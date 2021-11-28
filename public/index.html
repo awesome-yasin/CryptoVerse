@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="apple-touch-icon" type="image/png" sizes="180x180" 
+    href="images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" 
+    href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" 
+    href="images/favicon-16x16.png">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <link rel="manifest" href="images/site.webmanifest">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>CoinGecko Clone Project</title>
+</head>
+
+<body>
+
+  <div class="navigation-wrap bg-light start-header start-style">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<nav class="navbar navbar-expand-md navbar-light">
+					
+						<a class="navbar-brand" href="https://front.codes/" target="_blank"><img src="https://static.coingecko.com/s/coingecko-logo-d13d6bcceddbb003f146b33c2f7e8193d72b93bb343d38e392897c3df3e78bdd.png" style="height: 36px;"></a>	
+						
+						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+						
+						<div class="collapse navbar-collapse" id="navbarSupportedContent">
+							<ul class="navbar-nav ml-auto py-4 py-md-0">
+								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 active">
+									<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Home</a>
+									<div class="dropdown-menu">
+										<a class="dropdown-item" href="#">Home</a>
+										<a class="dropdown-item" href="#">View Source Code</a>
+										<a class="dropdown-item" href="#">Other Projects</a>
+									
+									</div>
+								</li>
+								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+									<a class="nav-link" href="/portfolio.html">Portfolio</a>
+								</li>
+								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+									<a class="nav-link" href="#">News</a>
+								</li>
+               
+								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+									<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Publications</a>
+									<div class="dropdown-menu">
+										<a class="dropdown-item" href="#">Crypto Economy: How Blockchain..</a>
+										<a class="dropdown-item" href="#">NFT Guide: How to Create..</a>
+										<a class="dropdown-item" href="#">The Crypto Encyclopedia</a>
+										<a class="dropdown-item" href="#">Crypto Technical Analysis</a>
+                    <a class="dropdown-item" href="#">The Crypto Trader</a>
+                    <a class="dropdown-item" href="#">The economics of Crypto-Currency Mining</a>
+									</div>
+								</li>
+                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+									<a class="nav-link" href="#">Top Gainer/Loser</a>
+								</li>
+								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+									<a class="nav-link" href="#">Contact</a>
+								</li>
+							</ul>
+						</div>
+						
+					</nav>		
+				</div>
+			</div>
+		</div>
+	</div>
+
+  <div class="containerv">
+    <!-- <h1 class="font-weight-bold text-center"><img class="clone"
+        src="images/android-chrome-192x192.png" width="70">
+     Crypto Matrix <img class="clone"
+        src="images/android-chrome-192x192.png" width="70"></h1>
+    <h6 class="font-weight-bold text-center">Results powered by CoinGecko API</h6>
+    <hr>
+    <h2 class="font-weight-bold text-center">Cryptocurrencies</h2>
+    <hr> -->
+
+    <!-- Global Market Data -->
+    <table class="table table-striped">
+      <tbody id="globalTableBody">
+        <tr class="content-row">
+          <td><span class="boldText">Coins: </span><span id="coinSpan"></span></td>
+          <td><span class="boldText">Exchanges: </span><span id="exchangesSpan"></span></td>
+          <td><span class="boldText">Total Market Cap: </span><span id="totalMarketCapSpan"></span>
+            <span id="totalMarketCapSpanPercent"></span></td>
+          <td><span class="boldText">24h Vol: </span><span id="_24hVolSpan"></span></td>
+          <td class="text-right"><span class="boldText">Dominance: </span><span id="btcSpan"></span>
+            <span id="ethSpan"></span></td>
+        </tr>
+      </tbody>
+    </table>
+
+
+    <div class="global col-sm-9">
+    <h5 class="font-weight-bold">Cryptocurrency Price By Market Cap</h5>
+    <p id="global_data"></p>
+    <p id="global_change"></p> <br> <br>
+    <p id="trading_vol"></p> <p id="btc_dom"></p><p id="eth_dom"></p> <p id="bnb_dom"></p><p id="info"></p>
+  </div>
+
+
+     <!-- Tabs -->
+    <ul class="nav nav-tabs" style="padding-left: 10px; font-size: 20px;">
+      <li class="nav-item">
+        <a class="nav-link app-tab-link active" href="/">Cryptocurrencies</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link app-tab-link" href="/exchanges.html" style="margin-left: 10px;">Exchanges</a>
+      </li>
+
+      <!-- Pagination -->
+      <li class="nav-item ml-auto">
+        <nav aria-label="Page navigation">
+          <ul class="pagination justify-content-end">
+            <li class="page-item">
+              <a id="pageNumber" class="page-link app-page-next" href="#"></a>
+            </li>
+            <li class="page-item">
+              <a id="pAnchor" class="page-link app-page-prev" href="#">Previous 100</a>
+            </li>
+            <li class="page-item">
+              <a id="nAnchor" class="page-link app-page-next" href="#">Next 100</a>
+            </li>
+          </ul>
+        </nav>
+      </li>
+    </ul>
+
+    <!-- Coin Table -->
+    <div class="table-main table-responsive-lg">
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th class="text-center" scope="col"><a href="#" class="sortable" 
+            name="market_cap_rank">Rank</th>
+          <th class="text-center" scope="col"><a href="#" class="sortable" 
+            name="name">Name</th>
+          <th class="text-center" scope="col"><a href="#" class="sortable" 
+              name="current_price">Price</th>
+          <th class="text-center" scope="col"><a href="#" class="sortable" 
+            name="market_cap">Market Cap</th>
+          <th class="text-center" scope="col"><a href="#" class="sortable" 
+            name="total_volume">Volume (24h)</th>
+            <th class="text-right" scope="col"><a href="#" class="sortable" 
+              name="high_24h low_24h">24 Hrs High/Low</th>
+          <th class="text-right" scope="col"><a href="#" class="sortable" 
+            name="circulating_supply">Circulating Supply</th>
+          <th class="text-right" scope="col"><a href="#" class="sortable" 
+            name="price_change_percentage_24h">Price Change (24h)</th>
+            <th class="text-right" scope="col"><a href="#" class="sortable" 
+              name="ath">ATH Price</th>
+              <th class="text-right" scope="col"><a href="#" class="sortable" 
+                name="atl">ATL Price</th>
+             
+        </tr>
+      </thead>
+      <tbody id="coinTableBody">
+      </tbody>
+    </table>
+  </div>
+
+
+  <!-- <h2>Trending coins</h2>
+
+  <div class="card-deck">
+    <div class="card">
+      <img src="https://assets.coingecko.com/coins/images/18407/small/logo_200.png?1631795328" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title" id="trending"></h5>
+        <p class="card-text" id="trend_hffgprice"></p>
+        
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://assets.coingecko.com/coins/images/19175/small/300x300Logo.png?1634612124" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://assets.coingecko.com/coins/images/16356/small/57198446-0-Get-Rich-Quick-Gober.png?1623812294" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+  </div> -->
+
+  <section class="section mt-5 pb-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h3 class="h3 mb-4 mb-md-5 text-center text-md-left">Trending Coins</h3>
+          <div class="row custom">
+            <div class="col-lg-4 col-sm-6 col-12">
+              <div class="box-information">
+                <a href="#" class="no-arrow">
+                  <div class="image" id="trend_img">
+                   
+                  </div>
+                  <div class="text">
+                    <h5 id="trending"></h5>
+                    <span class="small d-block" id="trend_price"></span>
+                  </div>
+                </a>
+              </div>
+            </div>
+  
+            <div class="col-lg-4 col-sm-6 col-12">
+              <div class="box-information">
+                <a href="#" class="no-arrow">
+                  <div class="image" id="trend_img_2">
+                  </div>
+                  <div class="text">
+                    <h5 id="trending_2"></h5>
+                    <span class="small d-block" id="trend_price_2"></span>
+                  </div>
+                </a>
+              </div>
+            </div>
+  
+            <div class="col-lg-4 col-sm-6 col-12">
+              <div class="box-information">
+                <a href="#" class="no-arrow">
+                  <div class="image" id="trend_img_3">
+                  </div>
+                  <div class="text">
+                    <h5 id="trending_3"></h5>
+                    <span class="small d-block" id="trend_price_3"></span>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-sm-6 col-12">
+              <div class="box-information">
+                <a href="#" class="no-arrow">
+                  <div class="image" id="trend_img_4">
+                  </div>
+                  <div class="text">
+                    <h5 id="trending_4"></h5>
+                    <span class="small d-block" id="trend_price_4"></span>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-sm-6 col-12">
+              <div class="box-information">
+                <a href="#" class="no-arrow">
+                  <div class="image" id="trend_img_5">
+                  </div>
+                  <div class="text">
+                    <h5 id="trending_5"></h5>
+                    <span class="small d-block" id="trend_price_5"></span>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-sm-6 col-12">
+              <div class="box-information">
+                <a href="#" class="no-arrow">
+                  <div class="image" id="trend_img_6">
+                  </div>
+                  <div class="text">
+                    <h5 id="trending_6"></h5>
+                    <span class="small d-block" id="trend_price_6"></span>
+                  </div>
+                </a>
+              </div>
+            </div>
+  
+          </div><!-- row custom -->
+        </div><!-- col-12 -->
+      </div><!-- row -->
+    </div>
+  </section>
+
+<div id="test"></div>
+
+
+
+<footer class="new_footer_area bg_color">
+  <div class="new_footer_top">
+      <div class="container">
+          <div class="row">
+
+
+
+            <!-- <div class="footer-content pt-5 pb-5">
+              <div class="row">
+                  <div class="col-lg-3 col-md-6">
+                      <div class="footer-widget">
+                          <div class="footer-logo">
+                              <a href="index.html"><img src="https://i.ibb.co/QDy827D/ak-logo.png" class="img-fluid" alt="logo"></a>
+                          </div>
+                          <div class="footer-text">
+                              <p>Lorem ipsum dolor sit amet, consec tetur adipisicing elit, sed do eiusmod tempor incididuntut consec tetur adipisicing
+                              elit,Lorem ipsum dolor sit amet.</p>
+                          </div>
+                          
+                      </div>
+                  </div> -->
+
+                  <div class="col-lg-3 col-md-6">
+                    <div class="f_widget about-widget pl_70 wow fadeInLeft" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInLeft;">
+                        <h3 class="f-title f_600 t_color f_size_18"></h3>
+                        <div class="footer-logo">
+                          <a href="index.html"><img src="https://cloudfront-us-east-1.images.arcpublishing.com/coindesk/XSITYN7KYVGLBNRFWMLHTHEAYU.jpg" class="img-fluid" alt="logo"></a>
+                      </div>
+                      <div class="footer-text">
+                        <p>Coin Matrix provides a fundamental analysis of the crypto market. In addition to tracking price, volume and market capitalisation, CoinGecko tracks community growth, open-source code development, major events and on-chain metrics.
+                         
+                          </p>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                  <div class="f_widget about-widget pl_70 wow fadeInLeft" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInLeft;">
+                      <h3 class="f-title f_600 t_color f_size_18">Features</h3>
+                      <ul class="list-unstyled f_list">
+                          <li><a href="#">Crypto News</a></li>
+                          <li><a href="#">Portfolio</a></li>
+                          <li><a href="#">Top Gainers/ Losers</a></li>
+                          <li><a href="#">Download Andriod App</a></li>
+                          <li><a href="#">Other Projects</a></li>
+                          
+                      </ul>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-md-6">
+                  <div class="f_widget company_widget wow fadeInLeft" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft;">
+                      <h3 class="f-title f_600 t_color f_size_18">Give Feedback</h3>
+                      <p>Give me the feedback about how you like the project !</p>
+                      <form action="#" class="f_subscribe_two mailchimp" method="post" novalidate="true" _lpchecked="1">
+                          <input type="text" name="EMAIL" class="form-control memail" placeholder="Email">
+                          <button class="btn btn_get btn_get_two" type="submit">Subscribe</button>
+                          <p class="mchimp-errmessage" style="display: none;"></p>
+                          <p class="mchimp-sucmessage" style="display: none;"></p>
+                      </form>
+                  </div>
+              </div>
+              
+              
+              <div class="col-lg-3 col-md-6">
+                  <div class="f_widget social-widget pl_70 wow fadeInLeft" data-wow-delay="0.8s" style="visibility: visible; animation-delay: 0.8s; animation-name: fadeInLeft;">
+                      <h3 class="f-title f_600 t_color f_size_18">Social Links</h3>
+                      <div class="f_social_icon">
+                          <a href="https://github.com/awesome-yasin" class="fa fa-github"></a>
+                          <a href="https://www.instagram.com/yasinn.0x/" class="fa fa-instagram"></a>
+                          <a href="https://www.linkedin.com/in/md-yasin-ansari-92a935221" class="fa fa-linkedin"></a>
+                          
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="footer_bg">
+          <div class="footer_bg_one"></div>
+          <div class="footer_bg_two"></div>
+      </div>
+  </div>
+  <div class="footer_bottom">
+      <div class="container">
+          <div class="row align-items-center">
+              <div class="col-lg-6 col-sm-7">
+                  <p class="mb-0 f_400">© CryptoMatrix Inc.. 2021 All rights reserved.</p>
+              </div>
+              
+          </div>
+      </div>
+  </div>
+</footer>
+
+
+
+
+  <script src="js/index.js"> </script>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
