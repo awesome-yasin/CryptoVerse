@@ -1,5 +1,4 @@
 
-    if (ethereum) { ethereum.autoRefreshOnNetworkChange = false; }; //avoids MetaMask errors in console.
     let coinsPerPage = 100;
     let currentPage = 1;
     let BASE_URL = `https://api.coingecko.com/api/v3`;
