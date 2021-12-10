@@ -1,182 +1,182 @@
 [
   {
     "name": "MoonX",
-    "volume": "$158,852",
-    "price": "$0.040564102711",
-    "change": "-95.3%"
+    "volume": "$158,631",
+    "price": "$0.040038421556",
+    "change": "-95.4%"
   },
   {
     "name": "Ether Terrestrial",
-    "volume": "$165,350",
-    "price": "$0.000000141581",
-    "change": "-86.0%"
-  },
-  {
-    "name": "Deffect",
-    "volume": "$72,429.32",
-    "price": "$0.009134201594",
-    "change": "-83.6%"
+    "volume": "$164,601",
+    "price": "$0.000000138996",
+    "change": "-86.1%"
   },
   {
     "name": "Acute Angle Cloud",
-    "volume": "$99,232.12",
-    "price": "$0.001523937423",
-    "change": "-82.9%"
-  },
-  {
-    "name": "DigitalNote",
-    "volume": "$82,767.57",
-    "price": "$0.000330652671",
-    "change": "-66.5%"
-  },
-  {
-    "name": "Blockasset",
-    "volume": "$920,029",
-    "price": "$0.348229",
-    "change": "-63.3%"
+    "volume": "$99,938.40",
+    "price": "$0.001519644770",
+    "change": "-83.2%"
   },
   {
     "name": "Koreadoge",
-    "volume": "$97,340.83",
-    "price": "$0.000271439304",
-    "change": "-62.4%"
+    "volume": "$89,135.24",
+    "price": "$0.000259262367",
+    "change": "-62.7%"
   },
   {
-    "name": "BnbHeroes Token",
-    "volume": "$3,456,052",
-    "price": "$0.063753095241",
+    "name": "Blockasset",
+    "volume": "$824,593",
+    "price": "$0.345689",
     "change": "-61.5%"
   },
   {
-    "name": "Aurora Chain",
-    "volume": "$149,260",
-    "price": "$0.001254030003",
-    "change": "-58.9%"
-  },
-  {
     "name": "Arker",
-    "volume": "$7,573,405",
-    "price": "$0.181707",
-    "change": "-58.2%"
+    "volume": "$7,367,722",
+    "price": "$0.169563",
+    "change": "-61.0%"
   },
   {
-    "name": "Goku Inu",
-    "volume": "$134,929",
-    "price": "$0.000000000123",
-    "change": "-56.5%"
+    "name": "BnbHeroes Token",
+    "volume": "$3,345,387",
+    "price": "$0.064072189130",
+    "change": "-59.6%"
   },
   {
-    "name": "IceFlake Finance",
-    "volume": "$110,930",
-    "price": "$14.41",
-    "change": "-54.8%"
-  },
-  {
-    "name": "Ditto",
-    "volume": "$110,101",
-    "price": "$0.429984",
-    "change": "-54.5%"
+    "name": "Aurora Chain",
+    "volume": "$149,500",
+    "price": "$0.001253213350",
+    "change": "-58.8%"
   },
   {
     "name": "SafeDeal",
-    "volume": "$412,372",
-    "price": "$2.65",
-    "change": "-54.2%"
+    "volume": "$402,269",
+    "price": "$2.59",
+    "change": "-56.9%"
   },
   {
-    "name": "MetaMatrix",
-    "volume": "$1,370,588",
-    "price": "$0.000000004048",
-    "change": "-48.2%"
+    "name": "Goku Inu",
+    "volume": "$136,075",
+    "price": "$0.000000000124",
+    "change": "-56.6%"
   },
   {
-    "name": "SmarterCoin",
-    "volume": "$4,831,795",
-    "price": "$0.000029155912",
-    "change": "-45.7%"
+    "name": "IceFlake Finance",
+    "volume": "$110,990",
+    "price": "$16.16",
+    "change": "-55.0%"
   },
   {
-    "name": "PUBLISH",
-    "volume": "$623,723",
-    "price": "$0.028638749348",
-    "change": "-45.7%"
-  },
-  {
-    "name": "PolyFLOKI",
-    "volume": "$65,059.83",
-    "price": "$0.000001002907",
-    "change": "-44.3%"
-  },
-  {
-    "name": "K-Tune",
-    "volume": "$67,449.89",
-    "price": "$0.058221478292",
-    "change": "-43.5%"
-  },
-  {
-    "name": "MetaSafeMoon",
-    "volume": "$117,936",
-    "price": "$0.000000001419",
-    "change": "-42.8%"
-  },
-  {
-    "name": "Meme",
-    "volume": "$4,543,610",
-    "price": "$60.38",
-    "change": "-42.6%"
-  },
-  {
-    "name": "HunnyDAO",
-    "volume": "$815,873",
-    "price": "$43.92",
-    "change": "-42.3%"
-  },
-  {
-    "name": "Blue Gold",
-    "volume": "$103,064",
-    "price": "$0.000000000729",
-    "change": "-42.0%"
+    "name": "Ditto",
+    "volume": "$110,161",
+    "price": "$0.435775",
+    "change": "-53.5%"
   },
   {
     "name": "NFTLaunch",
-    "volume": "$9,001,968",
-    "price": "$0.160686",
-    "change": "-41.8%"
+    "volume": "$9,029,305",
+    "price": "$0.131171",
+    "change": "-53.0%"
   },
   {
-    "name": "RaDAO",
-    "volume": "$916,221",
-    "price": "$16.22",
-    "change": "-41.3%"
+    "name": "Meme",
+    "volume": "$4,079,557",
+    "price": "$49.70",
+    "change": "-52.8%"
+  },
+  {
+    "name": "Tempo DAO",
+    "volume": "$254,011",
+    "price": "$10.10",
+    "change": "-47.7%"
+  },
+  {
+    "name": "MetaSafeMoon",
+    "volume": "$109,099",
+    "price": "$0.000000001506",
+    "change": "-47.3%"
+  },
+  {
+    "name": "PolyFLOKI",
+    "volume": "$64,252.07",
+    "price": "$0.000000986111",
+    "change": "-46.6%"
   },
   {
     "name": "Brainiac",
-    "volume": "$430,901",
-    "price": "$0.082362094524",
-    "change": "-40.7%"
+    "volume": "$397,990",
+    "price": "$0.074335104189",
+    "change": "-46.5%"
   },
   {
-    "name": "Credefi",
-    "volume": "$4,855,163",
-    "price": "$0.080573833440",
-    "change": "-40.0%"
+    "name": "SmarterCoin",
+    "volume": "$4,765,898",
+    "price": "$0.000028721528",
+    "change": "-46.3%"
+  },
+  {
+    "name": "PUBLISH",
+    "volume": "$618,192",
+    "price": "$0.028337857791",
+    "change": "-45.4%"
   },
   {
     "name": "Small Fish Cookie",
-    "volume": "$2,236,692",
-    "price": "$0.886799",
-    "change": "-39.9%"
+    "volume": "$2,213,592",
+    "price": "$0.836542",
+    "change": "-42.8%"
   },
   {
-    "name": "FlokiBonk",
-    "volume": "$92,854.27",
-    "price": "$0.000000000611",
-    "change": "-39.4%"
+    "name": "RaDAO",
+    "volume": "$915,425",
+    "price": "$14.36",
+    "change": "-42.7%"
+  },
+  {
+    "name": "K-Tune",
+    "volume": "$67,327.34",
+    "price": "$0.058115689754",
+    "change": "-42.7%"
   },
   {
     "name": "Token TKX",
-    "volume": "$86,973.87",
-    "price": "$0.000375929618",
-    "change": "-38.9%"
+    "volume": "$85,611.32",
+    "price": "$0.000364294549",
+    "change": "-40.6%"
+  },
+  {
+    "name": "Blue Gold",
+    "volume": "$100,745",
+    "price": "$0.000000000761",
+    "change": "-40.3%"
+  },
+  {
+    "name": "ADAPad",
+    "volume": "$7,570,580",
+    "price": "$0.298536",
+    "change": "-40.2%"
+  },
+  {
+    "name": "FlokiBonk",
+    "volume": "$92,934.97",
+    "price": "$0.000000000613",
+    "change": "-38.7%"
+  },
+  {
+    "name": "MetaMatrix",
+    "volume": "$1,336,043",
+    "price": "$0.000000004042",
+    "change": "-38.6%"
+  },
+  {
+    "name": "HunnyDAO",
+    "volume": "$801,100",
+    "price": "$44.99",
+    "change": "-38.0%"
+  },
+  {
+    "name": "DAV Network",
+    "volume": "$1,727,011",
+    "price": "$0.002134038487",
+    "change": "-37.6%"
   }
 ]
