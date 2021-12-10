@@ -13,7 +13,7 @@ const SearchBar = ({ apiCoins, toggle, onAdd }) => {
         <input
           className="search-bar"
           type="text"
-          placeholder="Search coin..."
+          placeholder="Search coin"
           onChange={(e) => {
             setSearchTerm(e.target.value);
           }}

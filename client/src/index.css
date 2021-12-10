@@ -7,27 +7,28 @@
 body {
   min-height: 100vh;
   font-family: "Poppins", sans-serif;
-  background: url(./Images/bg-image.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background-color: #7cffcb;
+  background-image : linear-gradient(315deg, #7cffcb 0%, #74f2ce 74%);
+  
 }
 
 .header {
-  width: 70%;
+  width: 50%;
+  border: 2px solid black;
   text-align: center;
   margin-top: 15px;
+  background-color: #fff;
   margin-bottom: 15px;
 }
 
 .header p {
   font-size: 18px;
   font-weight: bold;
-  color: rgb(255, 255, 255);
+
+  color: rgb(0, 0, 0);
 }
 
-.container {
+.containerzz {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -35,28 +36,22 @@ body {
   text-align: center;
   border-radius: 10px;
 }
-
-.form-mask {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.479);
-  min-height: 100vh;
-  width: 100%;
-  top: 0;
-  z-index: 10;
-  position: fixed;
-  cursor: pointer;
+.input-style {
+  width: 40%;
+  height: 40px !important;
+  outline: none;
+  box-sizing: border-box;
+  border: none;
 }
 
 .form-container {
   display: flex;
   justify-content: center;
-  height: 180px;
-  width: 50%;
-  margin-bottom: 15px;
-  position: absolute;
-  position: fixed;
+  height: 300px;
+  width: 100%;
+  
+  position: relative;
+
   z-index: 10;
   background: #e0e0e0;
 }
@@ -68,16 +63,19 @@ body {
 }
 
 .submit-btn {
-  height: 30px;
-  margin-top: 12px;
+  height: 40px;
+  margin-top: 15px;
   width: 161px;
   border: none;
+  margin-bottom: 20px;
   background-color: #3ee577;
-  background-image: linear-gradient(315deg, #3ee577 0%, #42fcdb 74%);
+ transition: 0.4s;
   border-radius: 10px;
   cursor: pointer;
 }
-
+.submit-btn:hover{
+  background-color: #21ca5a;
+}
 .coin-list {
   min-height: 30vh;
   display: flex;
@@ -85,18 +83,24 @@ body {
   align-items: center;
   justify-content: center;
   border-radius: 10px;
+  margin-bottom: 30px;
   width: 90%;
 }
 
 .coin-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+
   width: 100%;
 }
-
+.note{
+  font-size: 12px !important;
+  color: #f84242 !important;
+}
 .coin {
   width: 100%;
+ 
   height: auto;
   color: black;
   border-radius: 10px;
@@ -138,6 +142,7 @@ body {
   bottom: 7%;
   right: 10%;
   cursor: pointer;
+  z-index: 100;
   position: fixed;
 }
 
@@ -168,22 +173,24 @@ body {
 
 .search-bar {
   margin-top: 10px;
-  width: 70%;
-  height: 30px;
-  border-radius: 10px;
+  width: 80%;
+  height: 50px;
+  outline: 0;
   border: none;
+  transition: 0.4s;
   padding-left: 12px;
   background: #f5f5fa;
-  box-shadow: inset -2px -2px 4px rgba(255, 255, 255, 0.5),
-    inset 2px 2px 4px rgba(146, 146, 150, 0.25),
-    inset 5px 5px 10px rgba(174, 174, 187, 0.5), inset -5px -5px 10px #ffffff;
+  
 }
-
+.search-bar:hover, .search-bar:focus {
+  border: 1px solid #009688;
+  background-color: rgb(233, 233, 233);
+}
 .search-container {
-  background-color: #f0f0f3;
+  background-color: #e8e8e8;
   border-radius: 15px;
   height: 80vh;
-  width: 70%;
+  width: 80%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -197,13 +204,13 @@ body {
   flex-direction: column;
   align-items: center;
   overflow-y: scroll;
-  background: #f0f0f3;
+  background: transparent;
 }
 
 /* Scroll bar styling */
 
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 0px;
 }
 
 ::-webkit-scrollbar-track {
@@ -239,7 +246,7 @@ body {
 }
 
 .search-list-coin {
-  min-height: 30px;
+  min-height: 40px;
   display: flex;
   justify-content: space-around;
   width: 95%;
@@ -247,13 +254,10 @@ body {
   margin-bottom: 10px;
   align-items: center;
   text-align: center;
-  border-radius: 10px;
-  border-radius: 98px;
+  
   color: #34373b;
   background: #f0f0f3;
-  box-shadow: 5px 5px 10px rgba(94, 94, 95, 0.25), -5px -5px 10px #f0f0f3,
-    5px 5px 10px rgba(94, 94, 95, 0.25), 10px 10px 20px #f0f0f3,
-    -10px -10px 20px #f0f0f3;
+ 
 }
 
 .search-list-coin:first-child {
@@ -264,17 +268,18 @@ body {
   background-color: rgb(230, 230, 230);
 }
 
-.add-tx-btn {
+.add-txa-btnn {
   background: #3ee577;
   color: white;
   cursor: pointer;
   border-radius: 7px;
-  width: 80px;
+  height: 30px;
+  width: 130px;
   border: #3ee577 solid;
 }
 
 .profit {
-  color: green;
+  color: rgb(1, 104, 1);
 }
 
 .even {
@@ -288,6 +293,7 @@ body {
 .total-value {
   text-align: right;
   color: rgb(139, 139, 139);
+  margin-top: 50px;
 }
 
 .total-value p:first-child {
@@ -298,10 +304,7 @@ body {
   .search-container {
     width: 100%;
     height: 93vh;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 120px;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
+    
   }
 
   .search-bar {
@@ -310,9 +313,40 @@ body {
 
   .search-list {
     height: 70%;
+    margin-top: 40px;
   }
 
   .coin {
     font-size: 1em;
   }
+}
+.price{
+ float: top;
+  font-size: 12px;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+ 
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }

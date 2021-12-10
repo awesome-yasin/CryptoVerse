@@ -1,82 +1,400 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="apple-touch-icon" type="image/png" sizes="180x180" 
-    href="favicons/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" 
-    href="favicons/favicon-32x32.png">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" sizes="32x32" 
+    href="images/logo1.png">
   <link rel="icon" type="image/png" sizes="16x16" 
-    href="favicons/favicon-16x16.png">
-  <link rel="manifest" href="favicons/site.webmanifest">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-  <link rel="stylesheet" href="styles.css">
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-    crossorigin="anonymous"></script>
-  <title>CoinGecko Clone Project - Coin Page</title>
-</head>
+    href="images/logo1.png">
+    <link rel="manifest" href="favicons/site.webmanifest" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <title>CryptoVerse - Crypto Tracker, Portfolio, Events, News</title>
+    <style>
+      td {
+        border-right: 1px solid #fff;
+        font-weight: bolder;
+        
+      }
+      
+    </style>
+  </head>
 
-<body>
-  <div class="container">
-    <h1 class="font-weight-bold text-center"><img class="clone"
-      src="favicons/android-chrome-192x192.png" width="70">
-      CoinGecko Clone <img class="clone"
-      src="favicons/android-chrome-192x192.png" width="70"></h1>
-    <h6 class="font-weight-bold text-center">Results powered by CoinGecko API</h6>
-    <hr>
-    <h2 class="font-weight-bold text-center">Detailed Coin Information</h2>
-    <h6 class="font-weight-bold text-center">IvanOnTech Academy Bootcamp Project</h6>
-    <hr>
+  <body>
+    <div class="navigation-wrap bg-light start-header start-style">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <nav class="navbar navbar-expand-md navbar-light">
+            
+              <a class="navbar-brand" href="https://front.codes/" target="_blank"><img src="images/logo2.png" style="height: 40px;"></a>	
+              
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto py-4 py-md-0">
+                  <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 active">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Home</a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="#">Home</a>
+                      <a class="dropdown-item" href="#">View Source Code</a>
+                      <a class="dropdown-item" href="#">Other Projects</a>
+                    
+                    </div>
+                  </li>
+                  <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                    <a class="nav-link" href="/portfolio">Portfolio</a>
+                  </li>
+                  <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                    <a class="nav-link" href="/news.html">News</a>
+                  </li>
+                 
+                  <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Publications</a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="\Crypto Economy.html">Crypto Economy: How Blockchain..</a>
+                      <a class="dropdown-item" href="\NFT Guide.html">NFT Guide: How to Create..</a>
+                      <a class="dropdown-item" href="\cryptoEncyclo.html">The Crypto Encyclopedia</a>
+                      <a class="dropdown-item" href="\Crypto Technical.html">Crypto Technical Analysis</a>
+                      <a class="dropdown-item" href="\The Crypto Trader.html">The Crypto Trader</a>
+                      <a class="dropdown-item" href="\The economics of Crypto-Currency Mining.html">The economics of Crypto-Currency Mining</a>
+                    </div>
+                  </li>
+                  <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                    <a class="nav-link" href="/mover.html">Top Gainer/Loser</a>
+                  </li><li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                    <a class="nav-link" href="/event.html">Crypto Events</a>
+                  </li>
+                </li><li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                  <a class="nav-link" href="/dictionary.html">Crypto Dictionary</a>
+                </li>
+                  <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                    <a class="nav-link" href="#">Contact</a>
+                  </li>
+                </ul>
+              </div>
+              
+            </nav>		
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="containera">
+     
 
-    <!-- Global Market Data -->
-    <table class="table table-striped">
-      <tbody id="globalTableBody">
-        <tr class="content-row">
-          <td><span class="boldText">Coins: </span><span id="coinSpan"></span></td>
-          <td><span class="boldText">Exchanges: </span><span id="exchangesSpan"></span></td>
-          <td><span class="boldText">Total Market Cap: </span><span id="totalMarketCapSpan"></span>
-            <span id="totalMarketCapSpanPercent"></span></td>
-          <td><span class="boldText">24h Vol: </span><span id="_24hVolSpan"></span></td>
-          <td class="text-right"><span class="boldText">Dominance: </span><span id="btcSpan"></span>
-            <span id="ethSpan"></span></td>
-        </tr>
-      </tbody>
-    </table>
+      <!-- Global Market Data -->
+      <table class="table table-striped">
+        <tbody id="globalTableBody">
+          <tr class="content-row">
+            <td>
+              <span class="boldText">Coins: </span><span id="coinSpan"></span>
+            </td>
+            <td>
+              <span class="boldText">Exchanges: </span
+              ><span id="exchangesSpan"></span>
+            </td>
+            <td>
+              <span class="boldText">Total Market Cap: </span
+              ><span id="totalMarketCapSpan"></span>
+              <span id="totalMarketCapSpanPercent"></span>
+            </td>
+            <td>
+              <span class="boldText">24h Vol: </span
+              ><span id="_24hVolSpan"></span>
+            </td>
+            <td class="text-right">
+              <span class="boldText">Dominance: </span
+              ><span id="btcSpan"></span> <span id="ethSpan"></span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
 
-    <!-- Tabs -->
-    <ul class="nav nav-tabs">
-      <li class="nav-item">
-        <a class="nav-link app-tab-link" href="/">Cryptocurrencies</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link app-tab-link" href="/exchanges.html">Exchanges</a>
-      </li>
-    </ul>
+      <!-- Tabs -->
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link app-tab-link" href="/">Cryptocurrencies</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link app-tab-link" href="/exchanges.html">Exchanges</a>
+        </li>
+      </ul>
 
-    <!-- Coin List -->
-    <ul class="list-group" id="coinList">
-    </ul>
+      <div class="containera">
+        <div class="row">
+          <div class="col">
+            <ul class="list-group" id="coinList2"></ul>
 
-    <!-- Imprint -->
-    <br>
-    <hr>
-    <address align="center">
-      Written by <a href="mailto:the.rainmaker@mail.com" target="_blank">The Rainmaker</a><br>
-    </address>
-  </div>
-  <script src="https://widgets.coingecko.com/coingecko-coin-market-ticker-list-widget.js"></script>
-  <script src="https://widgets.coingecko.com/coingecko-coin-price-chart-widget.js"></script>
-  <script src="js/coin.js"></script>
-</body>
+            <table class="table table table-striped table-hover">
+              <thead>
+                <tr>
+                  <th class="text-center" scope="col">24hr</th>
+                  <th class="text-center" scope="col">7 Days</th>
+                  <th class="text-center" scope="col">14 Days</th>
+                  <th class="text-center" scope="col">30 Days</th>
+                  <th class="text-center" scope="col">200 Days</th>
+                  <th class="text-center" scope="col">1 Yrs</th>
+                </tr>
+              </thead>
+              <tbody id="priceChange"></tbody>
+            </table>
+          </div>
+          <div class="col">
+            <ul class="list-group" id="coinList"></ul>
+          </div>
+        </div>
+      </div>
 
+     <div class="container">
+       <div class="row">
+         <div class="col">
+          <table class="table table-bordered border">
+            <thead>
+             
+            </thead>
+            <tbody style="font-size: 19px;">
+              <h3 id="headn" style="margin-top: 30px; margin-bottom: 30px; margin-left: 10px; text-align: center;"></h3>
+              <tr>
+                <th scope="row" id="price_name"></th>
+                <td id="price"></td>
+              </tr>
+              <tr>
+                <th scope="row" id="market_cap"></th>
+                <td id="market_cap_price"></td>
+              </tr>
+              <tr>
+                <th scope="row" id="market_dom_n"></th>
+                <td id="market_dom"></td>
+              </tr>
+              <tr>
+                <th scope="row" id="tsn"></th>
+                <td id="ts"></td>
+              </tr>
+              <tr>
+                <th scope="row" id="csn"></th>
+                <td id="cs"></td>
+              </tr>
+              <tr>
+                <th scope="row" id="trading_vol_name"></th>
+                <td id="trading_volume"></td>
+              </tr>
+              
+              <tr>
+                <th scope="row" id="24_n"></th>
+                <td id="24h"></td>
+              </tr>
+              <tr>
+                <th scope="row" id="athn"></th>
+                <td id="ath"></td>
+                
+              </tr>
+              <tr>
+                <th scope="row" id="atln"></th>
+                <td id="atl"></td>
+                
+              </tr>
+              <tr>
+                <th scope="row" id="han"></th>
+                <td id="ha"></td>
+              </tr>
+              <tr>
+                <th scope="row" id="btname"></th>
+                <td id="bt"></td>
+              </tr>
+             
+               
+                
+              
+            </tbody>
+           
+          </table>
+         
+         </div>
+        
+       </div>
+      
+     </div>
+   <div class="details border" style="margin: 20px 30px;padding: 25px;">
+     <h3 id="dtn"></h3>
+       
+    
+     <p scope="row" id="desc" style="text-align: left;"></p>
+   </div>
+
+   <section class="section mt-5 pb-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h3 class="h3 mb-4 mb-md-5 text-center text-md-left">Trending Coins</h3>
+          <div class="row custom">
+            <div class="col-lg-4 col-sm-6 col-12">
+              <div class="box-information">
+                <a href="#" class="no-arrow">
+                  <div class="image" id="trend_img">
+                   
+                  </div>
+                  <div class="text">
+                    <h5 id="trending"></h5>
+                    <span class="small d-block" id="trend_price"></span>
+                  </div>
+                </a>
+              </div>
+            </div>
+  
+            <div class="col-lg-4 col-sm-6 col-12">
+              <div class="box-information">
+                <a href="#" class="no-arrow">
+                  <div class="image" id="trend_img_2">
+                  </div>
+                  <div class="text">
+                    <h5 id="trending_2"></h5>
+                    <span class="small d-block" id="trend_price_2"></span>
+                  </div>
+                </a>
+              </div>
+            </div>
+  
+            <div class="col-lg-4 col-sm-6 col-12">
+              <div class="box-information">
+                <a href="#" class="no-arrow">
+                  <div class="image" id="trend_img_3">
+                  </div>
+                  <div class="text">
+                    <h5 id="trending_3"></h5>
+                    <span class="small d-block" id="trend_price_3"></span>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-sm-6 col-12">
+              <div class="box-information">
+                <a href="#" class="no-arrow">
+                  <div class="image" id="trend_img_4">
+                  </div>
+                  <div class="text">
+                    <h5 id="trending_4"></h5>
+                    <span class="small d-block" id="trend_price_4"></span>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-sm-6 col-12">
+              <div class="box-information">
+                <a href="#" class="no-arrow">
+                  <div class="image" id="trend_img_5">
+                  </div>
+                  <div class="text">
+                    <h5 id="trending_5"></h5>
+                    <span class="small d-block" id="trend_price_5"></span>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-sm-6 col-12">
+              <div class="box-information">
+                <a href="#" class="no-arrow">
+                  <div class="image" id="trend_img_6">
+                  </div>
+                  <div class="text">
+                    <h5 id="trending_6"></h5>
+                    <span class="small d-block" id="trend_price_6"></span>
+                  </div>
+                </a>
+              </div>
+            </div>
+  
+          </div><!-- row custom -->
+        </div>
+      </div><!-- row -->
+    </div>
+  </section>
+
+
+    </div>
+    <footer>
+      <div class="content">
+        <div class="top">
+          <div class="logo-details">
+            <img src="images/logo.png" alt="" srcset="" style="width: 60px; height: 40px; margin-left: 0;">
+            <span class="logo_name">CoinVerse</span>
+          </div>
+          <div class="media-icons">
+            <a href="https://www.facebook.com/mdyasin.ansari.1029/"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://github.com/awesome-yasin"><i class="fab fa-github"></i></a>
+            <a href="https://www.instagram.com/yasinn.0x/"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/md-yasin-ansari-92a935221/"><i class="fab fa-linkedin-in"></i></a>
+            
+          </div>
+        </div>
+        <div class="link-boxes">
+          <ul class="box">
+            <li class="link_name">Features</li>
+            <li><a href="/portfolio">Portfolio</a></li>
+            <li><a href="/news.html">News</a></li>
+            <li><a href="/mover.html">Top Gainers/Losers</a></li>
+            <li><a href="/event.html">Crypto Events</a></li>
+            <li><a href="/dictionary.html">Crypto Dictionary</a></li>
+          </ul>
+          <ul class="box">
+            <li class="link_name">Upcoming Features</li>
+            <li><a href="#">Virtual Trading</a></li>
+            <li><a href="#">Coin Price Prediction</a></li>
+            <li><a href="#">AI Trading Bot</a></li>
+           
+          </ul>
+         
+          <ul class="box">
+            <li class="link_name">Other Projects</li>
+            <li><a href="https://github.com/awesome-yasin/Media-Downloader">Social Media-Downloader</a></li>
+            <li><a href="https://github.com/awesome-yasin/supercalculator">SuperCalculator</a></li>
+            <li><a href="https://github.com/awesome-yasin/react-miniprojects">React Mini Project</a></li>
+            <li><a href="https://github.com/awesome-yasin/netflix_clone">Netflix Clone</a></li>
+          </ul>
+          <ul class="box input-box">
+            <li class="link_name">Subscribe</li>
+            <li><input type="text" placeholder="Enter your email"></li>
+            <li><input type="button" value="Subscribe"></li>
+          </ul>
+        </div>
+      </div>
+      <div class="bottom-details">
+        <div class="bottom_text">
+          <span class="copyright_text">Copyright © 2021 <a href="#">CoinVerse</a>All rights reserved</span>
+         
+        </div>
+      </div>
+    </footer>
+    
+    <script src="https://widgets.coingecko.com/coingecko-coin-market-ticker-list-widget.js"></script>
+    <script src="https://widgets.coingecko.com/coingecko-coin-compare-chart-widget.js"></script>
+    <script src="https://widgets.coingecko.com/coingecko-coin-converter-widget.js"></script>
+    <script src="js/coin.js"></script>
+  </body>
 </html>

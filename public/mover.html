@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" sizes="32x32" 
+    href="images/logo1.png">
+  <link rel="icon" type="image/png" sizes="16x16" 
+    href="images/logo1.png">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="styles.css">
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+
+ 
+  <title>CryptoVerse - Crypto Tracker, Portfolio, Events, News</title>
+</head>
+
+<body>
+
+
+  <div class="navigation-wrap bg-light start-header start-style">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<nav class="navbar navbar-expand-md navbar-light">
+					
+						<a class="navbar-brand" href="https://front.codes/" target="_blank"><img src="images/logo2.png" style="height: 40px;"></a>	
+						
+						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+						
+						<div class="collapse navbar-collapse" id="navbarSupportedContent">
+							<ul class="navbar-nav ml-auto py-4 py-md-0">
+								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 active">
+									<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Home</a>
+									<div class="dropdown-menu">
+										<a class="dropdown-item" href="#">Home</a>
+										<a class="dropdown-item" href="#">View Source Code</a>
+										<a class="dropdown-item" href="#">Other Projects</a>
+									
+									</div>
+								</li>
+								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+									<a class="nav-link" href="/portfolio">Portfolio</a>
+								</li>
+								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+									<a class="nav-link" href="/news.html">News</a>
+								</li>
+               
+								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+									<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Publications</a>
+									<div class="dropdown-menu">
+										<a class="dropdown-item" href="\Crypto Economy.html">Crypto Economy: How Blockchain..</a>
+										<a class="dropdown-item" href="\NFT Guide.html">NFT Guide: How to Create..</a>
+										<a class="dropdown-item" href="\cryptoEncyclo.html">The Crypto Encyclopedia</a>
+										<a class="dropdown-item" href="\Crypto Technical.html">Crypto Technical Analysis</a>
+                    <a class="dropdown-item" href="\The Crypto Trader.html">The Crypto Trader</a>
+                    <a class="dropdown-item" href="\The economics of Crypto-Currency Mining.html">The economics of Crypto-Currency Mining</a>
+									</div>
+								</li>
+                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+									<a class="nav-link" href="/mover.html">Top Gainer/Loser</a>
+								</li><li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+									<a class="nav-link" href="/event.html">Crypto Events</a>
+								</li>
+              </li><li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                <a class="nav-link" href="/dictionary.html">Crypto Dictionary</a>
+              </li>
+								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+									<a class="nav-link" href="#">Contact</a>
+								</li>
+							</ul>
+						</div>
+						
+					</nav>		
+				</div>
+			</div>
+		</div>
+	</div>
+
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <tbody id="globalTableBody">
+        <tr class="content-row">
+          <td><span class="boldText">Coins: </span><span id="coinSpan"></span></td>
+          <td><span class="boldText">Exchanges: </span><span id="exchangesSpan"></span></td>
+          <td><span class="boldText">Total Market Cap: </span><span id="totalMarketCapSpan"></span>
+            <span id="totalMarketCapSpanPercent"></span></td>
+          <td><span class="boldText">24h Vol: </span><span id="_24hVolSpan"></span></td>
+          <td class="text-right"><span class="boldText">Dominance: </span><span id="btcSpan"></span>
+            <span id="ethSpan"></span></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+   
+  </div>
+
+
+    <section>
+        <h1 style="margin-bottom: 20px; font-weight: bold; margin-top: 10px;">Largest Gainers and Losers in Crypto</h1>
+  
+        <table class="table table-bordered table-hover table-responsive table-striped col-md-6" style="float: left;">
+            
+            <thead>
+            <tr>
+                <th class="text-center" scope="col">Coin</th>
+                <th class="text-center" scope="col">Volume</th>
+                <th class="text-center" scope="col">Price</th>
+                <th class="text-center" scope="col">Percentage Increase</th>
+            </tr>
+            </thead>
+            <tbody id='table'  class="hover">
+            </tbody>
+
+ 
+  </table>
+
+  <table class="table table-bordered table-hover table-responsive table-striped col-md-6" style="float: left;">
+   
+    <thead>
+    <tr>
+        <th class="text-center" scope="col">Coin</th>
+        <th class="text-center" scope="col">Volume</th>
+        <th class="text-center" scope="col">Price</th>
+        <th class="text-center" scope="col">Percentage Increase</th>
+    </tr>
+    </thead>
+    <tbody id='loser-table'  class="hover" style="background-color: #f5ddd4;;">
+    </tbody>
+
+</table>
+
+
+  </section>
+
+
+
+
+  <script src="js/mover.js"></script>
+  <script src="js/loser.js"></script>
+</body>
+
+</html>

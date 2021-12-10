@@ -17,13 +17,14 @@ const Header = ({ coins }) => {
 
   return (
     <div className="header">
-      <p>My portfolio</p>
-      <h1 style={{ color: "#6eeb5e" }}>
-        {new Intl.NumberFormat("us-US", {
+      <p>Portfolio Worth</p>
+      <h1 style={{ color: "#009E17" }}>
+        {new Intl.NumberFormat("en-IN", {
           style: "currency",
-          currency: "USD",
+          currency: "INR",
         }).format(total)}
       </h1>
+      <p className = "note">Note: everything is stored Locally on your Local Storage Nothing is Stored in server.</p>
     </div>
   );
 };

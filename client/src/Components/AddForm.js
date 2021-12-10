@@ -45,7 +45,7 @@ const AddForm = ({ toggleForm, coin, updateCoin }) => {
           <animated.form
             style={style}
             onSubmit={displayWorth}
-            className="form-container container"
+            className="form-container containerzz"
           >
             <BsXCircleFill className="exit-form-btn" onClick={toggleForm} />
             <p style={{ fontWeight: "bold" }}>{coin.name}</p>
@@ -73,7 +73,7 @@ const AddForm = ({ toggleForm, coin, updateCoin }) => {
                 setAmount(e.target.value);
               }}
             />
-            <input type="submit" value="Add coin(s)" className="submit-btn" />
+            <input type="submit" value="Add coin" className="submit-btn" />
           </animated.form>
         </>
       )

@@ -5,7 +5,7 @@ const AddTxBtn = ({setShowForm, showForm}) => {
         setShowForm(!showForm);
       }}
     >
-      <button className="add-tx-btn">Add coins</button>
+      <button className="add-txa-btnn">Add coins</button>
     </div>
   );
 };

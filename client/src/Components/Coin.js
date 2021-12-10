@@ -11,6 +11,7 @@ const Coin = ({ coin, onDelete, updateCoin }) => {
   let totalCost = coin.cost * coin.amount;
   let profitOrLoss = totalValue - totalCost;
   let ROI = (100 * profitOrLoss) / totalCost;
+  const priceChange =coin.price_change_percentage_24h;
 
   const toggleForm = () => {
     setShowForm(!showForm);
@@ -27,29 +28,35 @@ const Coin = ({ coin, onDelete, updateCoin }) => {
           }
         }}
       >
-        <div className="coin">
+        <div className="coin font-weight-bold">
+          
           <img
             src={coin.image}
             alt=""
             style={{ height: "30px", width: "30px" }}
           />
-          <p>{coin.symbol.toUpperCase()}</p>
-          <p>
-            {new Intl.NumberFormat("us-US", {
+          <p className = "nothing">{coin.name}</p>
+         
+          <div className ="">
+          <span className = "price font-weight-bold">Current Price</span>
+          <p title="Hooray!"> 
+            {new Intl.NumberFormat("en-IN", {
               style: "currency",
-              currency: "USD",
+              currency: "INR",
             }).format(coin.current_price)}
           </p>
-
+          </div>
           {/* Current value of coins */}
           {(coin.cost !== undefined) | (coin.amount !== undefined) ? (
             <div className="total-value">
+               <span className = "price">Total Value</span>
               <p>
-                {new Intl.NumberFormat("us-US", {
+                {new Intl.NumberFormat("en-IN", {
                   style: "currency",
-                  currency: "USD",
+                  currency: "INR",
                 }).format(totalValue)}
               </p>
+              <span className = "price">No of Coin</span>
               <p>{new Intl.NumberFormat().format(coin.amount)}</p>
             </div>
           ) : (
@@ -67,12 +74,14 @@ const Coin = ({ coin, onDelete, updateCoin }) => {
                   : profitOrLoss === 0 && "even"
               }
             >
+              <span className = "price">Profit / Loss</span>
               <p>
-                {new Intl.NumberFormat("us-US", {
+                {new Intl.NumberFormat("en-IN", {
                   style: "currency",
-                  currency: "USD",
+                  currency: "INR",
                 }).format(profitOrLoss)}
               </p>
+              <span className = "price">Profit / Loss Percent</span> 
               <p>{new Intl.NumberFormat().format(ROI)}%</p>
             </div>
           ) : (

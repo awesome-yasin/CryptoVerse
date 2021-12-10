@@ -15,9 +15,9 @@ const SearchCoin = ({ searchCoin, toggle, onAdd }) => {
       <p>{searchCoin.name}</p>
       <p>{searchCoin.symbol.toUpperCase()}</p>
       <p>
-        {new Intl.NumberFormat("us-US", {
+        {new Intl.NumberFormat("en-IN", {
           style: "currency",
-          currency: "USD",
+          currency: "INR",
         }).format(searchCoin.current_price)}
       </p>
     </div>

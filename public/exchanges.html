@@ -4,16 +4,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="apple-touch-icon" type="image/png" sizes="180x180" 
-    href="favicons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" 
-    href="favicons/favicon-32x32.png">
+    href="images/logo1.png">
   <link rel="icon" type="image/png" sizes="16x16" 
-    href="favicons/favicon-16x16.png">
+    href="images/logo1.png">
   <link rel="manifest" href="favicons/site.webmanifest">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="css/styles.css">
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
     crossorigin="anonymous"></script>
@@ -23,22 +21,79 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
     integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
     crossorigin="anonymous"></script>
-  <title>CoinGecko Clone Project - Exchanges Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <title>CryptoVerse - Crypto Tracker, Portfolio, Events, News</title>
 </head>
 
 <body>
-  <div class="container">
-    <h1 class="font-weight-bold text-center"><img class="clone"
-      src="favicons/android-chrome-192x192.png" width="70">
-      CoinGecko Clone <img class="clone"
-      src="favicons/android-chrome-192x192.png" width="70"></h1>
-    <h6 class="font-weight-bold text-center">Results powered by CoinGecko API</h6>
-    <hr>
-    <h2 class="font-weight-bold text-center">Crypto Exchanges</h2>
-    <h6 class="font-weight-bold text-center">IvanOnTech Academy Bootcamp Project</h6>
-    <hr>
 
-    <!-- Global Market Data -->
+
+  <div class="navigation-wrap bg-light start-header start-style">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<nav class="navbar navbar-expand-md navbar-light">
+					
+						<a class="navbar-brand" href="https://front.codes/" target="_blank"><img src="images/logo2.png" style="height: 40px;"></a>	
+						
+						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+						
+						<div class="collapse navbar-collapse" id="navbarSupportedContent">
+							<ul class="navbar-nav ml-auto py-4 py-md-0">
+								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 active">
+									<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Home</a>
+									<div class="dropdown-menu">
+										<a class="dropdown-item" href="#">Home</a>
+										<a class="dropdown-item" href="#">View Source Code</a>
+										<a class="dropdown-item" href="#">Other Projects</a>
+									
+									</div>
+								</li>
+								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+									<a class="nav-link" href="/portfolio">Portfolio</a>
+								</li>
+								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+									<a class="nav-link" href="/news.html">News</a>
+								</li>
+               
+								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+									<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Publications</a>
+									<div class="dropdown-menu">
+										<a class="dropdown-item" href="\Crypto Economy.html">Crypto Economy: How Blockchain..</a>
+										<a class="dropdown-item" href="\NFT Guide.html">NFT Guide: How to Create..</a>
+										<a class="dropdown-item" href="\cryptoEncyclo.html">The Crypto Encyclopedia</a>
+										<a class="dropdown-item" href="\Crypto Technical.html">Crypto Technical Analysis</a>
+                    <a class="dropdown-item" href="\The Crypto Trader.html">The Crypto Trader</a>
+                    <a class="dropdown-item" href="\The economics of Crypto-Currency Mining.html">The economics of Crypto-Currency Mining</a>
+									</div>
+								</li>
+                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+									<a class="nav-link" href="/mover.html">Top Gainer/Loser</a>
+								</li><li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+									<a class="nav-link" href="/event.html">Crypto Events</a>
+								</li>
+              </li><li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                <a class="nav-link" href="/dictionary.html">Crypto Dictionary</a>
+              </li>
+								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+									<a class="nav-link" href="#">Contact</a>
+								</li>
+							</ul>
+						</div>
+						
+					</nav>		
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+  <div class="containerz">
+    
+
+    <div class="table-responsive">
     <table class="table table-striped">
       <tbody id="globalTableBody">
         <tr class="content-row">
@@ -52,7 +107,13 @@
         </tr>
       </tbody>
     </table>
-
+    <div class="global col-sm-9">
+      <h5 class="font-weight-bold">Cryptocurrency Price By Market Cap</h5>
+      <p id="global_data"></p>
+      <p id="global_change"></p> <br> <br>
+      <p id="trading_vol"></p> <p id="btc_dom"></p><p id="eth_dom"></p> <p id="bnb_dom"></p><p id="info"></p>
+    </div>
+</div>
     <!-- Tabs -->
     <ul class="nav nav-tabs">
       <li class="nav-item">
@@ -80,28 +141,178 @@
       </li>
     </ul>
 
-    <!-- Table -->
+    <div class="table-responsive">
     <table class="table table-striped">
       <thead>
         <tr>
-          <th class="text-center" scope="col"><a href="#" class="sortable" name="trust_score_rank">Rank</th>
-          <th class="text-left" scope="col"><a href="#" class="sortable" name="name">Name</th>
-          <th class="text-right" scope="col"><a href="#" class="sortable" name="trade_volume_24h_btc">24h Trade Volume</th>
-          <th class="text-right" scope="col"><a href="#" class="sortable" name="year_established">Est.</th>
-          <th class="text-right" scope="col"><a href="#" class="sortable" name="country">Based In</th>
+          <th class="text-center boldText" scope="col"><a href="#" style="color: rgb(2, 89, 2);" class="sortable" name="trust_score_rank">Rank</th>
+          <th class="text-left" scope="col"><a href="#" style="color: rgb(2, 89, 2);" class="sortable" name="name">Name</th>
+          <th class="text-right" scope="col"><a href="#" style="color: rgb(2, 89, 2);" class="sortable" name="trade_volume_24h_btc">24h Trade Volume</th>
+          <th class="text-right" scope="col"><a href="#" style="color: rgb(2, 89, 2);" class="sortable" name="year_established">Est.</th>
+          <th class="text-right" scope="col"><a href="#" style="color: rgb(2, 89, 2);" class="sortable" name="country">Based In</th>
+            <th class="text-right" scope="col"><a href="#" style="color: rgb(2, 89, 2);" class="sortable" name="country">Trust Score</th>
+              <th class="text-right" scope="col"><a href="#" style="color: rgb(2, 89, 2);" class="sortable" name="country">Trust Score Rank</th>
         </tr>
       </thead>
       <tbody id="exchangeTableBody">
       </tbody>
     </table>
+    </div>
+   
 
-    <!-- Imprint -->
-    <br>
-    <hr>
-    <address align="center">
-      Written by <a href="mailto:the.rainmaker@mail.com" target="_blank">The Rainmaker</a><br>
-    </address>
+    <section class="section mt-5 pb-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h3 class="h3 mb-4 mb-md-5 text-center text-md-left">Trending Coins</h3>
+            <div class="row custom">
+              <div class="col-lg-4 col-sm-6 col-12">
+                <div class="box-information">
+                  <a href="#" class="no-arrow">
+                    <div class="image" id="trend_img">
+                     
+                    </div>
+                    <div class="text">
+                      <h5 id="trending"></h5>
+                      <span class="small d-block" id="trend_price"></span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+    
+              <div class="col-lg-4 col-sm-6 col-12">
+                <div class="box-information">
+                  <a href="#" class="no-arrow">
+                    <div class="image" id="trend_img_2">
+                    </div>
+                    <div class="text">
+                      <h5 id="trending_2"></h5>
+                      <span class="small d-block" id="trend_price_2"></span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+    
+              <div class="col-lg-4 col-sm-6 col-12">
+                <div class="box-information">
+                  <a href="#" class="no-arrow">
+                    <div class="image" id="trend_img_3">
+                    </div>
+                    <div class="text">
+                      <h5 id="trending_3"></h5>
+                      <span class="small d-block" id="trend_price_3"></span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+  
+              <div class="col-lg-4 col-sm-6 col-12">
+                <div class="box-information">
+                  <a href="#" class="no-arrow">
+                    <div class="image" id="trend_img_4">
+                    </div>
+                    <div class="text">
+                      <h5 id="trending_4"></h5>
+                      <span class="small d-block" id="trend_price_4"></span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+  
+              <div class="col-lg-4 col-sm-6 col-12">
+                <div class="box-information">
+                  <a href="#" class="no-arrow">
+                    <div class="image" id="trend_img_5">
+                    </div>
+                    <div class="text">
+                      <h5 id="trending_5"></h5>
+                      <span class="small d-block" id="trend_price_5"></span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+  
+              <div class="col-lg-4 col-sm-6 col-12">
+                <div class="box-information">
+                  <a href="#" class="no-arrow">
+                    <div class="image" id="trend_img_6">
+                    </div>
+                    <div class="text">
+                      <h5 id="trending_6"></h5>
+                      <span class="small d-block" id="trend_price_6"></span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+    
+            </div><!-- row custom -->
+          </div><!-- col-12 -->
+        </div><!-- row -->
+      </div>
+    </section>
+  
+  <div id="test"></div>
+
+
+
+   
   </div>
+
+  
+
+  <footer>
+    <div class="content">
+      <div class="top">
+        <div class="logo-details">
+          <img src="images/logo.png" alt="" srcset="" style="width: 60px; height: 40px; margin-left: 0;">
+          <span class="logo_name">CoinVerse</span>
+        </div>
+        <div class="media-icons">
+          <a href="https://www.facebook.com/mdyasin.ansari.1029/"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://github.com/awesome-yasin"><i class="fab fa-github"></i></a>
+          <a href="https://www.instagram.com/yasinn.0x/"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/md-yasin-ansari-92a935221/"><i class="fab fa-linkedin-in"></i></a>
+          
+        </div>
+      </div>
+      <div class="link-boxes">
+        <ul class="box">
+          <li class="link_name">Features</li>
+          <li><a href="/portfolio">Portfolio</a></li>
+          <li><a href="/news.html">News</a></li>
+          <li><a href="/mover.html">Top Gainers/Losers</a></li>
+          <li><a href="/event.html">Crypto Events</a></li>
+          <li><a href="/dictionary.html">Crypto Dictionary</a></li>
+        </ul>
+        <ul class="box">
+          <li class="link_name">Upcoming Features</li>
+          <li><a href="#">Virtual Trading</a></li>
+          <li><a href="#">Coin Price Prediction</a></li>
+          <li><a href="#">AI Trading Bot</a></li>
+         
+        </ul>
+       
+        <ul class="box">
+          <li class="link_name">Other Projects</li>
+          <li><a href="https://github.com/awesome-yasin/Media-Downloader">Social Media-Downloader</a></li>
+          <li><a href="https://github.com/awesome-yasin/supercalculator">SuperCalculator</a></li>
+          <li><a href="https://github.com/awesome-yasin/react-miniprojects">React Mini Project</a></li>
+          <li><a href="https://github.com/awesome-yasin/netflix_clone">Netflix Clone</a></li>
+        </ul>
+        <ul class="box input-box">
+          <li class="link_name">Subscribe</li>
+          <li><input type="text" placeholder="Enter your email"></li>
+          <li><input type="button" value="Subscribe"></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom-details">
+      <div class="bottom_text">
+        <span class="copyright_text">Copyright © 2021 <a href="#">CoinVerse</a>All rights reserved</span>
+       
+      </div>
+    </div>
+  </footer>
   <script src="js/exchanges.js"></script>
 </body>
 

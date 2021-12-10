@@ -93,7 +93,8 @@ function App() {
   updatePrice();
 
   return (
-    <div className="container">
+    <div className="containerzz">
+      
       {!toggleSearch && <Header coins={coins} />}
 
       {transition(
