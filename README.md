@@ -17,7 +17,7 @@ The Technologies Used are: NodeJs, ReactJs, Jquery, EJS, Axios, Cheerio, Bootstr
 The API Used are from:
 
 - Coingecko (For coin data, Coin Tracker, Coin Details, Movers, Coin Dictionary)
-- CoinCompare API for Latest Crypto News
+- CryptoCompare API for Latest Crypto News
 - Kryptocal API for coins latest events
 
 ```diff
@@ -131,7 +131,7 @@ It is made using ReactJs and ExpressJS with libraries of Bootstrap and Jquery an
 
 Coinverse Crypto News Collects the most recent news about crypto industry clear UI and Link to source News Channel. All live news about Bitcoin, technology blockchain and cryptocurrency.
 
-It is made using NodeJs, Jquery, Bootstrap and Free API from Coincompare.
+It is made using NodeJs, Jquery, Bootstrap and Free API from Cryptocompare.
 
 ### Demo Image:
 
