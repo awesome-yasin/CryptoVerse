@@ -20,6 +20,11 @@ The API Used are from:
 - CoinCompare API for Latest Crypto News
 - Kryptocal API for coins latest events
 
+```diff
+- Note: All the currencies is in my Native currency INR but you can change it in API Link where INR written to USD or any other currencies
+```
+
+
 ## 1. CryptoVerse HomePage:
 
 Cryptoverse homepage cointains the table of all the crypto currencies aligned with Ranking order, Name, Price, MarketCap, Volume, 24 Hrs High/Low, Circulating Supply, 
