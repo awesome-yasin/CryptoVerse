@@ -20,47 +20,44 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(express.static("public"));
-app.use("/css", express.static(__dirname + "/public/css"));
-app.use("/js", express.static(__dirname + "/public/js"));
-app.use("/images", express.static(__dirname + "/public/images"));
 
-app.set("view engine", "ejs");
-app.use("/events", require("./routes/event"));
-app.set("views", "./views");
 
 async function getPriceFeed() {
   try {
-    const siteUrl = "https://www.coingecko.com/en/coins/trending";
+    const siteUrl = "https://coinmarketcap.com/gainers-losers/";
 
-    const coinArr = [];
-    const loserArr = [];
+    
     const { data } = await axios({
       method: "GET",
       url: siteUrl,
     });
 
     const $ = cheerio.load(data);
-    const elemSelector = "#gecko-table-all > tbody > tr";
-    const losers = "#gecko-table-all > tbody > tr";
-    const keys = ["name", "volume", "price", "change"];
+    const elemSelector = "#__next > div > div > div.sc-57oli2-0.comDeo.cmc-body-wrapper > div > div.sc-1yw69nc-0.DaVcG.table-wrap > div > div:nth-child(1) > div > table > tbody > tr";
+    const losers = "#__next > div > div > div.sc-57oli2-0.comDeo.cmc-body-wrapper > div > div.sc-1yw69nc-0.DaVcG.table-wrap > div > div:nth-child(2) > div > table > tbody > tr";
+    const keys = [
+        'rank',
+      'name',
+      'price',
+      'change',
+       'volume'
+      ];
+      const coinArr = [];
+      const loserArr = [];
 
     $(elemSelector).each((parentsIdx, parentsElem) => {
       let keyIdx = 0;
       const coinObj = {};
 
       if (parentsIdx <= 29) {
-        $(parentsElem)
-          .children()
-          .each((childTdx, childElem) => {
+        $(parentsElem).children().each((childTdx, childElem) => {
             let tdVal = $(childElem).text();
 
-            if (keyIdx === 0 || keyIdx === 1) {
-              tdVal = $("span:first-child", $(childElem).html()).text();
+            if (keyIdx === 0 || keyIdx === 5) {
+              tdVal = $("p:nth-child(1)", $(childElem).html()).text();
             }
-
-            if (keyIdx === 2 || keyIdx === 3) {
-              tdVal = $("span:first-child", $(childElem).html()).text();
+            if (keyIdx === 1) {
+              tdVal = $("p:nth-child(1)", $(childElem).html()).text();
             }
 
             if (tdVal) {
@@ -77,18 +74,15 @@ async function getPriceFeed() {
       let keyIdx = 0;
       const coinObj = {};
 
-      if (parentsIdx > 29) {
-        $(parentsElem)
-          .children()
-          .each((childTdx, childElem) => {
+      if (parentsIdx <= 29) {
+        $(parentsElem).children().each((childTdx, childElem) => {
             let tdVal = $(childElem).text();
 
-            if (keyIdx === 0 || keyIdx === 1) {
-              tdVal = $("span:first-child", $(childElem).html()).text();
+            if (keyIdx === 0 || keyIdx === 5) {
+              tdVal = $("p:nth-child(1)", $(childElem).html()).text();
             }
-
-            if (keyIdx === 2 || keyIdx === 3) {
-              tdVal = $("span:first-child", $(childElem).html()).text();
+            if (keyIdx === 1) {
+              tdVal = $("p:nth-child(1)", $(childElem).html()).text();
             }
 
             if (tdVal) {
@@ -97,9 +91,10 @@ async function getPriceFeed() {
               keyIdx++;
             }
           });
-        loserArr.push(coinObj);
+          loserArr.push(coinObj);
       }
     });
+
 
     fs.writeFile(
       "public/js/gainers.json",
@@ -112,7 +107,6 @@ async function getPriceFeed() {
         console.log("Successfully written data to file 1");
       }
     );
-
     fs.writeFile(
       "public/js/losers.json",
       JSON.stringify(loserArr, null, 2),
@@ -124,6 +118,8 @@ async function getPriceFeed() {
         console.log("Successfully written data to file 2");
       }
     );
+    
+    return coinArr
   } catch (err) {
     console.error(err);
   }
@@ -131,11 +127,28 @@ async function getPriceFeed() {
 
 getPriceFeed();
 
+
+
+app.use(express.static("public"));
+app.use("/css", express.static(__dirname + "/public/css"));
+app.use("/js", express.static(__dirname + "/public/js"));
+app.use("/images", express.static(__dirname + "/public/images"));
+
+app.set("view engine", "ejs");
+app.use("/events", require("./routes/event"));
+app.set("views", "./views");
+
+
+
 app.use(express.static(path.join(__dirname, "/client", "build")));
 
 app.route("/portfolio").get((req, res) => {
   res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
 });
+
+
+
+
 
 app.listen(port, function() {
   console.log('Our app is running on http://localhost:' + port);
