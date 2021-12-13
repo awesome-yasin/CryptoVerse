@@ -193,7 +193,20 @@ Its a one page web page that coin information of all Crypto categories like what
 ### Page URL: https://cryptoversee.herokuapp.com/dictionary.html
 
 
+## 9. CryptoVerse Crypto Market Prediction
 
+CryptoVerse Crypto Prediction Uses Cheerio TO scrap data from Crypto prediction to predict the Future worth of coin from 2021-2024. You can search different coins and it will show a table of prediction with Month, Max Price, Min Price, Average Price, Change. 
+
+It is made from NodeJs, Axios, Cheerio, Bootstrap and data is scrapped from coin predictions.
+
+### Demo Image:
+
+![pre1](https://user-images.githubusercontent.com/85479838/145850353-5af2234e-d4b9-41af-aeea-94201dd7e9d9.png)
+
+![pre2](https://user-images.githubusercontent.com/85479838/145850370-351dd3db-df6f-43ba-a333-444c0dd98b89.png)
+
+
+### Page URL: https://cryptooversee.herokuapp.com/predict
 
 
 
