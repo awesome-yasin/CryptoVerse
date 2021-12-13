@@ -136,6 +136,7 @@ app.use("/images", express.static(__dirname + "/public/images"));
 
 app.set("view engine", "ejs");
 app.use("/events", require("./routes/event"));
+app.use('/predict',require('./routes/pred'))
 app.set("views", "./views");
 
 
