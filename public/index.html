@@ -5,10 +5,19 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
  
-  <link rel="icon" type="image/png" sizes="32x32" 
-    href="images/logo1.png">
-  <link rel="icon" type="image/png" sizes="16x16" 
-    href="images/logo1.png">
+  <link rel="apple-touch-icon" sizes="57x57" href="images/logo.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="images/logo.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="images/logo.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="images/logo.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="images/logo.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="images/logo.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="images/logo.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="images/logo.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/logo.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="images//logo.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/logo.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="images//logo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/logo.png">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
     crossorigin="anonymous"></script>
@@ -20,7 +29,9 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+ 
   <title>CryptoVerse - Crypto Tracker, Portfolio, Events, News</title>
+ 
 </head>
 
 <body>
@@ -75,7 +86,7 @@
                 <a class="nav-link" href="/dictionary.html">Crypto Dictionary</a>
               </li>
 								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-									<a class="nav-link" href="#">Contact</a>
+									<a class="nav-link" href="https://cryptooversee.herokuapp.com/predict">Crypto Prediction</a>
 								</li>
 							</ul>
 						</div>
@@ -87,7 +98,7 @@
 	</div>
 
   <div class="containerv">
- 
+    
     <div class="table-responsive">
     <table class="table table-striped">
       <tbody id="globalTableBody">
@@ -109,7 +120,53 @@
     <p id="global_data"></p>
     <p id="global_change"></p> <br> <br>
     <p id="trading_vol"></p> <p id="btc_dom"></p><p id="eth_dom"></p> <p id="bnb_dom"></p><p id="info"></p>
+    
   </div>
+  <!-- <div class="autocomplete field">
+  <input type="text" id="myInput" id = "automplete-1">
+  <button type="button" id="myBtn">Show Value</button>
+    </div>
+ -->
+
+
+
+
+
+
+
+
+    <div id="subscription_area" style="margin-top: 70px; margin-bottom: 70px;">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="subscribe_now">
+              
+          <p>Search Your Coin</p>
+              <form class="subscribe_form">
+                <div class="input-group">
+                 
+                   <input type="text" class="form-control"  id="myInput" name="email" autocomplete="off" placeholder="Enter Coin Name">
+                   <span class="input-group-btn">
+                        <button class="btn btn-default" id="myBtn" type="button">Search</button>
+                   </span>
+                   <div class="autocomple"></div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
 
 
     
@@ -149,16 +206,18 @@
             name="name">Name</th>
           <th class="text-center" scope="col"><a href="#" class="sortable" 
               name="current_price">Price</th>
-          <th class="text-center" scope="col"><a href="#" class="sortable" 
-            name="market_cap">Market Cap</th>
+              <th class="text-right" scope="col"><a href="#" class="sortable" 
+                name="price_change_percentage_24h">Price Change (24h)</th>
+                <th class="text-right" scope="col"><a href="#" class="sortable" 
+                  name="high_24h low_24h">24 Hrs High/Low</th>
           <th class="text-center" scope="col"><a href="#" class="sortable" 
             name="total_volume">Volume (24h)</th>
-            <th class="text-right" scope="col"><a href="#" class="sortable" 
-              name="high_24h low_24h">24 Hrs High/Low</th>
+            
           <th class="text-right" scope="col"><a href="#" class="sortable" 
             name="circulating_supply">Circulating Supply</th>
-          <th class="text-right" scope="col"><a href="#" class="sortable" 
-            name="price_change_percentage_24h">Price Change (24h)</th>
+          
+            <th class="text-center" scope="col"><a href="#" class="sortable" 
+              name="market_cap">Market Cap</th>
             <th class="text-right" scope="col"><a href="#" class="sortable" 
               name="ath">ATH Price</th>
               <th class="text-right" scope="col"><a href="#" class="sortable" 
@@ -259,9 +318,9 @@
               </div>
             </div>
   
-          </div><!-- row custom -->
-        </div><!-- col-12 -->
-      </div><!-- row -->
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -325,7 +384,7 @@
 
 
   <script src="js/index.js"> </script>
-
+  <script src="js/search.js"></script>
 
 </body>
 
