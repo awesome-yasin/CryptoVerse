@@ -1,4 +1,3 @@
-
 let coinID = location.search.slice(1);
 let BASE_URL = `https://api.coingecko.com/api/v3`;
 let COIN_DATA_ENDPOINT = 
@@ -96,7 +95,7 @@ function generateListElements(data) {
   $('#atl').append(
 
     $(`<p class=' ${data.market_data.atl_change_percentage.inr >= 0 ? "text-success" : "text-danger"} 
- text-left'></p>`).text("₹" + " " + number.format(data.market_data.atl.inr)+ " "+"/"+"  "+ Number(data.market_data.atl_change_percentage.inr).toFixed(2) + "%")
+ text-left'></p>`).text("₹" + " " + number.format(data.market_data.atl.inr)+ " "+"/"+"  "+ Number(data.market_data.atl_change_percentage.inr).toFixed(2) + "%" + " " )
   )
 
   $('#market_dom_n').text(data.name + " " + "Market Cap Rank")
@@ -116,6 +115,12 @@ function generateListElements(data) {
 
   $('#dtn').text("What is"+ " "+data.name + " " + "?")
   $('#desc').html(data.description.en)
+
+  $('#athnd').text(data.name + " " + "ATH Date")
+  $('#athd').text((moment(data.market_data.ath_date.inr)).format("llll") + " " + "("+ (moment(data.market_data.ath_date.inr, "YYYYMMDD")).fromNow()+ ")")
+
+  $('#atlnd').text(data.name + " " + "ATL Date")
+  $('#atld').text((moment(data.market_data.atl_date.inr)).format("llll") + " " + "("+ (moment(data.market_data.atl_date.inr, "YYYYMMDD")).fromNow()+ ")")
 
 };
 function generateTrendBody(data){
@@ -286,5 +291,3 @@ async function refreshMarketTableBody() {
 async function refreshTrendBody() {
   generateTrendBody(await getTrendData());
 }
-
-
