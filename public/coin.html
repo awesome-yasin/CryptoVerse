@@ -3,32 +3,35 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/png" sizes="32x32" 
-    href="images/logo1.png">
-  <link rel="icon" type="image/png" sizes="16x16" 
-    href="images/logo1.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="images/logo.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="images/logo.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/logo.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="images/logo.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/logo.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="images/logo.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/logo.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/logo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/logo.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="images//logo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/logo.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="images//logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/logo.png">
     <link rel="manifest" href="favicons/site.webmanifest" />
     <link
       rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
-      crossorigin="anonymous"
-    />
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/styles.css" />
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"
+     
     ></script>
     <script
       src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-      crossorigin="anonymous"
+      
     ></script>
     <script
       src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-      crossorigin="anonymous"
+     
     ></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
     <title>CryptoVerse - Crypto Tracker, Portfolio, Events, News</title>
@@ -92,7 +95,7 @@
                   <a class="nav-link" href="/dictionary.html">Crypto Dictionary</a>
                 </li>
                   <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link" href="https://cryptooversee.herokuapp.com/predict">Crypto Prediction</a>
                   </li>
                 </ul>
               </div>
@@ -104,7 +107,7 @@
     </div>
     <div class="containera">
      
-
+      <div class="table-responsive">
       <!-- Global Market Data -->
       <table class="table table-striped">
         <tbody id="globalTableBody">
@@ -132,7 +135,30 @@
           </tr>
         </tbody>
       </table>
+</div>
 
+<div id="subscription_area" style="margin-top: 70px; margin-bottom: 70px;">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="subscribe_now">
+          
+      <p>Search Your Coin</p>
+          <form class="subscribe_form">
+            <div class="input-group">
+             
+               <input type="text" class="form-control"  id="myInput" name="email" autocomplete="off" placeholder="Enter Coin Name">
+               <span class="input-group-btn">
+                    <button class="btn btn-default" id="myBtn" type="button">Search</button>
+               </span>
+               <div class="autocomple"></div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
       <!-- Tabs -->
       <ul class="nav nav-tabs">
         <li class="nav-item">
@@ -214,8 +240,18 @@
                 
               </tr>
               <tr>
+                <th scope="row" id="athnd"></th>
+                <td id="athd"></td>
+                
+              </tr>
+              <tr>
                 <th scope="row" id="atln"></th>
                 <td id="atl"></td>
+                
+              </tr>
+              <tr>
+                <th scope="row" id="atlnd"></th>
+                <td id="atld"></td>
                 
               </tr>
               <tr>
@@ -396,6 +432,8 @@
     <script src="https://widgets.coingecko.com/coingecko-coin-market-ticker-list-widget.js"></script>
     <script src="https://widgets.coingecko.com/coingecko-coin-compare-chart-widget.js"></script>
     <script src="https://widgets.coingecko.com/coingecko-coin-converter-widget.js"></script>
+    <script src="https://rawgit.com/moment/moment/2.2.1/min/moment.min.js"></script>
     <script src="js/coin.js"></script>
+    <script src="js/search.js"></script>
   </body>
 </html>
