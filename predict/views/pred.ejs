@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="apple-touch-icon" sizes="57x57" href="images/logo.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="images/logo.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/logo.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="images/logo.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/logo.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="images/logo.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/logo.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/logo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/logo.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="images//logo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/logo.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="images//logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/logo.png">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CryptoVerse - Crypto Tracker, Portfolio, Events, News</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans:ital@1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <link rel="stylesheet" href="/css/style.css" />
+    <style>
+      body{
+        max-width: 100vw;
+        overflow-x: hidden !important;
+      }
+      .form-control {
+        border-color: red;
+      }
+      tbody{
+          font-weight: bold;
+          font-size: 18px;
+      }
+      .autocomplete-items {
+        position: absolute;
+        border: 1px solid #d4d4d4;
+        border-bottom: none;
+        border-top: none;
+        z-index: 199;
+        /*position the autocomplete items to be the same width as the container:*/
+        width: 250px;
+        
+      }
+
+      .autocomplete-items div {
+        padding: 10px;
+        cursor: pointer;
+        background-color: #fff;
+        border-bottom: 1px solid #d4d4d4;
+      }
+
+      /*when hovering an item:*/
+      .autocomplete-items div:hover {
+        background-color: #e9e9e9;
+      }
+
+      /*when navigating through the items using the arrow keys:*/
+      .autocomplete-active {
+        background-color: DodgerBlue !important;
+        color: #131313;
+      }
+      .yasin {
+        background-color: white;
+        color: black;
+        border: 2px solid #4caf50;
+        padding: 16px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+      }
+      .yasin:hover {
+        background-color: #4caf50;
+        color: white;
+      }
+      .y-it {
+        padding: 16px 32px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: 3px solid #ccc;
+        -webkit-transition: 0.5s;
+        transition: 0.5s;
+        outline: none;
+        max-width: 100%;
+      }
+     
+
+.start-header {
+	opacity: 1;
+	transform: translateY(0);
+	padding: 20px 0;
+	box-shadow: 0 10px 30px 0 rgba(138, 155, 165, 0.15);
+	-webkit-transition : all 0.3s ease-out;
+	transition : all 0.3s ease-out;
+}
+.start-header.scroll-on {
+	box-shadow: 0 5px 10px 0 rgba(138, 155, 165, 0.15);
+	padding: 10px 0;
+	-webkit-transition : all 0.3s ease-out;
+	transition : all 0.3s ease-out;
+}
+.start-header.scroll-on .navbar-brand img{
+	height: 32px;
+	-webkit-transition : all 0.3s ease-out;
+	transition : all 0.3s ease-out;
+}
+.navigation-wrap{
+	position: relative;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	-webkit-transition : all 0.3s ease-out;
+	transition : all 0.3s ease-out;
+}
+.navbar{
+	padding: 0;
+}
+.navbar-brand img{
+	height: 28px;
+  color: green;
+	width: auto;
+	display: block;
+  filter: brightness(10%);
+	-webkit-transition : all 0.3s ease-out;
+	transition : all 0.3s ease-out;
+}
+.navbar-toggler {
+	float: right;
+	border: none;
+	padding-right: 0;
+}
+.navbar-toggler:active,
+.navbar-toggler:focus {
+	outline: none;
+}
+.navbar-light .navbar-toggler-icon {
+	width: 24px;
+	height: 17px;
+	background-image: none;
+	position: relative;
+	border-bottom: 1px solid #000;
+    transition: all 300ms linear;
+}
+.navbar-light .navbar-toggler-icon:after, 
+.navbar-light .navbar-toggler-icon:before{
+	width: 24px;
+	position: absolute;
+	height: 1px;
+	background-color: #000;
+	top: 0;
+	left: 0;
+	content: '';
+	z-index: 2;
+    transition: all 300ms linear;
+}
+.navbar-light .navbar-toggler-icon:after{
+	top: 8px;
+}
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
+	transform: rotate(45deg);
+}
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
+	transform: translateY(8px) rotate(-45deg);
+}
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+	border-color: transparent;
+}
+.nav-link{
+	color: #212121 !important;
+	font-weight: 500;
+    transition: all 200ms linear;
+}
+.nav-item:hover .nav-link{
+	color: #8167a9 !important;
+}
+.nav-item.active .nav-link{
+	color: #777 !important;
+}
+.nav-link {
+	position: relative;
+	padding: 5px 0 !important;
+	display: inline-block;
+}
+.nav-item:after{
+	position: absolute;
+	bottom: -5px;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	content: '';
+	background-color: #8cc645;
+	opacity: 0;
+    transition: all 200ms linear;
+}
+.nav-item:hover:after{
+	bottom: 0;
+	opacity: 1;
+}
+.nav-item.active:hover:after{
+	opacity: 0;
+}
+.nav-item{
+	position: relative;
+    transition: all 200ms linear;
+}
+
+
+.bg-light {
+	background-color: #fff !important;
+    transition: all 200ms linear;
+}
+.section {
+    position: relative;
+	width: 100%;
+	display: block;
+}
+.full-height {
+    height: 100vh;
+}
+.over-hide {
+    overflow: hidden;
+}
+.absolute-center {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 100%;
+  margin-top: 40px;
+	transform: translateY(-50%);
+	z-index: 20;
+}
+h1{
+	font-size: 48px;
+	line-height: 1.2;
+	font-weight: 700;
+	color: #212112;
+	text-align: center;
+}
+p{
+	text-align: center;
+	margin: 0;
+	padding-top: 10px;
+	opacity: 1;
+	transform: translate(0);
+    transition: all 300ms linear;
+    transition-delay: 1700ms;
+}
+body.hero-anime p{
+	opacity: 0;
+	transform: translateY(40px);
+    transition-delay: 1700ms;
+}
+h1 span{
+	display: inline-block;
+    transition: all 300ms linear;
+	opacity: 1;
+	transform: translate(0);
+}
+body.hero-anime h1 span:nth-child(1){
+	opacity: 0;
+	transform: translateY(-20px);
+}
+body.hero-anime h1 span:nth-child(2){
+	opacity: 0;
+	transform: translateY(-30px);
+}
+body.hero-anime h1 span:nth-child(3){
+	opacity: 0;
+	transform: translateY(-50px);
+}
+body.hero-anime h1 span:nth-child(4){
+	opacity: 0;
+	transform: translateY(-10px);
+}
+body.hero-anime h1 span:nth-child(5){
+	opacity: 0;
+	transform: translateY(-50px);
+}
+body.hero-anime h1 span:nth-child(6){
+	opacity: 0;
+	transform: translateY(-20px);
+}
+body.hero-anime h1 span:nth-child(7){
+	opacity: 0;
+	transform: translateY(-40px);
+}
+body.hero-anime h1 span:nth-child(8){
+	opacity: 0;
+	transform: translateY(-10px);
+}
+body.hero-anime h1 span:nth-child(9){
+	opacity: 0;
+	transform: translateY(-30px);
+}
+body.hero-anime h1 span:nth-child(10){
+	opacity: 0;
+	transform: translateY(-20px);
+}
+h1 span:nth-child(1){
+    transition-delay: 1000ms;
+}
+h1 span:nth-child(2){
+    transition-delay: 700ms;
+}
+h1 span:nth-child(3){
+    transition-delay: 900ms;
+}
+h1 span:nth-child(4){
+    transition-delay: 800ms;
+}
+h1 span:nth-child(5){
+    transition-delay: 1000ms;
+}
+h1 span:nth-child(6){
+    transition-delay: 700ms;
+}
+h1 span:nth-child(7){
+    transition-delay: 900ms;
+}
+h1 span:nth-child(8){
+    transition-delay: 800ms;
+}
+h1 span:nth-child(9){
+    transition-delay: 600ms;
+}
+h1 span:nth-child(10){
+    transition-delay: 700ms;
+}
+body.hero-anime h1 span:nth-child(11){
+	opacity: 0;
+	transform: translateY(30px);
+}
+body.hero-anime h1 span:nth-child(12){
+	opacity: 0;
+	transform: translateY(50px);
+}
+body.hero-anime h1 span:nth-child(13){
+	opacity: 0;
+	transform: translateY(20px);
+}
+body.hero-anime h1 span:nth-child(14){
+	opacity: 0;
+	transform: translateY(30px);
+}
+body.hero-anime h1 span:nth-child(15){
+	opacity: 0;
+	transform: translateY(50px);
+}
+h1 span:nth-child(11){
+    transition-delay: 1300ms;
+}
+h1 span:nth-child(12){
+    transition-delay: 1500ms;
+}
+h1 span:nth-child(13){
+    transition-delay: 1400ms;
+}
+h1 span:nth-child(14){
+    transition-delay: 1200ms;
+}
+h1 span:nth-child(15){
+    transition-delay: 1450ms;
+}
+
+
+.nav-item .dropdown-menu {
+    transform: translate3d(0, 10px, 0);
+    visibility: hidden;
+    opacity: 0;
+	max-height: 0;
+    display: block;
+	padding: 0;
+	margin: 0;
+    transition: all 200ms linear;
+}
+.nav-item.show .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+	max-height: 999px;
+    transform: translate3d(0, 0px, 0);
+}
+.dropdown-menu {
+	padding: 10px!important;
+	margin: 0;
+	font-size: 13px;
+	letter-spacing: 1px;
+	color: #212121;
+	background-color: #fcfaff;
+	border: none;
+	border-radius: 3px;
+	box-shadow: 0 5px 10px 0 rgba(138, 155, 165, 0.15);
+    transition: all 200ms linear;
+}
+.dropdown-toggle::after {
+	display: none;
+}
+
+.dropdown-item {
+	padding: 3px 15px;
+	color: #212121;
+	border-radius: 2px;
+    transition: all 200ms linear;
+}
+.dropdown-item:hover, 
+.dropdown-item:focus {
+	color: #fff;
+	background-color: #8cc645;
+}
+
+
+@media (max-width: 767px) { 
+	h1{
+		font-size: 38px;
+	}
+	.nav-item:after{
+		display: none;
+	}
+	.nav-item::before {
+		position: absolute;
+		display: block;
+		top: 15px;
+		left: 0;
+		width: 11px;
+		height: 1px;
+		content: "";
+		border: none;
+		background-color: #000;
+		vertical-align: 0;
+	}
+	.dropdown-toggle::after {
+		position: absolute;
+		display: block;
+		top: 10px;
+		left: -23px;
+		width: 1px;
+		height: 11px;
+		content: "";
+		border: none;
+		background-color: #000;
+		vertical-align: 0;
+		transition: all 200ms linear;
+	}
+	.dropdown-toggle[aria-expanded="true"]::after{
+		transform: rotate(90deg);
+		opacity: 0;
+	}
+	.dropdown-menu {
+		padding: 0 !important;
+		background-color: transparent;
+		box-shadow: none;
+		transition: all 200ms linear;
+	}
+	.dropdown-toggle[aria-expanded="true"] + .dropdown-menu {
+		margin-top: 10px !important;
+		margin-bottom: 20px !important;
+	}
+
+}
+
+
+
+
+
+
+
+footer{
+  position: relative;
+  background: #f7f7f7;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+footer::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 100px;
+  height: 1px;
+  width: 100%;
+  background: #AFAFB6;
+}
+footer .content{
+  max-width: 1250px;
+  margin: auto;
+  padding: 30px 40px 40px 40px;
+}
+footer .content .top{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+.content .top .logo-details{
+  color: rgb(109, 109, 109);
+  font-size: 30px;
+}
+.content .top .media-icons{
+  display: flex;
+}
+.content .top .media-icons a{
+  height: 40px;
+  width: 40px;
+  margin: 0 8px;
+  border-radius: 50%;
+  text-align: center;
+ 
+  line-height: 40px;
+  color: #fff;
+  font-size: 17px;
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+.top .media-icons a:nth-child(1){
+  background: #4267B2;
+  
+}
+.top .media-icons a:nth-child(1):hover{
+  color: #4267B2;
+  background: #fff;
+  border: 1px solid rgb(15, 130, 0);
+}
+.top .media-icons a:nth-child(2){
+  background: #000000;
+}
+.top .media-icons a:nth-child(2):hover{
+  color: #000000;
+  background: #fff;
+  border: 1px solid rgb(15, 130, 0);
+}
+.top .media-icons a:nth-child(3){
+  background: #E1306C;
+}
+.top .media-icons a:nth-child(3):hover{
+  color: #E1306C;
+  border: 1px solid rgb(15, 130, 0);
+  background: #fff;
+}
+.top .media-icons a:nth-child(4){
+  background: #0077B5;
+}
+.top .media-icons a:nth-child(4):hover{
+  color: #0077B5;
+  background: #fff;
+  border: 1px solid rgb(15, 130, 0);
+}
+.top .media-icons a:nth-child(5){
+  background: #FF0000;
+}
+.top .media-icons a:nth-child(5):hover{
+  color: #FF0000;
+  border: 1px solid rgb(15, 130, 0);
+  background: #fff;
+}
+footer .content .link-boxes{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+footer .content .link-boxes .box{
+  width: calc(100% / 5 - 10px);
+}
+.content .link-boxes .box .link_name{
+  color: rgb(133, 133, 133);
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  position: relative;
+}
+.link-boxes .box .link_name::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 2px;
+  width: 35px;
+  background: #fff;
+}
+.content .link-boxes .box li{
+  margin: 6px 0;
+  list-style: none;
+}
+.content .link-boxes .box li a{
+  color: rgb(109, 109, 109);
+  font-size: 14px;
+
+  font-weight: 400;
+  text-decoration: none;
+  opacity: 0.8;
+  transition: all 0.4s ease
+}
+.content .link-boxes .box li a:hover{
+  opacity: 1;
+  text-decoration: none;
+  color: rgb(15, 130, 0);;
+}
+.content .link-boxes .input-box{
+  margin-right: 55px;
+}
+.link-boxes .input-box input{
+  height: 40px;
+  width: calc(100% + 55px);
+  outline: none;
+  border: 2px solid #AFAFB6;
+  background: #ffffff;
+  border-radius: 4px;
+  padding: 0 15px;
+  font-size: 15px;
+  color: rgb(109, 109, 109);
+  margin-top: 5px;
+}
+.link-boxes .input-box input::placeholder{
+  color: #AFAFB6;
+  font-size: 16px;
+}
+.link-boxes .input-box input[type="button"]{
+  background: rgb(15, 130, 0);
+  color: rgb(255, 255, 255);
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 4px 0;
+  opacity: 0.8;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+.input-box input[type="button"]:hover{
+  opacity: 1;
+}
+footer .bottom-details{
+  width: 100%;
+  background: #f7f7f7;
+}
+footer .bottom-details .bottom_text{
+  max-width: 1250px;
+  margin: auto;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+}
+.bottom-details .bottom_text span,
+.bottom-details .bottom_text a{
+  font-size: 14px;
+  font-weight: 300;
+  color: rgb(99, 99, 99);
+  opacity: 0.8;
+  font-weight: bold;
+  text-decoration: none;
+}
+.bottom-details .bottom_text a:hover{
+  opacity: 1;
+  text-decoration: underline;
+}
+.bottom-details .bottom_text a{
+  margin-right: 10px;
+}
+@media (max-width: 900px) {
+  footer .content .link-boxes{
+    flex-wrap: wrap;
+  }
+  footer .content .link-boxes .input-box{
+    width: 40%;
+    margin-top: 10px;
+  }
+}
+@media (max-width: 700px){
+  footer{
+    position: relative;
+  }
+  .content .top .logo-details{
+    font-size: 26px;
+  }
+  .content .top .media-icons a{
+    height: 35px;
+    width: 35px;
+    font-size: 14px;
+    line-height: 35px;
+  }
+  footer .content .link-boxes .box{
+    width: calc(100% / 3 - 10px);
+  }
+  footer .content .link-boxes .input-box{
+    width: 60%;
+  }
+  .bottom-details .bottom_text span,
+  .bottom-details .bottom_text a{
+    font-size: 12px;
+  }
+}
+@media (max-width: 520px){
+  footer::before{
+    top: 145px;
+  }
+  footer .content .top{
+    flex-direction: column;
+  }
+  .content .top .media-icons{
+    margin-top: 16px;
+  }
+  footer .content .link-boxes .box{
+    width: calc(100% / 2 - 10px);
+  }
+  footer .content .link-boxes .input-box{
+    width: 100%;
+  }
+}
+.open-bug { color: red; }
+
+
+
+      
+.subscribe_form {
+  max-width: 470px;
+  width: 100%;
+  margin: 0 auto;
+  box-shadow: 0px 2px 5px 0px rgba(10, 6, 20, 0.24);
+}
+.subscribe_form:focus {
+  outline: none;
+}
+.subscribe_form .form-control {
+  border: none;
+}
+.subscribe_form .form-control:focus {
+  box-shadow: none;
+}
+.subscribe_form input {
+  height: 44px;
+}
+.subscribe_form button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  border: none;
+  height: 44px;
+  background-color: #0ed085;
+  color: #fff;
+  margin: -1px;
+  border-radius: 0;
+  float: right;
+
+  text-transform: uppercase;
+  position: relative;
+  transition: all ease 0.3s;
+  -webkit-transition: all ease 0.3s;
+  -moz-transition: all ease 0.3s;
+  -o-transition: all ease 0.3s;
+  -ms-transition: all ease 0.3s;
+}
+.subscribe_form button:hover, .subscribe_form button:focus, .subscribe_form button:active, .subscribe_form button:visited {
+  color: #fff;
+  background-color: rgba(14, 208, 133, 0.77);
+  outline: none;
+  transition: all ease 0.3s;
+  -webkit-transition: all ease 0.3s;
+  -moz-transition: all ease 0.3s;
+  -o-transition: all ease 0.3s;
+  -ms-transition: all ease 0.3s;
+}
+.subscribe_form button:hover:before, .subscribe_form button:focus:before, .subscribe_form button:active:before, .subscribe_form button:visited:before {
+  background-color: rgba(14, 208, 133, 0.77);
+  transition: all ease 0.3s;
+  -webkit-transition: all ease 0.3s;
+  -moz-transition: all ease 0.3s;
+  -o-transition: all ease 0.3s;
+  -ms-transition: all ease 0.3s;
+}
+.subscribe_form button:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  height: 1px;
+  background-color: #0ed085;
+  width: 100%;
+  transition: all ease 0.3s;
+  -webkit-transition: all ease 0.3s;
+  -moz-transition: all ease 0.3s;
+  -o-transition: all ease 0.3s;
+  -ms-transition: all ease 0.3s;
+}
+.subscribe_form .input-group-btn:last-child > .btn, .subscribe_form .input-group-btn:last-child > .btn-group {
+  z-index: 2;
+  margin-left: 0px;
+}
+
+
+.subscribe_now p {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 2px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #34495e;
+  margin-bottom: 20px;
+  text-align: center;
+
+}
+.autocomplete-items{
+  width: inherit;
+  margin-top: 42px;
+}
+    </style>
+  </head>
+
+  <body>
+    <div class="navigation-wrap bg-light start-header start-style">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <nav class="navbar navbar-expand-md navbar-light">
+            
+              <a class="navbar-brand" href="https://cryptoversee.herokuapp.com/"><img src="images/logo2.png" style="height: 40px;"></a>	
+              
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto py-4 py-md-0">
+                  <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 active">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Home</a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="https://cryptoversee.herokuapp.com/">Home</a>
+                      <a class="dropdown-item" href="https://github.com/awesome-yasin/CryptoVerse">View Source Code</a>
+                      <a class="dropdown-item" href="https://github.com/awesome-yasin/">Other Projects</a>
+                    
+                    </div>
+                  </li>
+                  <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                    <a class="nav-link" href="https://cryptoversee.herokuapp.com/portfolio">Portfolio</a>
+                  </li>
+                  <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                    <a class="nav-link" href="https://cryptoversee.herokuapp.com/news.html">News</a>
+                  </li>
+                 
+                  <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Publications</a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="https://cryptoversee.herokuapp.com/Crypto%20Economy.html">Crypto Economy: How Blockchain..</a>
+                      <a class="dropdown-item" href="https://cryptoversee.herokuapp.com/NFT%20Guide.html">NFT Guide: How to Create..</a>
+                      <a class="dropdown-item" href="https://cryptoversee.herokuapp.com/cryptoEncyclo.html">The Crypto Encyclopedia</a>
+                      <a class="dropdown-item" href="https://cryptoversee.herokuapp.com/Crypto%20Technical.html">Crypto Technical Analysis</a>
+                      <a class="dropdown-item" href="https://cryptoversee.herokuapp.com/The%20Crypto%20Trader.html">The Crypto Trader</a>
+                      <a class="dropdown-item" href="https://cryptoversee.herokuapp.com/The%20economics%20of%20Crypto-Currency%20Mining.html">The economics of Crypto-Currency Mining</a>
+                    </div>
+                  </li>
+                  <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                    <a class="nav-link" href="https://cryptoversee.herokuapp.com/mover.html">Top Gainer/Loser</a>
+                  </li><li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                    <a class="nav-link" href="https://cryptoversee.herokuapp.com/events">Crypto Events</a>
+                  </li>
+                </li><li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                  <a class="nav-link" href="https://cryptoversee.herokuapp.com/dictionary.html">Crypto Dictionary</a>
+                </li>
+                  <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                    <a class="nav-link" href="/">Market Prediction</a>
+                  </li>
+                </ul>
+              </div>
+              
+            </nav>		
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="container resize" style="margin-top: 30px; max-width: 100vw !important">
+      <div class="row">
+        <form
+          class="form-inline"
+          autocomplete="off"
+          action="/search"
+          method="POST"
+        >
+          <div class="autocomplete">
+
+            <input
+              class="form-control y-it"
+              id="myInput"
+              name="search"
+              type="search"
+              placeholder="Search Coin Only By Name"
+            
+              aria-label="Search"
+            />
+          </div>
+          <button class="yasin button-1" type="submit">Search</button>
+        </form>
+      </div>
+    </div> -->
+
+
+
+
+
+    <div id="subscription_area" style="margin-top: 70px; margin-bottom: 70px;">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="subscribe_now">
+              
+          <p>Search Your Coin</p>
+              <form  autocomplete="off" action="/search" method="POST" class="subscribe_form">
+                <div class="input-group text-centered">
+                 
+                   <input type="text" class="form-control centered" id="myInput"
+                   name="search"
+                   type="search"
+                   placeholder="Search Coin Only By Name"
+                   aria-label="Search" style="margin: 0 auto;">
+
+                   <span class="input-group-btn">
+                        <button class="btn btn-default" id="myBtn" type="submit">Search</button>
+                   </span>
+                   <div class="autocomple"></div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+<p style="font-size: 12px; color: red; text-align: center; font-weight: bold; margin-bottom: 30px;">Note: This is not investment advice. These data are scraped from Crypto Predictions</p>
+    <div class="news-container">
+      <div class="news">
+        <% de.forEach(function(articlez,index){ %> <% if ((typeof articlez.head
+        =='object' || articlez.desc =='object' )){ %> <% } else{ %>
+
+        <h4 class="text-center" style="margin-bottom: 30px;">> <%- articlez.head %> - 2024</h4>
+
+        <% } %> <% }) %>
+
+        <div class="container">
+          <div class="row">
+            <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+              <thead>
+                <th scope="col">Month</th>
+                <th scope="col">Maximum Price</th>
+                <th scope="col">Average Price</th>
+                <th scope="col">Minimum Price</th>
+                <th scope="col">Change</th>
+              </thead>
+              <% articles.forEach(function(article,index){ %> <% if ((typeof
+              article.Month =='object' || article.Minimum_Price =='object' ||
+              article.Maximum_Price =='object' || article.Average_Price
+              =='object' || article.Change=='object' || article.desc
+              =='object')){ %> <% } else{ %>
+              <tbody>
+                <% var price = parseFloat(article.Maximum_Price.replace(/\$|,/g, ''))
+                var avgPrice = parseFloat(article.Average_Price.replace(/\$|,/g, ''))
+                var MinPrice = parseFloat(article.Average_Price.replace(/\$|,/g, ''))
+                let nf = new Intl.NumberFormat('en-IN');
+
+                  price = price * 77
+                  price = nf.format(price);
+
+                  avgPrice = avgPrice * 77
+                  avgPrice = nf.format(avgPrice);
+
+                  MinPrice = MinPrice * 77
+                  MinPrice = nf.format(MinPrice);
+
+                  %>
+                <td scope="row"><%- article.Month %></td>
+                <td scope="row">₹ <%- price %>                </td>
+                <td scope="row">₹ <%- avgPrice %></td>
+                <td scope="row">₹ <%- MinPrice %></td>
+
+                <!-- <td scope="row"><%- article.Month %></td>
+                <td scope="row">Rs <%- (Number(article.Maximum_Price) * 77).toFixed(2) %></td>
+                <td scope="row">Rs <%- (Number(article.Average_Price) * 77).toFixed(2) %></td>
+                <td scope="row">Rs <%- (Number(article.Minimum_Price) * 77).toFixed(2) %></td> -->
+
+
+                  <!-- <% if(article.Change >= 0 ){ %>
+                    <td scope="row" style='color:green;'><%= article.Change %></td>
+                  <% } else{ %>  
+                    <td scope="row"><%= article.Change %></td>
+                 <% } %> -->
+
+                 <!-- <% if (article.Change > 0) { %>
+                  <td scope="row" style="color: green;" ><%- article.Change %></td>
+                  <%} else { %>
+                    <td scope="row" style= "color: red;"><%- article.Change %></td>
+                  <% } %> -->
+
+                  <% if(article.Change.indexOf("-") > -1){ %>
+                    <td scope="row" style="color: red;" ><%- article.Change %></td>
+                    <% } else { %>
+                      <td scope="row" style= "color: green;"><%- article.Change %></td>
+                    <% } %>
+                <!-- <td scope="row" class=" <%- article.Change >=0 ? 'open-bug' : '' %> "><%- article.Change %></td> -->
+              </tbody>
+              <% } %> <% }) %>
+            </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="content">
+        <div class="top">
+          <div class="logo-details">
+            <img src="images/logo.png" alt="" srcset="" style="width: 60px; height: 40px; margin-left: 0;">
+            <span class="logo_name">CryptoVerse</span>
+          </div>
+          <div class="media-icons">
+            <a href="https://www.facebook.com/mdyasin.ansari.1029/"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://github.com/awesome-yasin"><i class="fab fa-github"></i></a>
+            <a href="https://www.instagram.com/yasinn.0x/"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/md-yasin-ansari-92a935221/"><i class="fab fa-linkedin-in"></i></a>
+            
+          </div>
+        </div>
+        <div class="link-boxes">
+          <ul class="box">
+            <li class="link_name">Features</li>
+            <li><a href="https://cryptoversee.herokuapp.com/portfolio">Portfolio</a></li>
+            <li><a href="https://cryptoversee.herokuapp.com/news.html">News</a></li>
+            <li><a href="https://cryptoversee.herokuapp.com/mover.html">Top Gainers/Losers</a></li>
+            <li><a href="https://cryptoversee.herokuapp.com/events">Crypto Events</a></li>
+            <li><a href="https://cryptoversee.herokuapp.com/dictionary.html">Crypto Dictionary</a></li>
+          </ul>
+          <ul class="box">
+            <li class="link_name">Upcoming Features</li>
+            <li><a href="#">Virtual Trading</a></li>
+            <li><a href="https://cryptoverseee.herokuapp.com/">Coin Price Prediction</a></li>
+            <li><a href="#">AI Trading Bot</a></li>
+           
+          </ul>
+         
+          <ul class="box">
+            <li class="link_name">Other Projects</li>
+            <li><a href="https://github.com/awesome-yasin/Media-Downloader">Social Media-Downloader</a></li>
+            <li><a href="https://github.com/awesome-yasin/supercalculator">SuperCalculator</a></li>
+            <li><a href="https://github.com/awesome-yasin/react-miniprojects">React Mini Project</a></li>
+            <li><a href="https://github.com/awesome-yasin/netflix_clone">Netflix Clone</a></li>
+          </ul>
+          <ul class="box input-box">
+            <li class="link_name">Subscribe</li>
+            <li><input type="text" placeholder="Enter your email"></li>
+            <li><input type="button" value="Subscribe"></li>
+          </ul>
+        </div>
+      </div>
+      <div class="bottom-details">
+        <div class="bottom_text">
+          <span class="copyright_text">Copyright © 2021 <a href="https://cryptoversee.herokuapp.com/">CryptoVerse</a>All rights reserved</span>
+         
+        </div>
+      </div>
+    </footer>
+    <script>
+      function autocomplete(inp, arr) {
+        /*the autocomplete function takes two arguments,
+          the text field element and an array of possible autocompleted values:*/
+        var currentFocus;
+        /*execute a function when someone writes in the text field:*/
+        inp.addEventListener("input", function (e) {
+          var a,
+            b,
+            i,
+            val = this.value;
+          /*close any already open lists of autocompleted values*/
+          closeAllLists();
+          if (!val) {
+            return false;
+          }
+          currentFocus = -1;
+          /*create a DIV element that will contain the items (values):*/
+          a = document.createElement("DIV");
+          a.setAttribute("id", this.id + "autocomplete-list");
+          a.setAttribute("class", "autocomplete-items");
+          /*append the DIV element as a child of the autocomplete container:*/
+          this.parentNode.appendChild(a);
+          /*for each item in the array...*/
+          for (i = 0; i < arr.length; i++) {
+            /*check if the item starts with the same letters as the text field value:*/
+            if (
+              arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()
+            ) {
+              /*create a DIV element for each matching element:*/
+              b = document.createElement("DIV");
+              /*make the matching letters bold:*/
+              b.innerHTML =
+                "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+              b.innerHTML += arr[i].substr(val.length);
+              /*insert a input field that will hold the current array item's value:*/
+              b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+              /*execute a function when someone clicks on the item value (DIV element):*/
+              b.addEventListener("click", function (e) {
+                /*insert the value for the autocomplete text field:*/
+                inp.value = this.getElementsByTagName("input")[0].value;
+                /*close the list of autocompleted values,
+                      (or any other open lists of autocompleted values:*/
+                closeAllLists();
+              });
+              a.appendChild(b);
+            }
+          }
+        });
+        /*execute a function presses a key on the keyboard:*/
+        inp.addEventListener("keydown", function (e) {
+          var x = document.getElementById(this.id + "autocomplete-list");
+          if (x) x = x.getElementsByTagName("div");
+          if (e.keyCode == 40) {
+            /*If the arrow DOWN key is pressed,
+                increase the currentFocus variable:*/
+            currentFocus++;
+            /*and and make the current item more visible:*/
+            addActive(x);
+          } else if (e.keyCode == 38) {
+            //up
+            /*If the arrow UP key is pressed,
+                decrease the currentFocus variable:*/
+            currentFocus--;
+            /*and and make the current item more visible:*/
+            addActive(x);
+          } else if (e.keyCode == 13) {
+            /*If the ENTER key is pressed, prevent the form from being submitted,*/
+            e.preventDefault();
+            if (currentFocus > -1) {
+              /*and simulate a click on the "active" item:*/
+              if (x) x[currentFocus].click();
+            }
+          }
+        });
+        function addActive(x) {
+          /*a function to classify an item as "active":*/
+          if (!x) return false;
+          /*start by removing the "active" class on all items:*/
+          removeActive(x);
+          if (currentFocus >= x.length) currentFocus = 0;
+          if (currentFocus < 0) currentFocus = x.length - 1;
+          /*add class "autocomplete-active":*/
+          x[currentFocus].classList.add("autocomplete-active");
+        }
+        function removeActive(x) {
+          /*a function to remove the "active" class from all autocomplete items:*/
+          for (var i = 0; i < x.length; i++) {
+            x[i].classList.remove("autocomplete-active");
+          }
+        }
+        function closeAllLists(elmnt) {
+          /*close all autocomplete lists in the document,
+            except the one passed as an argument:*/
+          var x = document.getElementsByClassName("autocomplete-items");
+          for (var i = 0; i < x.length; i++) {
+            if (elmnt != x[i] && elmnt != inp) {
+              x[i].parentNode.removeChild(x[i]);
+            }
+          }
+        }
+        /*execute a function when someone clicks in the document:*/
+        document.addEventListener("click", function (e) {
+          closeAllLists(e.target);
+        });
+      }
+
+      /*An array containing all the country names in the world:*/
+      var countries = [
+        
+      "bitcoin", "ethereum", "tether", "bnb", "usd-coin", "xrp", "cardano", "solana", "terra", "polkadot", "avalanche", "dogecoin", "binance-usd", "terrausd", "shiba-inu", "wrapped-bitcoin", "cronos", "polygon", "dai", "lido-staked-ether", "near", "litecoin", "cosmos-hub", "chainlink", "ftx-token", "bitcoin-cash", "tron", "ethereum-classic", "algorand", "okb", "leo-token", "axie-infinity", "stellar", "uniswap", "hedera", "elrond", "internet-computer", "decentraland", "the-sandbox", "vechain", "monero", "fantom", "filecoin", "ceth", "waves", "tezos", "theta-network", "klaytn", "thorchain", "frax", "magic-internet-money", "osmosis", "the-graph", "zcash", "eos", "cusdc", "bittorrent", "helium", "flow", "aave", "iota", "apecoin", "cdai", "pancakeswap", "quant", "theta-fuel", "gala", "maker", "huobi-btc", "harmony", "neo", "arweave", "bitcoin-sv", "ecash", "enjin-coin", "kusama", "convex-finance", "radix", "kucoin-token", "stacks", "celsius-network", "huobi-token", "dash", "trueusd", "celo", "loopring", "humans-ai", "nexo", "chiliz", "bitcoin-cash-abc", "basic-attention-token", "amp", "juno", "kadena", "synthetix-network-token", "mina-protocol", "bitdao", "frax-share", "xido-finance", "gatetoken", "pax-dollar", "nem", "curve-dao-token", "oasis-network", "holo", "qtum", "iotex", "decred", "secret", "ecomi", "link", "compound", "neutrino-usd", "smooth-love-potion", "bitcoin-gold", "zilliqa", "cusdt", "yearn-finance", "pocket-network", "nexus-mutual", "omg-network", "xdc-network", "livepeer", "bitkub-coin", "sushi", "bancor-network-token", "renbtc", "marinade-staked-sol", "1inch", "anchor-protocol", "icon", "ankr", "ravencoin", "kava", "gnosis", "render-token", "pax-gold", "audius", "wax", "iost", "e-radix", "woo-network", "lido-dao", "moonbeam", "safemoon", "rocket-pool", "fei-usd", "horizen", "sapphire", "radio-caca", "olympus", "oec-token", "fei-protocol", "rally", "velas", "immutable-x", "everdome", "siacoin", "uma", "defi-kingdoms", "0x", "golem", "baby-doge-coin", "telcoin", "tether-gold", "dydx", "ontology", "songbird", "skale", "liquity-usd", "dogelon-mars", "green-metaverse-token", "apenft", "constellation", "metis-token", "convex-crv", "looksrare", "pirate-chain", "trust-wallet-token", "playdapp", "ethereum-name-service", "constitutiondao", "swissborg", "digitalbits", "serum", "just", "syscoin", "spell-token", "polymath", "ren", "illuvium", "synapse", "hive", "nucypher", "flux", "digibyte", "tomb", "keep-network", "nervos-network", "function-x", "nano", "lisk", "lido-staked-sol", "decentralized-social", "kyber-network-crystal", "floki-inu", "ronin", "ultra", "sxp", "perpetual-protocol", "vvs-finance", "tenset", "casper-network", "flex-coin", "creditcoin", "persistence", "mobox", "api3", "tokemak", "origin-protocol", "wazirx", "everscale", "winklink", "plex", "coin98", "fetch-ai", "raydium", "husd", "mai", "injective", "safemoon-old", "ichi", "celer-network", "dent", "mxc", "metahero", "ocean-protocol", "chromia", "lukso-token", "dopex", "tribe", "astroport", "zenon", "xyo-network", "zipmex-token", "energy-web-token", "ergo", "xsushi", "coti",
+      "status", "yield-guild-games", "unibright", "chia", "vulcan-forged", "ufo-gaming", "mask-network", "coinex-token", "mirror-protocol", "origintrail", "astar", "medibloc", "power-ledger", "escoin-token", "multichain", "euro-tether", "tomb-shares", "dao-maker", "orbs", "mx-token", "keep3rv1", "conflux", "gmx", "moonriver", "gemini-dollar", "radicle", "pundi-x", "civic", "mdex", "aragon", "ardor", "cratos", "maple", "boba-network", "request", "mmfinance", "mil-k-alliance", "interest-bearing-bitcoin", "superfarm", "cartesi", "alchemix-usd", "reserve-rights-token", "aurora", "joe", "power-cash", "telos", "stargaze", "jasmycoin", "reef-finance", "merit-circle", "numeraire", "yoshi-exchange", "alchemy-pay", "sbtc", "insure-defi", "akash-network", "coinmetro", "biconomy", "bifrost", "divi", "rari-governance-token", "world-mobile-token", "verge", "pundi-x-old", "thorchain-erc20", "kyber-network-crystal-legacy", "band-protocol", "tokamak-network", "storj", "starlink", "aelf", "xsgd", "magic", "decentral-games", "ascendex-token", "victoria-vr", "iexec-rlc", "vethor-token", "mango", "btse-token", "sperax", "ark", "stormx", "beta-finance", "orchid-protocol", "nkn", "usdx", "bezoge-earth", "acala", "bnb48-club-token", "prometeus", "kishu-inu", "alpha-finance", "poollotto-finance", "biswap", "beldex", "sun-token", "dusk-network", "veritaseum", "alien-worlds", "origin-dollar", "feg-token-bsc", "stratis", "dopex-rebate-token", "steem", "redacted-cartel", "metadium", "balancer", "qredo", "maidsafecoin", "ankr-reward-bearing-staked-eth", "rmrk", "dero", "hxro", "hathor", "feg-token", "stasis-euro", "strike", "deapcoin", "dawn-protocol", "stp-network", "truefi", "ellipsis", "benqi-liquid-staked-avax", "flexusd", "rsk-infrastructure-framework", "marlin", "singularitynet", "seth2", "spookyswap", "iron-bank-euro", "wonderland", "polkastarter", "platon-network", "kardiachain", "alchemix", "adventure-gold", "btc-standard-hashrate-token", "kilt-protocol", "klever", "dodo", "aavegotchi", "adshares", "ion", "railgun", "league-of-kingdoms", "my-neighbor-alice", "venus", "meerkat-shares", "bakeryswap", "proton", "gxchain", "kirobo", "orion-protocol", "titanswap", "phantasma", "funtoken", "hoo-token", "bounce", "quarkchain",
+      "utrust", "covalent", "seedify-fund", "crypto20", "metal", "tomochain", "seth", "decentral-games-governance", "beefy-finance", "cuni", "kava-swap", "regen", "badger-dao", "gpex", "hydra", "tornado-cash", "susd", "aioz-network", "bitcoin-diamond", "hermez-network", "electroneum", "superrare", "augur", "bonfida", "wrapped-centrifuge", "idex", "gitcoin", "verasity", "benqi", "wanchain", "everipedia", "wilder-world", "ageur", "crabada", "cbat", "automata", "certik", "keeperdao", "dvision-network", "alpine-f1-team-fan-token", "hunt", "clover-finance", "safepal", "ampleforth", "verus-coin", "neutrino-system-base-token", "propy", "xmon", "pylon-protocol", "allianceblock", "dfi-money", "blox", "maps", "oxygen", "aergo", "defi-pulse-index", "gains-farm", "enzyme", "zoidpay", "travala-com", "index-coop-eth-2x-flexible-leverage-index", "wrapped-nxm", "klima-dao", "aave-old", "avalaunch", "swarm", "rizon", "qi-dao", "celo-dollar", "vectorspace-ai", "irisnet", "redfox-labs", "opendao", "jpeg-d", "quickswap", "boson-protocol", "arpa-chain", "zero-collateral-dai", "linear", "somnium-space-cubes", "circuits-of-value", "aurory", "nerve-finance", "lcx", "hifi-finance", "sifchain", "handshake", "haven", "platoncoin", "shapeshift-fox-token", "hector-finance", "alpaca-finance", "guildfi", "ribbon-finance", "carry", "mstable-usd", "ethernity-chain", "thundercore", "sai", "loom-network-old", "harvest-finance", "peakdefi", "elastos", "netvrk", "dock", "flamingo-finance", "coin-of-the-champions", "deus-finance", "sharetoken", "presearch", "alpha-quark-token", "gas", "everrise", "bzx-protocol", "kin", "chainx", "komodo", "derivadao", "snowblossom", "bitshares", "socean-staked-sol", "vader-protocol", "c0x", "woonkly-power", "lto-network", "dia", "shibadoge", "cvault-finance", "vega-protocol", "tranchess", "rai-reflex-index", "cudos", "polyswarm", "ampleforth-governance-token", "templedao", "syntropy", "shuey-rhon-inu", "uquid-coin", "barnbridge", "doge-army-token", "xcad-network", "qanplatform", "nftx", "dei-token", "platypus-finance", "singularitydao", "star-atlas", "aleph-im", "xdefi", "tectonic", "samoyedcoin", "contentos", "phala-network", "toucan-protocol-base-carbon-tonne", "chrono-tech", "ambire-adex", "mixmarvel", "peony-coin", "deversifi", "fuse", "bytecoin", "gains-network", "district0x", "beethoven-x", "phonon-dao", "avinoc", "crypterium", "sovryn", "bscpad", "rich-quack", "cocos-bcx", "token-pocket", "firo", "bella-protocol", "manchester-city-fan-token", "bitmart-token", "paraswap", "edgeware", "boringdao-old", "talken", "streamr-xdata", "map-protocol", "morpheus-network", "bluzelle", "tokocrypto", "terra-virtua-kolect", "refereum", "decentral-games-new", "universe-xyz", "nominex", "e-money", "hi-dollar", "tellor", "splinterlands", "vai", "groestlcoin", "phoenix-global-old", "koda-cryptocurrency", "fio-protocol", "gods-unchained", "gridplus-old", "quantstamp", "cortex", "voxies", "nexus", "kava-lend", "dash-diamond", "naga", "saito", "silent-notary", "mossland", "rarible", "steem-dollars", "sero", "vite", "litentry", "selfkey", "moviebloc", "vires-finance", "tracer-dao", "retreeb", "kleros", "aeternity", "epic-cash", "catecoin", "cargox", "aion", "liquity", "whale", "trustswap", "bean", "savanna", "gyen", "position-token", "koinos", "derace", "qash", "occamfi", "numbers-protocol", "altura", "genopets", "unifty", "axion", "global-coin-research", "seur", "parsiq", "jet", "solanium", "ovr", "ooki", "bytom", "hydradx", "usdk", "celo-euro", "karura", "beam", "zignaly", "paris-saint-germain-fan-token", "revolution-populi", "nuls", "silo-finance", "apeswap-finance", "velo", "banana", "shiden-network", "frontier", "polkaswap", "bone-shibaswap", "sentinel-protocol", "stafi", "the-doge-nft", "eden", "pstake-finance", "fodl-finance", "cellframe", "kryll", "stackos", "gamezone", "unizen", "new-bitshares", "orca", "hotbit-token", "futureswap", "nest-protocol", "cream", "boringdao", "yield-app", "star-atlas-dao", "zkswap", "tbtc", "locktrip", "energi", "fusion", "thorswap", "strong", "inverse-finance", "mantra-dao", "six-network", "hypercash", "starterra", "clink", "mcontent", "shyft-network", "rainicorn", "get-protocol", "mimo-governance-token", "ki", "apollox", "friends-with-benefits-pro", "newscrypto-coin", "atari", "ramp", "bosagora", "rai-finance", "snowbank", "aurox-token", "solve", "math", "akropolis", "geist-finance", "rootkit", "nimiq", "carbon-protocol", "darkcrypto-share", "sentinel", "crypto-raiders", "refinable", "metronome", "measurable-data-token", "dforce-token", "sipher", "aragon-court", "stablexswap", "impossible-finance-launchpad", "v-systems", "mcashchain", "mad-meerkat-optimizer",
+      "3x-long-ethereum-token", "saber", "scprime", "sx-network", "comdex", "adappter-token", "rubic", "ariva", "velaspad", "hacken-token", "taboo-token", "terrakrw", "paid-network", "dxdao", "pkt", "oxen", "unifi-protocol-dao", "lattice-token", "waykichain", "nfty-token", "freeway-token", "suku", "yuan-chain-coin", "opulous", "stake-dao", "kujira", "sora", "liquiddriver", "offshift", "atletico-madrid-fan-token", "hopr", "airswap", "sandclock", "popsicle-finance", "reserve", "paribus", "ptokens-btc", "civilization", "dextools", "bns-token", "counterparty", "metaverse-index", "ardana", "bepro-network", "hoge-finance", "gochain", "erc20", "era-swap-token", "hegic", "efforce", "etherrock-72", "sentivate", "usdp-stablecoin", "boringdao-btc", "zombie-inu", "rome", "hiblocks", "lgcy-network", "terra-world-token", "zkspace", "glitch-protocol", "spiritswap", "everest", "lazio-fan-token", "kintsugi", "bux-token", "btu-protocol", "unilend-finance", "fortube", "fc-barcelona-fan-token", "unisocks", "hbtc-captain-token", "gemma-extending-tech", "swapxi-token", "stratos", "tokenlon", "dexe", "step-finance", "delta-exchange-token", "rss3", "tranquil-finance", "conscious-value-network", "vivid-labs", "planet-finance", "vecrv-dao-yvault", "tronpad", "insurace", "cryptex-finance", "pibble", "revv", "ekta", "apollo", "bytz", "powerpool-concentrated-voting-power", "bread", "elysia", "gem-exchange-and-trading", "mute", "santos-fc-fan-token", "spool-dao-token", "genesysgo-shadow", "alchemist", "uxd-stablecoin", "ternoa", "gifto", "opacity", "gamee", "reflexer-ungovernance-token", "stake", "wing-finance", "muse-dao", "lbry-credits", "hot-cross", "0chain", "jade-protocol", "router-protocol", "safe-haven", "aventus", "spectrum-token", "axel", "gamercoin", "solend", "vidt-datalink", "permission-coin", "mithril", "orion-money", "stronghold-token", "foam", "sperax-usd", "quantum-resistant-ledger", "xels", "wegro", "vesper-finance", "likecoin", "adapad", "multivac", "goldfinch", "chain-guardians", "ultiledger", "reddcoin", "bilira", "dora-factory", "chain-games", "dragonchain", "jupiter", "floordao", "reimagined-finance", "tulip-protocol", "manifold-finance", "stader", "meter-governance", "lunar", "meter-governance", "dogebonk", "premia", "media-licensing-token", "pnetwork", "vitadao", "treasure-under-sea", "lit", "sylo", "tethys-finance", "cake-monster", "openocean", "umbrella-network", "ix-swap", "wliti", "index-cooperative", "exeedme", "trias-token", "alethea-artificial-liquid-intelligence-token", "lyra-finance", "swftcoin", "pac-protocol", "ethereum-push-notification-service-epns", "apollo-dao", "epik-prime", "marketmove", "polkamarkets", "polkafoundry", "inter-milan-fan-token", "woofy", "bnbpay", "fibswap-dex", "mcdex", "polkabridge", "dego-finance", "juventus-fan-token", "coinzoom-token", "e-money-eur", "vertcoin", "polkadex", "pangolin", "governance-zil", "pluton", "oraichain-token", "obyte", "pivx", "cardstack", "fantohm", "pawtocol", "mogul-productions", "invictus", "enreachdao", "bitz-token", "guild-of-guardians", "angle", "rupiah-token", "validity", "troy", "yieldly", "grin", "defi-land", "thorstarter", "cloutcontracts", "fiat-dao-token", "avocado-dao", "polkacity", "spartacus", "luffy", "staked-kuji", "kccpad", "mork", "daohaus", "peercoin", "pendle", "flux-token", "blackpool-token", "yield-yak", "pallapay", "pbtc35a", "thought", "populous", "nash", "veed", "pandacoin", "cirus", "kylin-network", "vfox", "valkyrie-protocol", "mobius", "cardstarter", "auto", "blockchain-monster-hunt", "minds", "mobiecoin", "waltonchain", "stakeborg-dao", "gamestarter", "lords", "equilibria", "xfinite-entertainment-token", "banano", "gamma-strategies", "gelato", "alkimi", "privateum", "crust-network", "santiment-network-token", "vidya", "lunr-token", "earthcoin", "blockchainspace", "mad-meerkat-etf", "axia-coin", "dsla-protocol", "birake", "dacxi", "steam-exchange", "sunny-aggregator", "lamden", "dafi-protocol", "navcoin", "smart-valor", "xaya", "torum", "cvi", "proximax", "chainge-finance", "onston", "paragonsdao", "acet", "polychain-monsters", "iqeon", "vent-finance", "spartan-protocol-token", "smartofgiving", "unicrypt", "skey-network", "gm", "raptoreum", "te-food", "wpp-token", "kuma-inu", "o3-swap", "dimitra", "percent", "dehub", "electra-protocol", "elk-finance", "vvsp", "bomber-coin", "poolz-finance", "shill-token", "nftb", "signum", "infinitecoin", "imperium-empires", "bitcoin-2", "trabzonspor-fan-token", "polydoge", "arsenal-fan-token", "asch", "neos-credits", "mint-club", "shirtum", "ethos", "shabu-shabu", "solrise-finance", "metahash", "sienna", "gains", "moon-nation-game", "neblio", "aquarius", "blockwallet", "antimatter", "hedpay", "bigshortbets", "green-satoshi-token", "arcblock", "drops-ownership-power", "hubble", "scream", "zano", "symbiosis-finance", "saffron-finance", "dollars", "ac-milan-fan-token", "decentral-games-old", "ledgis", "cloakcoin", "nftrade", "unicly-cryptopunks-collection", "blocto-token", "tarot", "micropets", "robonomics-network", "mstable-governance-token-meta", "adax", "galatasaray-fan-token", "vempire-ddao", "gny", "sparkpoint", "satt", "particl", "b-protocol", "mahadao", "unmarshal", "instar", "tokenclub", "futurecoin", "mars4", "netswap", "ref-finance", "bitkan", "dose", "decentral-games-ice", "etherisc-dip-token", "mysterium", "infinity-pad", "curate", "safemars", "gaia-everworld", "blockv", "eqifi", "uno-re", "bitnautic", "thorwallet-dex", "notional-finance", "block-ape-scissors", "babb", "ubeswap", "veraone", "putincoin", "realm", "gamer", "wirex", "yearn-lazy-ape", "k21", "dovu", "apm-coin", "arianee", "congruent-dao-token", "stakewise", "loop-finance", "oneart", "hapi", "julswap", "nervenetwork", "rebel-bots", "wom-protocol", "zb-token", "bot-ocean", "clearpool", "betu", "bao-finance", "saud", "shardus", "coinweb", "ignis", "shopx", "abyss", "doge-dash", "waves-ducks", "deepspace", "bogged-finance", "darwinia-network-native-token", "strikex", "game-fantasy-token", "eco-value-coin", "0x-nodes", "naos-finance", "smart-mfg", "cola-token", "new-order", "warden", "werewolf-coin", "mars-ecosystem-token", "bbs-network", "faraland", "the-husl", "mirrored-ishares-silver-trust", "trisolaris", "ferrum-network", "witnet", "zookeeper", "safecoin", "dhedge-dao", "mirrored-apple", "superlauncher", "swop", "secret-finance", "ambrosus", "goztepe-s-k-fan-token", "deri-protocol", "scrooge", "nectar", "pegaxy-stone", "labs-group", "polkacover", "niftyx-protocol",
+      "popcorn", "zbg-token", "nebulas", "ispolink", "don-key", "gameswap", "wownero", "nxt", "zeroswap", "mirrored-invesco-qqq-trust", "lossless", "keanu-inu", "dappradar", "pooltogether", "sakura", "enterdao", "synthetify-token", "aldrin", "phoenix-global", "probit-token", "suterusu", "scallop", "juggernaut", "pointpay", "bone", "mirrored-tesla", "froyo-games", "receive-access-ecosystem", "btc-2x-flexible-leverage-index", "data-exchange-token", "duckdaodime", "convergence", "modefi", "apwine", "arc-governance-old", "bent-finance", "tempus", "free-coin", "robot", "mirrored-ishares-gold-trust", "newyorkcitycoin", "dogegf", "internxt", "vcgamers", "dfyn-network", "oneledger", "kira-network", "minter", "dentacoin", "sideshift-token", "fractal", "1-up", "metaverse-etp", "shibaverse", "paint-swap", "nurifootball", "mirrored-amazon", "prism", "siren", "oxbull-tech", "xidr", "nifty-league", "trubadger", "universa", "media-network", "kalmar", "jarvis-reward-token", "bridge", "0xbitcoin", "mirrored-microsoft", "swingby", "factom", "dexlab", "meme", "cbc-network", "geeq", "moeda-loyalty-points", "mirrored-google", "as-roma-fan-token", "enjinstarter", "launchpool", "digits-dao", "seascape-crowns", "graviton", "varen", "vaiot", "pacoca", "finxflo", "cwbtc", "morpheus-labs", "jackpot", "euphoria", "bifi", "burency", "lithium-finance", "zmine", "rbase-finance", "aladdin-dao", "vesta-finance", "digg", "jones-dao", "binamon", "cypherium", "cashaa", "thales", "cumrocket", "peculium", "tendieswap", "fancy-games", "sonm", "sinverse", "mirrored-alibaba", "shopperoo", "pepecash", "bitsong", "spankchain", "biconomy-exchange-token", "solchicks-token", "oax", "slink", "uniform-fiscal-object", "apy-finance", "bankless-dao", "mstable-btc", "dinger-token", "unicly", "tixl", "green-climate-world", "lith-token", "revomon", "bondly", "lambda", "xend-finance", "raiden-network-token", "shopping-io", "kollect", "credits", "bscex", "diamond", "enecuum", "yuki-coin", "only1", "aidos-kuneen", "evolution-finance", "kine-protocol", "million", "gro-dao-token", "mirrored-united-states-oil-fund", "nft-art-finance", "mercurial", "rangers-protocol", "galaxy-fight-club", "plotx", "pika", "fabric", "credmark", "marinade", "feisty-doge-nft", "dope-wars-paper", "metasoccer", "port-finance", "armor", "advertise-coin", "wabi", "mirrored-netflix", "smartlands-network", "salt", "cops-finance", "plasma-finance", "xfund", "mirrored-twitter", "oddz", "tranche-finance", "cutcoin", "cerby-token", "jigstack", "defibox", "wasder", "beekan-beenews", "latoken", "monolith", "eqo", "idavoll-dao", "pinknode", "unix", "bifrost-native-coin", "ambire-wallet", "fortknoxster", "annex-finance", "wam", "realfevr", "fear", "mirrored-ether", "swash", "creampye-old", "belt", "cope", "zodium", "covesting", "tontoken", "unfederalreserve", "oduwa-coin", "bitcny", "versoview", "safemoon-inu", "cerberus", "mt-pelerin-shares", "gather", "ethereans", "radar", "ufc-fan-token", "hundred-finance", "woof", "onooks", "tower", "metavpad", "babydoge-eth", "wall-street-games", "unipilot", "exnetwork-token", "gerowallet", "connect-financial", "dify-finance", "smartmesh", "arcona", "deblox", "charged-particles", "givingtoservices-svs", "pastel", "minidoge", "gton-capital", "impermax", "autobahn-network", "anchorswap", "time-new-bank", "xy-finance", "riodefi", "bonded-finance", "oneswap-dao-token", "public-mint", "jenny-metaverse-dao-token", "advanced-technology-coin", "tigercash", "ghost", "standard-protocol", "kommunitas", "fndz-token", "affyn", "nft-protocol", "luaswap", "gyro", "launchzone", "plian", "crep", "euno", "litecoin-cash", "ideaology", "og-fan-token", "ime-lab", "nftlaunch", "revuto", "deepbrain-chain", "giveth", "statera", "blockasset", "degen-index", "you-chain", "tokpie", "achain", "starname", "cache-gold", "trueflip", "pocmon-old", "tidal-finance", "quadrant-protocol", "arable-protocol", "reth2", "wrapped-ampleforth", "monsta-infinite", "empire-capital-token", "warp-finance", "asian-fintech", "mobility-coin", "unbound-finance", "onering", "charli3", "bnpl-pay", "toacoin", "revault-network", "niob", "viberate", "carboneco", "hodl-finance", "bontecoin", "zenlink-network-token", "nabox", "wagerr", "unidex", "wagyuswap", "tokenplace",
+      "rich", "archangel", "kuswap", "impossible-finance", "kainet", "metagods", "husky-avax", "spheroid-universe", "decentr", "oiler", "unicly-hashmasks-collection", "cap", "starship", "ojamu", "goldcoin", "stakecube", "uncl", "einsteinium", "kattana", "darkness-share", "bridge-mutual", "equilibrium-eosdt", "cleardao", "allbridge", "astroswap", "airbloc", "upbots", "feeder-finance", "ekta", "polker", "revest-finance", "blackdragon-token", "skycoin", "dlp-duck-token", "mirrored-bitcoin", "firestarter", "genaro-network", "filecoin-standard-full-hashrate", "xvix", "meme-inu", "dotmoovs", "cherryswap", "unido", "unslashed-finance", "must", "xtblock-token", "freedom-coin", "unilayer", "ripio-credit-network", "mimas", "beowulf", "usechain", "dfx-finance", "bibox-token", "acryptos", "useless", "edgeless", "waterfall-governance-token", "musk-gold", "tenx", "uniwhales", "hara-token", "kleekai", "deeponion", "catapult", "tokenomy", "heroes-empires", "lympo", "x", "idena", "kalao", "unicly-bored-ape-yacht-club-collection", "dark-frontiers", "lootex", 1337, "napoli-fan-token", "idle", "playnity", "cyberfi", "smartcash", "txa", "rocket-vault-rocketx", "exponential-capital", "ioi-token", "bird-money", "vedao", "blizz-finance", "qlc-chain", "nft-index", "bloom", "king-shiba", "dogs-of-elon", "opium", "mist", "kambria", "blocknet", "swerve", "my-defi-pet", "crosswallet", "botto", "indexed-finance", "nord-finance", "defi-for-you", "hyve", "clucoin", "crodex", "csp-dao-network", "cool-cats-milk", "crypton", "bedrock", "aurora-chain", "ridotto", "adora-token", "furucombo", "hiveterminal-token", "hord", "dinox", "xwin-finance", "bitcoinz", "azzure", "subx-finance-lab", "evidenz", "euler-tools", "aurusdefi", "relevant", "nunet", "citadel-one", "gridcoin", "ok-lets-go", "graphlinq-protocol", "roobee", "atlas-dex", "recast1", "bnktothefuture", "signata", "tetu", "strips-finance", "chronicle", "maximizer", "voice-token", "kanpeki", "oxbull-solana", "any-blocknet", "safedeal", "artery", "crypto-carbon-energy", "kromatika", "matrix-ai-network", "jetfuel-finance", "revolve-games", "locgame", "liquidus", "lunaverse", "onino", "starstream", "minto", "serey-coin", "yel-finance", "ubiq", "amlt-network", "restart-energy", "the-crypto-prophecies", "growth-defi", "zyx", "goal-token", "phantasma-energy", "fedoracoin", "divergence-protocol", "cybermiles", "pawthereum", "equalizer", "league-of-ancients", "shopnext", "defi-warrior", "yf-link", "wild-credit", "vera", "sport-and-leisure", "intchain", "piedao-dough-v2", "total-crypto-market-cap", "rhythm", "monk", "electronic-gulden", "bloxmove-token", "gulden", "defi-yield-protocol", "kick", "rewards-bunny", "verisafe", "mass", "ring", "autonio", "relay-token", "exrnchain", "gami-world", "cube", "arc-governance", "pillar", "genre", "falcon-project", "powertrade-fuel", "pulsepad", "magnet-dao", "pickle-finance", "vabble", "hyprr-howdoo", "templar-dao", "xtoken", "ternio", "solidex", "apricot", "mover", "oneeth", "metrix-coin", "katana-inu", "mch-coin", "zilswap", "darkness-dollar", "garlicoin", "ureeqa", "anrkey-x", "jur", "dapp-com", "inventoryclub", "ethpad", "julien", "legend-of-fantasy-war", "olyseum", "citizen-finance-old", "cropperfinance", "poa-network", "friesdao", "42-coin", "viper", "penguin-finance", "boscoin", "yam", "smoothy", "xeta-reality", "april", "integral", "smartcredit-token", "grey-token", "plant-vs-undead-token", "metafabric", "makiswap", "charg-coin", "conceal", "cult-dao", "wallstreetbets-dapp", "suncontract", "metastrike", "eddaswap", "edenchain", "kondux", "monetha", "b-cube-ai", "polytrade", "metadoge", "sdefi", "uniqly", "bankless-bed-index", "elvantis", "revenue-coin", "acent", "dxsale-network", "wanswap", "jumptoken", "iron-bank", "the-parallel", "apreum", "lightcoin", "quidd", "game-ace-token", "blockbank", "ycash", "sarcophagus", "talecraft", "epik-protocol", "rocketx-exchange", "kick-io", "wault-finance-old", "definer", "solace", "run", "fief", "ninneko", "covercompared", "xrhodium", "leeds-united-fan-token", "ruff", "ally-direct", "sentinel-old", "enigma", "unit-protocol", "moonstarter", "innovaminex", "hush",
+      "konomi-network", "ame-chain", "stakenet", "htmlcoin", "dfohub", "prosper", "polkawar", "phantasia", "cub-finance", "effect-network", "obortech", "verve", "top-network", "mirrored-proshares-vix", "luna-rush", "roseon-finance", "plastiks", "renzec", "unit-protocol-new", "egretia", "duel-network", "wowswap", "blockzero-labs", "bitcoinstaking", "bitwin24", "x-cash", "algovest", "razor-network", "vexanium", "88mph", "solape-token", "babylons", "fastswap-bsc", "csai", "vibe", "vidulum", "yield-optimization-platform-protocol", "peps-coin", "open-monetary-system", "emanate", "flare-token", "bitcoin-pro", "float-protocol", "evai", "monavale", "sync-network", "pussy-financial", "tierion", "oceanex-token", "wiva", "cpchain", "flamengo-fan-token", "genesis-worlds", "solarbeam", "coinxpad", "rac", "doubloon", "linka", "dune", "hedget", "fairgame", "tadpole", "altrucoin-old", "starter-xyz", "franklin", "billionhappiness", "xaurum", "dogey-inu", "avaxtars-token", "verox", "swapz-app", "sw-dao", "public-index-network", "otterclam", "communifty", "coinmerge-erc20", "raven-protocol", "brokoli", "throne", "superbonds", "moonedge", "bundles", "unitrade", "fydcoin", "agave-token", "spaceswap-milk2", "polylastic", "handle-fi", "baanx", "museum-of-crypto-art", "afreum", "ethichub", "rogue-doge", "disbalancer", "bsc-station", "parallel", "kineko", "onx-finance", "1world", "coreto", "cryptopay", "polis", "dogewhale", "b20", "revain", "raze-network", "float-protocol-float", "fortress", "spacechain-erc-20", "nafter", "mettalex", "defisocial", "odyssey", "zuki-moba", "all-sports", "spendcoin", "formation-fi", "nftfy", "bismuth", "boom-token", "topbidder", "auroracoin", "elondoge-token", "modern-investment-coin", "bankless-defi-innovation-index", "orclands-metaverse", "angel-nodes", "dev-protocol", "vita-inu", "hybrix", "vegawallet-token", "cykura", "acryptosi", "gridzone-io", "perth-mint-gold-token", "emercoin", "unistake", "daex", "newdex-token", "pop-network", "whiteheart", "dogemongo", "cover-protocol", "everlens", "carvertical", "coinmerge-bep20", "shakita-inu", "cindicator", "honest", "aichain", "shoot", "dexkit", "integritee", "golden-doge", "filda", "thoreum-old", "paypolitan-token", "dav-network", "hakka-finance", "masq", "tycoon", "abitshadow-token", "dogecola", "dappnode", "hempcoin", "cryptokek", "purefi", "blackcoin", "9d-nft", "velhalla", "kawakami", "zusd", "yusd", "carbon", "turtlecoin", "oin-finance", "moonscape", "meme-lordz", "unicly-mystic-axies-collection", "verso", "nodeseeds", "quark", "pist-trust", "kaka-nft-world", "metaverse-nft-index", "value-defi", "clintex-cti", "lendingblock", "pathfund", "libratoken", "devour", "sense", "unimex-network", "redpanda-earth", "etho-protocol", "omni", "davis-cup-fan-token", "lunes", "herocoin", "shih-tzu", "openalexa-protocol", "veriblock", "demole", "upfiring", "poodl-token", "tastenft", "tryhards", "earnbet", "otocash", "qao", "energy-ledger", "spore", "kaiba-defi", "gunstar-metaverse", "blocksquare", "gravity-finance", "big-data-protocol", "evereth", "king-floki-v2", "dinoswap", "axpire", "freerossdao", "crypto-royale", "superlauncher-dao", "metawars", "arcs", "invest-like-stakeborg-index", "wrapped-dgld", "bitspawn", "zeptacoin", "humandao", "leonicorn-swap", "silva", "hydro-protocol", "inari", "slam-token", "zen-protocol", "wasabix", "horizon-protocol", "potcoin", "feathercoin", "neumark", "asko", "cardence", "iot-chain", "polkalokr", "coinspaid", "8pay", "cryptocart-v2", "sinovate", "elpis-battle", "bitcore", "pontoon", "shard-coin", "resfinex-token", "idexo-token", "piedao-balanced-crypto-pie", "etna-network", "defidollar", "peri-finance", "memetic", "zenfuse", "decubate", "cryptonovae", "swarm-network", "swarm-markets", "argentine-football-association-fan-token", "indahash", "leverj-gluon", "multiverse-capital", "rendoge", "apy-vision", "ares-protocol", "tribeone", "doex", "base-protocol", "sekuritance", "exodia", "portugal-national-team-fan-token", "daostack", "aston-martin-cognizant-fan-token", "warena", "footballstars", "basketdao-defi-index", "cook", "utu-coin", "cryptopolis", "nerian-network", "napoleon-x", "dimecoin", "polygonumonline", "xfinance", "skrumble-network", "tap", "yin-finance", "mirrored-facebook", "xp-network", "gemlink", "ethermon",
+      "sirin-labs-token", "flits", "transient", "microtick", "pumapay", "impactmarket", "moola-market", "sumokoin", "cofix", "stone-token", "portion", "helmet-insure", "celestial", "cova-unity", "spores-network", "ceres", "mobifi", "trava-finance", "shibavax", "potentiam", "cryptoids-admin-coin", "cryptowar-xblade", "behodler", "murall", "mintme-com-coin", "chads-vc", "adamant-messenger", "ukrainedao-flag-nft", "primecoin", "data-economy-index", "gleec-coin", "bitscreener", "aston-villa-fan-token", "mirrored-airbnb", "cryptozoon", "lovelace-world", "nsure-network", "kally", "the-three-kingdoms", "lyra", "centric-swap", "button", "shopping-io-governance", "seen", "props-token", "alfa-romeo-racing-orlen-fan-token", "vid", "comfy", "bitlocus", "governor-dao", "finance-vote", "draken", "lgo-token", "next", "mochimo", "stream-protocol", "milkshake-swap", "cornichon", "cryptobulls-token", "soldex", "mu-continent", "nanobyte", "travel-care", "mirrored-goldman-sachs", "swapfolio", "wagmidao", "plair", "food-farmer-finance", "wepower", "reward-hunters-token", "ionchain", "ghostmarket", "octofi", "cotrader", "yee", "falconswap", "s-c-corinthians-fan-token", "cnns", "swag-finance", "eurocointoken", "thx-network", "coinone-token", "trustfi-network-token", "curecoin", "anji", "waultswap", "dmm-governance", "investin", "merculet", "exmo-coin", "plethori", "universidad-de-chile-fan-token", "crowny-token", "high-performance-blockchain", "eosforce", "bomb", "zippie", "coinary-token", "corgicoin", "superbid", "night-life-crypto", "crystl-finance", "exchangecoin", "geyser", "defactor", "genesis-vision", "ston", "beach-token", "kiwigo", "digix-gold", "amon", "alpaca-city", "hitchain", "atlo", "ubique-chain-of-things-ucot", "somee-social", "accel-defi", "starbots", "petrachor", "nearpad", "power-index-pool-token", "humaniq", "ticoex-token-formerly-topinvestmentcoin", "socialgood", "earnx-old", "darwinia-commitment-token", "nucleus-vision", "weown", "soul-swap", "momento", "beach-token-bsc", "luxfi", "snook", "archer-dao-governance-token", "somee-social-old", "scala", "vector-finance", "defiato", "racex", "covenants", "piedao-defi-large-cap", "denarius", "bnb-cash", "linkeye", "less-network", "surf-finance", "alyattes", "minersdefi", "skull", "quiverx", "market-ledger", "sphere", "essentia", "zap", "bavala", "dark-magic", "fantom-maker", "sekuya", "ryo-currency", "non-fungible-yearn", "puli", "wannaswap", "avaxlauncher", "bob-s-repair", "yup", "score-token", "fabwelt", "polylauncher", "stakehound-staked-ether", "phuture", "empty-set-dollar", "triall", "blue-protocol", "2gether", "golff", "bankroll-network", "frakt-token", "genesis-pool", "xmooney", "teloscoin", "darleygo-essence", "fydcoin", "cat-token", "hunny-finance", "babylon-finance", "crypto-fight-club", "blackhat-coin", "bright-union", "dexsport", "ftribe-fighters", "parex", "gamyfi-token", "shadows", "centaur", "viperpit", "holy-trinity", "xmax", "odin-protocol", "maza", "ixicash", "medicalchain", "savage", "benzene", "yggdrash", "thekey", "butterfly-protocol", "union-protocol-governance-token", "pinkcoin", "myx-network", "sator", "u-cash", "dextrust", "ost", "my-master-war", "young-boys-fan-token", "nyzo", "smileycoin", "wings", "veil", "defrost-finance", "unifarm", "signaturechain", "coin", "terablock", "direct-insurance-token", "myriad", "flypme", "merge", "exrt-network", "fandom-chain", "dehive", "hoqu", "crd-network", "capital-finance", "rabbit-finance", "tapmydata", "debitum-network", "subme", "yieldwatch", "sao-paulo-fc-fan-token", "chi-gastoken-bsc", "almace-shards", "dough", "aga-token", "wolfsafepoorpeople", "lendefi", "aircoins", "zeitcoin", "eve-token", "launchx", "meta-doge", "quai-dao", "metabrands", "primas", "quasacoin", "koromaru", "squiddao", "unicly-fewocious-collection", "overlord", "rise-of-defenders", "complifi", "digitalnote", "matrix-labs", "allive", "yield-protocol", "dos-network", "treatdao-old", "qiibee", "moonlana", "gst", "crown", "kittenfinance", "medishares", "grape-protocol", "symbull", "sashimi", "oh-finance", "ara-token", "megacryptopolis", "dracula-token", "forefront", "truechain", "coldstack", "metavault", "berry-data", "solvent", "argoapp", "happycoin", "dios-finance", "peanut", "gsenetwork", "potent-coin", "metagamehub-dao", "phoenixdao", "oikos", "unitedcrowd", "assy-index", "royale", "items", "dracula",
+      "unicly-aavegotchi-astronauts-collection", "sav3", "x8x-token", "spherium", "asia-coin", "bitcoin-plus", "goose-finance", "rocki", "solanax", "basis-cash", "ethbox-token", "lepasa", "etherland", "moonienft", "samsunspor-fan-token", "gas-dao", "fintrux", "huckleberry", "scifi-index", "axioms", "atn", "kingdom-game-4-0", "tig-token", "carlive-chain", "cheems", "crypto-phoenix", "karbo", "scorpion-finance", "centaurify", "smaugs-nft", "credefi", "bitball", "panda-girl", "shar-pei", "snowball", "spice", "neurotoken", "change", "tripio", "hanu-yokia", "cronosphere", "polkaparty", "avaxtars", "crowdhero", "katalyo", "robotina", "aca-token", "piedao-defi", "piedao-defi-small-cap", "lead-token", "bountymarketcap", "lotto", "defidollar-dao", "scry-info", "energyfi", "acestarter", "chainswap", "arth", "solana-ecosystem-index", "auctus", "sapien", "peachfolio", "world-token", "dyor", "rigoblock", "zclassic", "herofi", "snetwork", "hashgard", "colligo-token", "liq-protocol", "skull-candy-shards", "robonomics-web-services", "2key-network", "polkarare", "halalchain", "eosdac", "aimedis", "uranus", "domani-protocol", "bondappetite-usd", "french-digital-reserve", "inheritance-art", "crypto-cavemen", "rasko", "cardwallet", "nolimitcoin", "dopecoin", "atromg8", "wrapped-origin-axie", "safemooncash", "sugarbounce", "rage-fan", "kawaii-islands", "prcy-coin", "moneytoken", "pera-finance", "natus-vincere-fan-token", "swapr", "projectx", "origin-sport", "aidcoin", "polinate", "umi-digital", "supercoin", "graphene", "mobilego", "stacker-ventures", "freicoin", "buzzcoin", "media-eye", "nuke-token", "kangal", "rentible", "lootbox-io", "dragon-kart-token", "phoenixcoin", "marginswap", "ionomy", "kampay", "crossswap", "sake", "alpha", "dmarket", "amun-polygon-ecosystem-index", "believer", "dark", "sint-truidense-voetbalvereniging-fan-token", "unlimitedip", "nft-platform-index", "as-monaco-fan-token", "vault", "ultralpha", "tradestars", "delta-theta", "nidhi-dao", "playcent", "plutos-network", "2x2", "versacoin", "hummingbot", "evedo", "lympo-market-token", "mm-token", "projectoasis", "aetherv2", "adbank", "ieth", "bitto", "donaswap", "keyfi", "en-tan-mo", "mywish", "vdv-token", "joincoin", "bittoken", "yfdai-finance", "azuki", "reverse", "add-xyz-new", "dprating", "pixl-coin", "meta-bsc", "privapp-network", "omni-real-estate-token", "safcoin", "traxia", "invictus-capital-token", "lightstreams-photon", "ticoex-token", "landshare", "hyperchain-x", "ulord", "suvereno", "mim", "codi-finance", "hashcoin", "defi-omega", "sharpay", "playermon", "squid-moon", "avme", "exzocoin-2-0", "play-it-forward-dao", "cvcoin", "iteration-syndicate", "halodao", "elite", "edc-blockchain", "pinkslip-finance", "dogecash", "digital-fitness", "bnsd-finance", "waggle-network", "legia-warsaw-fan-token", "battle-pets", "floof", "saketoken", "kitty-coin", "bitorbit", "daps-coin", "i-stanbul-ba-ak-ehir-fan-token", "stsla", "airight", "wrapped-gen-0-cryptokitties", "domraider", "merkle-network", "aircoin", "mothership", "hauteclere-shards", "ledgerscore", "graft-blockchain", "menlo-one", "appcoins", "4thpillar-technologies", "snovian-space", "nuco-cloud", "adaboy", "meliora", "channels", "catbread", "arqma", "chai", "ethergem", "mmaon", "wallstreetninja", "pascal", "curio", "unclemine", "release", "infinito", "sether", "monetaryunit", "sibcoin", "decentraweb", "tolar", "niftify", "ten", "carbon-gems", "axial-token", "node-squared", "ecoin-finance", "cryptomeda", "rainbowtoken", "parachute", "lixir-finance", "data", "blocks-space", "thorus", "moonpoly", "sail", "phoenix", "definity", "dynamic-set-dollar", "multiplier", "papel-token", "geodb", "omniwhirl", "imo", "yoyow", "oneroot-network", "typerium", "metafluence", "infomatix", "structure-finance", "krypto-kitty", "polkadomain", "aga-rewards", "waultswap-polygon", "tidex-token", "apollon-limassol-fan-token", "komet", "okcash", "aluna", "nix", "true-pnl", "localcoinswap", "digital-reserve-currency", "polyient-games-governance-token", "extend-finance", "kassandra", "golden-ball", "coliquidity", "bittube", "spacecowboy", "0-exchange", "coin-artist", "vig", "litex", "professional-fighters-league-fan-token", "decent", "mercor-finance", "defire", "mrweb-finance", "ubex", "stobox", "curio-governance", "patientory", "lien",
+      "atlantis-loans", "thirm-protocol", "dingocoin", "yetiswap", "cre8r-dao", "lepricon", "depocket", "infinitypad", "macaronswap", "coinfi", "safutitano", "nftify", "dexfolio", "safeswap", "tanks", "more-token", "aitra", "snowswap", "grimtoken", "jade-currency", "swincoin", "genix", "cobinhood", "piplcoin", "totemfi", "gg-token", "argon", "element", "propel", "piedao-btc", "tardigrades-finance", "dfsocial-gaming", "santa-coin", "blockster", "matka", "naxar", "dynamix", "dogeville", "cryptex", "minikishu", "relite-finance", "genomesdao", "happyfans", "blox-token", "toshimon", "optionroom", "bezop", "pentagon-finance", "follow-token", "everex", "deflect", "banca", "ibiza-token", "yield", "tosdis", "ugchain", "red", "ebox", "asimi", "bcpay-fintech", "dogedi", "kiloample", "apyswap", "ferma", "lunaland", "islander", "tent", "zerogoki", "latiumx", "kulupu", "qchi", "liquidifty", "alanyaspor-fan-token", "piratecash", "investdex", "zoracles", "oblichain", "delphy", "cream-eth-2", "otcbtc-token", "sxag", "bitcoin-scrypt", "friendz", "morphose", "ark-of-the-universe", "ethereum-yield", "nanjcoin", "decentralized-nations", "spaceswap-shake", "hodltree", "teneo", "project-inverse", "blocsport-one", "dog-owner", "alchemydao", "kitty-coin-solana", "electrify-asia", "bgogo-token", "party-of-the-living-dead", "solanasail-governance-token", "palletonetoken", "machi-x", "mochi-market", "moneybyte", "hertz-network", "iridium", "keytango", "pepemon-pepeballs", "ultrain", "beamswap", "cougar-token", "nyan-v2", "knit-finance", "cashcow", "content-neutrality-network", "ricochet", "zeedex", "dds-store", "lunachow", "cage", "x-consoles", "polkacipher", "spiderdao", "graviton-zero", "sharder-protocol", "wallfair", "cockapoo", "substratum", "chartex", "fire-lotto", "openswap", "rune", "aspire", "variable-time-dollar", "ownly", "canyacoin", "cryptotycoon", "b21", "chain-wars", "alliance-fan-token", "ink", "bartertrade", "riecoin", "phore", "florida-man", "digicol-token", "doki-doki", "blitzpick", "indorse", "name-change-token", "kuramainu", "the-bitcoin-family", "the-corgi-of-polkabridge", "kobocoin", "black-eye-galaxy", "zasset-zusd", "wault", "graviocoin", "axis-defi", "bitdegree", "donut", "mars", "klondike-finance-v2", "moonpirate", "motacoin", "club-atletico-independiente-fan-token", "arcane-token", "bull-coin", "lys-capital", "alex", "oogi", "rogue-west", "shadow-token", "bitmoney", "sentre", "nft-stars", "lync-network", "wicrypt", "astrotools", "swagg-network", "quantis", "deathroad", "digitex-token", "topbtc-token", "faceter", "robust-token", "levante-u-d-fan-token", "secure-pad", "moontools", "goldmint", "cato", "u-network", "ysl", "pinkmoon", "flynnjamm", "wtf-token", "adamant-coin", "deficliq", "fantomstarter", "checkdot", "polygen", "sureremit", "paypie", "dfund", "miss-doge", "incakoin", "mercury", "somee-advertising-token", "token-tkx", "fanstime", "terracoin", "unicake", "recharge-finance", "decentra-lotto", "arionum", "block-commerce-protocol", "dether", "basis-share", "scex", "defiville-island", "cue-protocol", "iht-real-estate-protocol", "unity-network", "tornado-core", "dogebnb-org", "kurobi", "defhold", "ghospers-game", "world-of-defish", "xsigma", "nft-rehab", "vether", "sxau", "fxpay", "cbdao", "benchmark-protocol", "litecash", "open-governance-token", "molten", "bitgear", "starbase", "stox", "odem", "endor-protocol-token", "ethernaal", "wetrust", "vicewrld", "dino-exchange", "xion-finance", "bobo-cash", "zuflo-coin", "contentbox", "blind-boxes", "abcc-token", "myra-ai", "silver-stonks", "lever-network", "10x-gg", "obtoken", "dinamo-zagreb-fan-token", "parasol-finance", "bunnypark-game", "zeepin", "wrapped-cryptokitties", "etherparty", "stronghands-finance", "tradao", "gamex", "team-vitality-fan-token", "avaware", "non-fungible-toke", "sbnb", "trinity-network-credit", "afen-blockchain", "emerald-crypto", "localtrade", "ladz", "roush-fenway-racing-fan-token", "zlot", "unvest", "merchdao", "ormeus-ecosystem", "obr", "nemesis-dao", "pawn", "hakuswap", "box-token", "masari", "yui-finance", "qbao", "sway-social", "aaachain", "2give", "ydragon", "alphacat", "arcane-bear", "transcodium", "swarm-city", "the-champcoin",
+      "bethereum", "morphie", "sxmr", "blocklancer", "hydro", "ecoin", "united-emirate-decentralized-coin", "pakcoin", "phoenix-token", "remme", "flixxo", "audiocoin", "fortress-loans", "binance-multi-chain-capital", "neurochain", "zhegic", "empty-set-share", "yfbitcoin", "team-heretics-fan-token", "gowithmi", "thrive", "bonfi", "work-quest", "xiasi-inu", "keep4r", "tiki-token", "etha-lend", "libre-defi", "solabrador", "dark-matter", "vodi-x", "seal-finance", "statik", "dragonbite", "minerva-wallet", "stipend", "community-token", "melx", "dogeswap", "ibuffer-token", "value-network-token", "zetacoin", "wenlambo", "unicly-beeple-collection", "nil-dao", "pocket-arena", "netcoincapital", "xp", "midas-dollar-share", "upstabletoken", "combine-finance", "crypto-inu", "sacks", "earnbase", "catex-token", "pundi-x-nem", "polkadog", "decentbet", "node-runners", "trendering", "davinci-token", "defi-wizard", "delphi", "unipower", "doc-com", "stardex", "zeusshield", "klondike-finance-v1", "whirl-finance", "bottos", "xiotri", "seigniorage-shares", "datarius-credit", "crea", "twinci", "moar-finance", "bepay-finance", "synchrolife", "trezarcoin", "omnitude", "tacos", "goswapp", "bitcoin-confidential", "amoveo", "wandx", "blockmason-credit-protocol", "mib-coin", "buy-sell", "value-finance", "smartshare", "vipstarcoin", "ethereum-stake", "giv-token", "collateral-pay", "daoventures", "chronobase", "theflashcurrency", "1million-token", "tabank", "n3rd-finance", "sxtz", "hue", "stater", "datamine-flux", "blocktix", "crypto-sports", "proto-gold-fuel", "skyrim-finance", "solaris", "pylon-finance", "gourmet-galaxy", "pivot-token", "owndata", "insula", "basis-gold-share", "cerberusdao", "wault-usd", "maincoin", "arthx", "pancakepoll", "trollcoin", "swiss-finance", "safewhale", "zenzo", "polkainsure-finance", "kora-network", "black-phoenix", "riverboat", "updog", "metaverse-miner", "acoconut", "degenvc", "one-cash", "cafeswap-token", "heros-token", "0xcert", "wrapped-virgin-gen-0-cryptokittties", "bintex-futures", "blockchain-cuties-universe-governance", "spindle", "tipinu", "rare", "ethereum-gold", "chonk", "peseta-digital", "yearn-secure", "coil", "nfta", "reflect-finance", "artex", "soar", "balpha", "degov", "datamine", "hugo-game", "kawakami", "agrello", "keysians-network", "bonpay", "soakmont", "esbc", "noir", "ethverse", "srh", "demodyfi", "flurry-finance", "bullion", "devault", "deus-synthetic-coinbase-iou", "solomon-defi", "coinsbit-token", "goma-finance", "swing", "ethereum-gold-project", "masternet", "sparkpoint-fuel", "panicswap", "revival", "crusaders-of-crypto", "renbch", "zoomswap", "font", "sechain", "defipie", "chi-gastoken", "ties-db", "shrimp-capital", "matrixetf", "waterdrop", "hackspace-capital", "gmr-finance-old", "coin-oracle", "battle-saga", "zrcoin", "dynamo-coin", "gencoin-capital", "peepcoin", "protector-roge", "moonfarm-finance", "cryptobonusmiles", "fsbt-api", "seos", "swap", "yellow-road", "pigx", "zebi", "altestate-token", "crabada-amulet", "palgold", "koho-chain", "crdt", "fluffy-coin", "jetcoin", "midas-protocol", "riskmoon", "fuzex", "sconex", "zero-utility-token", "teddy", "quotation-coin", "rito", "toshify-finance", "pink-panther", "yearn-ecosystem-token-index", "star-foxx", "better-money", "tokens-of-babel", "zero", "nftmall", "liquidity-network", "bscwin-bulls", "vericoin", "gulf-coin-gold", "wrapped-filecoin", "swaperry", "bondappetit-governance-token", "hondaiscoin", "gaur-money", "adtoken", "globalboost-y", "lukki-operating-token", "scorum", "polkadog-v2-0", "ttcoin", "vitall-markets", "kickpad", "noblecoin", "porta", "sentinel-chain", "parkgene", "firdaos", "knoxfs", "yfuel", "ixcoin", "yaxis", "utopia-genesis-foundation", "moonbear-finance", "cycle-token", "solex-finance", "auric-network", "bitwhite", "openpredict-token", "semitoken", "adventure-token", "staysafu", "krown", "yfrb-finance", "solberg", "insane", "cryptotask", "showcase-token", "ailink-token", "verify", "novara-calcio-fan-token", "qwertycoin", "greeneum-network", "scope", "corestarter", "gaj-finance", "aurum", "typhoon-network", "alicoin", "proton-token", "acdx-exchange-token", "startup-boost-token", "ethanol", "soccerhub", "origo", "metaportal-gaming-index", "buymainstreet", "baepay", "fungie-dao", "ethereum-meta", "waifu-token", "cxn-network", "moonwolf-io", "vox-finance", "yam-v2", "jetoken", "pylon-network",
+      "niobium-coin", "satopay", "megacoin", "artx", "blockcdn", "ape-in", "foresight", "cherry", "project-shivom", "pancaketools", "unicly-doki-doki-collection", "reflector-finance", "gambit", "axia", "mytoken", "kids-cash", "crypto-development-services", "unique-one", "yeld-finance", "switch", "midas-gold", "zipper-network", "cryption-network", "daiquilibrium", "marsx", "liquidity-dividends-protocol", "wild-crypto", "panda-yield", "safe-shield", "depth-token", "gapcoin", "bitcoin-green", "babyswap", "sharedstake-governance-token-v2", "method-finance", "gameflip", "midas-dollar", "bsclaunch", "bonk-token", "maticpad", "obee-network", "facts", "flokibonk", "vortex-defi", "operon-origins", "pegnet", "giga-watt-token", "unidexbot", "srnartgallery", "farm-defi", "x42-protocol", "dacc", "spaghetti", "virgox-token", "polkaex", "renewable-electronic-energy-coin", "kerman", "remex", "micromoney", "promodio", "unikoin-gold", "leaguedao-governance-token", "sada", "krypton-galaxy-coin", "swapmatic", "rate3", "metaversepro", "fufu", "doyourtip", "pancake-bunny", "bitcoin-subsidium", "block-logic", "coinbene-token", "baguette", "uplexa", "finminity", "staysbase", "tesla-token", "defi-of-thrones", "starbugs-shards", "dogeyield", "sota-finance", "ziot", "colligo", "prophecy", "bitcapitalvendor", "team", "based-money", "yearn-finance-dot", "yftether", "hellogold", "porkswap", "rentberry", "gems", "ormeus-coin", "rigel-protocol", "pinkelon", "jiaozi", "fortuna-sittard-fan-token", "italo", "milky-token", "showhand", "manga-token", "babypunks", "setc", "concertvr", "wheat-token-bsc", "unidexgas", "bridge-protocol", "token-kennel", "savenode", "exchangen", "sola-token", "darkcrypto", "oro", "kalissa", "redchillies", "auxilium", "bigbom", "blockparty", "inmax", "po-et", "adadex-tools", "nftmusic-ai", "force-dao", "tokenjenny", "bounty0x", "merebel", "binapet", "intervalue", "trade-butler-bot", "sybc-coin", "skincoin", "nestegg-coin", "streamix", "new-year-bull", "metaverse-exchange", "unifund", "fiscus-fyi", "natmin", "sensitrust", "echolink", "zelaapayae", "vaultz", "parts-of-four-coin", "pkg-token", "payfair", "avaluse", "forcecowboy", "fire-protocol", "484-fund", "elysian", "stk", "gulag-token", "idle-mystic", "basketdao", "debase", "toast-finance", "wolfsafepoorpeople-polygon", "sergs", "olive-cash", "singulardtv", "challengedac", "gdoge-finance", "litecoin-plus", "rug-proof", "porkchop", "impulseven", "matryx", "plusonecoin", "karma-dao", "true-seigniorage-dollar", "4new", "socialx", "storiqa", "evil-coin", "mmocoin", "linkcoin-token", "xeebster", "imm", "crypto-birds", "the-famous-token", "gamerse", "allsafe", "sxrp", "corionx", "italian-lira", "stronghands-masternode", "y-coin", "omniwhirl", "dungeonswap", "netbox-coin", "emerald-crypto", "risingsun", "dogefi", "intelligent-investment-chain", "boat", "noodle-finance", "polyient-games-unity", "babyusdt", "falconx", "hyperion", "yffc-finance", "augmented-finance", "hilux", "nvl-project", "jointer", "defiat", "swiftcash", "coinsuper-ecosystem-network", "privatix", "moon-juice", "crypto-kombat", "babyquick", "trustdao", "aditus", "pengolincoin", "foundrydao-logistics", "gonetwork", "zilla", "defi-top-5-index", "mybit-token", "guppy", "datum", "brick-token", "osina", "weentar", "noah-decentralized-state-coin", "rise-protocol", "daughter-doge", "xkawa", "portal", "binance-ecosystem-value", "block-array", "sishi-finance", "catocoin", "tendies", "borderless", "piedao-yearn-ecosystem-pie", "whey", "solyard-finance", "photon", "veros", "olympus-inu-dao", "ether-zero", "cipher-old", "crystal-token", "tokenbox", "maxcoin", "unicly-chris-mccann-collection", "npcoin", "vsync", "devery", "atbcoin", "omni-consumer-protocol", "yearn-finance-bit", "shibalana", "reward-cycle", "civitas", "worldcore", "golden-ratio-token", "binance8", "ucrowdme", "yfbeta", "multipad", "king-arthur", "scriv", "chadfi", "obsidium", "vikings-inu", "wiki-token", "pluracoin", "wanderlust", "stronghands", "tutti-frutti", "pria", "mirrored-amc-entertainment", "dust-token", "truedeck", "truegame", "openbisea", "dextoken-governance", "cheesefry", "cubiex", "boutspro", "tcash", "amun-defi-momentum-index", "conjure", "orakuru", "savix", "2acoin", "smol", "bitcoinsov", "vesper-v-dollar", "ito-utility-token", "shield-protocol-old", "trollbox", "stakedzen", "flashx-ultra", "joon",
+      "goatcoin", "fyooz", "swirl-cash", "bagels-finance", "polystarter", "cryptoads-marketplace", "greentrust", "ipchain", "qnodecoin", "aquachain", "ftmlaunch", "hurify", "bscview", "educoin", "project-senpai", "axe", "pepedex", "dollardoge", "akamaru-inu", "family", "yield-farming-token", "kaiba-inu", "diamond-xrpl", "bishares", "hermes", "xuez-coin", "ditto", "pulltherug-finance", "imagecoin", "insurepal", "oction", "kripton", "dairy-money-milk", "2local", "cocaine-cowboy-shards", "orium", "bolivarcoin", "squirrel-finance", "uniqueone-photo", "unicly-genesis-collection", "lanacoin", "yvs-finance", "rope", "digital-money-bits", "fm-gallery", "beetle-coin", "alphr", "eleven-finance", "usdq", "depo", "social-rocket", "webcoin", "gunstar-metaverse-currency", "phu-quoc-dog", "arion", "elevate", "iq-cash", "xxxnifty", "tama-egg-niftygotchi", "netkoin", "steakbank-finance", "thingsoperatingsystem", "yoink", "fyooz-nft", "zionomics", "ethereum-cash", "datx", "meridian-network", "alphadex", "joulecoin", "safeswap-token", "feed-token", "membrana", "boosted-finance", "oracle-top-5-index", "trivechain", "bitcoinvend", "bithereum", "smugdoge", "yoloverse", "frogdao-dime", "hashtagger", "bitjob", "boldman-capital", "crystal-kingdoms", "nfx-coin", "aquariuscoin", "deltachain", "holyheld-old", "lassocoin", "dirty-finance", "bitcoin-red", "mirrored-gamestop", "aegis", "kiwi-token", "crowd-machine", "prism-network", "nft-soccer-games", "apoyield", "safeinsure", "rivex", "translateme-network-token", "mithril-share", "swirge", "opus", "dice-finance", "quinads", "metamorph", "metricexchange", "lulz", "my-farm-pet", "block-duelers", "polarisdefi", "cash2", "moontography", "crycash", "thingschain", "shrew", "monster-slayer-share", "biopset", "bitrent", "component", "50cent", "fantasy-sports", "fado-go", "pacific-defi", "araw-token", "lunyr", "yffi-finance", "bitcashpay-old", "hippofinance", "ideas", "litebar", "helix", "dmscript", "retrocade", "futurax", "moonshield-finance", "ruler-protocol", "medibit", "yetucoin", "rotten", "fortuna", "swipp", "nft-alley", "freq-set-dollar", "all-best-ico", "custom-contract-network", "proxynode", "sf-capital", "team-finance", "yfox-finance", "srnartgallery-tokenized-arts", "jbox", "habitat", "rich-lab-token", "littlebabydoge", "eight-hours", "stacy", "eltcoin", "duo-network", "neural-protocol", "gentarium", "arbidex", "kwikswap-protocol", "skyhub", "cybermusic", "ether-kingdoms-token", "mvp", "mushroom", "giant", "safecapital", "yieldx", "moona", "imbrex", "cake-bank", "memecoin-factory", "bitcomine", "cherrypick", "voise", "bt-finance", "decentralized-asset-trading-platform", "layer-1-quality-index", "trickle", "vitoge", "kemacoin", "armours", "cry-coin", "privacyswap", "glox-finance", "visor", "multigame", "ai-doctor", "llamaswap", "cargo-gems", "definitex", "gohelpfund", "moonx", "shd-cash", "kalkulus", "cryptrust", "influxcoin", "lunch-money", "zzz-finance", "phoneum", "raijin", "sins-finance", "multiplier-bsc", "clash-token", "ethorse", "social-activity-token", "uptrennd", "bearn-fi", "fango", "bitcoin-unicorn", "rocket-raccoon", "noob-finance", "tourist-token", "baguette-token", "fusible", "paypex", "deepcloud-ai", "holder-finance", "shining-crystal-shard", "oolongswap", "levin", "taichi", "alpha-impact", "zap-defi", "milkywayex", "paws-funds", "vegaswap", "arbirisefinance", "baconswap", "absolute", "ubu-finance", "yfidapp", "guncoin", "yolocash", "ashera", "basis-dollar-share", "your-finance-decentralized", "zent-cash", "raise-token", "apr-coin", "nice", "fud-finance", "bezant", "zzz-finance-v2", "promotionchain", "ethplode", "etherbone", "tsuki-dao", "tajcoin", "meeb-master", "azuma-coin", "herbalist-token", "myth-token", "ccore", "basis-dollar", "horuspay", "jem", "slt", "havy", "tuxcoin", "interfinex-bills", "scholarship-coin", "voyager", "know-your-developer", "sovreign-governance-token", "freedom-reserve", "veles", "hyperquant", "heartbout", "yunex-yun-token", "icarus-finance", "mantis-network", "data-transaction-token", "dctdao", "c2c-system", "pokelon-finance", "alpha-coin", "javascript-token", "vikkytoken", "decentrahub-coin", "yieldwars", "atlant", "bitcloud", "my-crypto-play", "unilock-network-old", "soltato-fries", "wavesgo", "zealium", "kind-ads-token", "chronic-token", "welltrado", "etg-finance", "leonidas-token", "oros-finance", "coffeecoin",
+      "martkist", "suretly", "note-blockchain", "polypux", "archetypal-network", "aquafi", "umi", "stronghold", "aerotoken", "octans", "future-of-finance-fund", "igtoken", "safepe", "kanadecoin", "mate", "melo-token", "evencoin", "taodao", "harrison-first", "dopple-exchange-token", "game-stars", "stand-share", "crypto-trading-solutions-coin", "scanetchain", "tokendesk", "crystal-clear", "uchain", "bunnytoken", "caluracoin", "eggplant-finance", "mooncoin", "hakunamatata-old", "yffs-finance", "meme-games", "neetcoin", "fintab", "fractionalized-wave-999", "mchain", "impleum", "bitcomo", "distx", "metawhale-gold", "simple-cool-automatic-money", "degen-arts", "barter", "tianyu-finance", "electrum-dark", "aeryus", "softchain", "couchain", "twindex", "dalecoin", "kimex", "indodex", "sucrecoin", "furukuru", "cpuchain", "experiencecoin", "pear", "yearn-finance-passive-income", "xeus", "polyroll", "guider", "yfscience", "touriva", "roiyal-coin", "junsonmingchancoin", "elondoge-dao", "intucoin", "rigel-finance", "connectjob", "martexcoin", "milf-finance", "bitcoinbrand", "sing-token", "fera", "livenodes", "buysell", "collegicoin", "gold-bcr", "ludos-protocol", "token-cashpay", "bake-coin", "stand-cash", "holderswap", "zenad", "game-fanz", "bitcoin-one", "cryptocurrency-top-10-index", "goaltime-n", "mecha-tracker", "swapdex", "zoints", "isotopec", "cashhand", "mainstream-for-the-underground", "the-lab-finance", "cointorox", "beverage", "rank-token", "bankex", "longdrink-finance", "faithcoin", "themis-network", "geysercoin", "joint-ventures", "bundle-dao", "peerguess", "mocktailswap", "bulleon", "keyco", "fruit", "fastswap", "secure-cash", "covid-token", "metawhale-btc", "dowcoin", "worldcoin", "bfk-warzone", "rope-token", "swyft", "bigdatacash", "myfriends", "clexchain", "build-finance", "memex", "gastoken", "unlimited-fiscusfyi", "alpha-token", "speed-mining-service", "bata", "kermit-finance", 404, "tokoin", "provoco", "tera", "hodlcoin", "digixdao", "bgov", "bitradio", "coin-fast-alert-old", "ink-protocol", "ysl-io", "fesschain", "blockburn", "pangea-arbitration-token-bitnation", "uptoken", "rivetz", "anyswap", "yooshi", "sora-validator-token", "cobak-token", "voyager-token", "aeron", "coinpoker", "baasid", "reapchain", "vanilla-network", "midas", "citizen-finance", "octopus-protocol", "hodl", "based-gold", "the-rare-antiquities-token-old", "basketcoin", "proxy", "amun-defi-index", "passive-income", "deltahub-community", "evrice", "nyantereum-international", "innovative-bioresearch-coin", "nut-money", "harmonycoin", "cash-global-coin", "cryptocean", "pocket", "niubiswap", "realt-token-15796-hartwell-st-detroit-mi-48227", "1x-short-bnb-token", "certurium", "safedollar-shares", "cryptomines-eternal", "binance-peg-dogecoin", "si14bet", "s4fe", "bacondao", "lotoblock", "venus-sxp", "realt-token-4061-grand-st-detroit-mi-48238", "realt-token-4852-4854-w-cortez-st-chicago-il-60651", "soak-token", "kong-defi", "sesameseed", "people-s-punk", "boobank", "beyondfi", "aave-amm-uniuniweth", "chainlink-trading-set", "aave-amm-bptwbtcweth", "realt-token-18433-faust-ave-detroit-mi-48219", "bollo-token", "depay", "venus-usdc", "grandpa-fan", "valencia-cf-fan-token", "realt-token-9336-patton-st-detroit-mi-48228", "digex", "abbc", "royal-bnb", "moonshot", "uncle-doge", "cberry", "lp-renbtc-curve", "coshi-inu", "jackpot-army", "aave-wbtc", "2gather", "ipfst", "key", "payperex", "green-dildo-finance", "eautocoin", "newton-coin-project", "zupi-coin", "alacrity", "excelon", "iceslush-finance", "robo-token", "anime-token", "realt-token-9465-beaconsfield-st-detroit-mi-48224", "tokyo-coin", "circleex", "organix", "unagii-wrapped-bitcoin", "tratok", "solarys", "buffalo-swap", "poker-io", "parrot-protocol", "papacake", "prime-dai", "ethersportz", "realt-token-9717-everts-st-detroit-mi-48224", "real-coin", "eureka-coin", "ri-token", "galaxer", "financial-investment-token", "mimblewimblecoin", "matic-aave-interest-bearing-weth", "casper-defi", "creator-platform", "dexit-network", "binance-peg-xrp", "integrity", "betherchip", "xcredit", "mmmluckup7", "mttcoin", "innovation-blockchain-payment", "tbridge-token", "baby-floki-coin", "miss", "timechain-swap-token", "iron-titanium-token", "ontology-gas", "dbx", "aave-amm-unilinkweth", "koel-coin", "swgtoken", "codemy", "atheios", "insight-protocol", "hodooi-com", "minibitcoin", "algoil", "ncat-token", "trustpad", "aave-weth", "erc223", "thebigcoin", "moonwalk", "eska", "yearn-finance-network", "corn", "eox", "polycat-finance", "brank", "qusd-stablecoin", "greenpower", "mask-vault-nftx", "improved-bitcoin", "planet-sandbox", "overline-emblem", "ally", "repo-coin", "xdollar-stablecoin", "realt-token-13606-winthrop-st-detroit-mi-48227", "lexit",
+      "space-hamster", "eros-token", "nova", "web-coin-pay", "realt-token-19333-moenart-st-detroit-mi-48234", "bio-passport", "shroudx", "sypool", "darkbundles", "football-fantasy-pro", "bafe-io", "wincash-coin", "vixco", "football-inu", "infinium", "omega-protocol-money", "precium", "2based-finance", "phoenixchain", "symbol", "aiwork", "waves-enterprise", "aave-mana", "aave-amm-usdt", "aave-uni", "aave-zrx", "lemond", "parabolic", "safe", "ammbr", "unibomb", "fountain", "ecog9coin", "easyfi-v2", "x-token", "torg", "busy-dao", "wordlex", "vesta", "bankerdoge", "aave-polygon-usdc", "babydogex", "double-a-chain", "evo", "cherry-token", "divs", "gorilla-diamond", "pegshares", "aave-ren", "griffin-art", "btc-rsi-crossover-yield-set", "xank", "basis-gold-share-heco", "bytenext", "blizzard-network", "oec-tron", "etherlite", "bsccrop", "honey-pot-beekeepers", "tron-atm", "venus-bch", "myfichain", "cryptosphere-token", "hitbtc-token", "centralex", "shibaken-finance", "polyyork", "autoshark", "genwealth-coin", "jpyq-stablecoin-by-q-dao-v1-0", "matic-aave-interest-bearing-yfi", "collective-vault-nftx", "divo-token", "epochtoken", "option-panda-platform", "3x-long-dragon-index-token", "safevault", "ethersmart", "xtrm", "genesis-shards", "tokyo-au", "realt-token-18983-alcoy-ave-detroit-mi-48205", "blockchain-quotations-index-token", "oracle-system", "coinalpha", "hustle-token", "renrenbit", "amaten", "sxc-token", "maze-token", "copuppy", "1x-short-shitcoin-index-token", "weather-finance", "roocoin", "beyond-the-scene-coin", "emojis-farm", "fromm-car", "honeypad", "donnie-finance", "tokenasset", "3x-short-tezos-token", "efinity-token", "fidenza-527", "unicap-finance", "dogezoo", "stoner-doge-finance", "alpha-wolf", "digi-dinar", "overlord-game", "hype-finance", "tvt", "safexi", "hashnet-biteco", "culture-ticket-chain", "space-soldier", "staked-aave-balancer-pool-token", "0-5x-long-exchange-token-index-token", "topcat", "bitrue-coin", "sovranocoin", "tasty-token", "ring-x-platform", "rowket", "deipool", "atlantic-coin", "vankia-chain", "dreamscoin", "greenmars", "tronx-coin", "3x-short-shitcoin-index-token", "bigocoin", "tachyon-protocol", "realt-token-4380-beaconsfield-st-detroit-mi-48224", "dessfi", "trustverse", "ebsp-token", "ziticoin", "rake-finance", "smart-dollar", "uniris", "torq-coin", "art-nano", "versess-coin", "ethereum-wrapped-filecoin", "realt-token-4340-east-71-cleveland-oh-44105", "cine-media-celebrity-coin", "safecomet", "bora", "star-crunch", "gomoney2", "captain", "somesing", "nftblackmarket", "unification", "shadetech", "half-pizza", "realt-token-12405-santa-rosa-dr-detroit-mi-48204", "incoin", "decenturion", "1x-short-xrp-token", "whaleroom", "ricefarm", "mobilian-coin", "realt-token-19596-goulburn-ave-detroit-mi-48205", "babyelon", "zoomcoin", "kyc-crypto", "pamp-cc", "honey", "trustbase", "buildin", "most-protocol", "insureum", "bloktopia", "yuno-finance", "xcom", "zort", "2crazynft", "axial", "semux", "sushiba", "lydia-finance", "wadzpay-token", "teaswap-art", "cifculation", "3x-long-xrp-token", "dogepepsi", "mvl", "solster", "papa-doge", "thefutbolcoin", "adamant", "mars-token", "apes-of-empires", "synapse-network", "airnft-token", "exchange-union", "tunnel-protocol", "cerium", "atlas-protocol", "aidi-finance", "kcash", "zjlt-distributed-factoring-network", "investdigital", "tom-inu", "topchain", "quam-network", "human-protocol", "1x-short-bitcoin-token", "quiztok", "polaris-share", "honeybear", "taraxa", "dark-matter-defi", "loserchick-egg", "ig-gold", "ramifi-protocol", "nfty-defi-protocol", "weble-ecosystem-token", "bumoon", "okex-fly", "hex", "bidr", "hash-bridge-oracle", "aave-dai", "bugg-inu", "cryptoworld-vip", "zoo-crypto-world", "hrdcoin", "rccc", "xceltoken-plus", "ken-inu", "ourglass", "scomp", "aave-amm-weth", "tavittcoin", "glyph-vault-nftx", "czfarm", "cool-vault-nftx", "owldao", "aave-amm-unicrvweth", "deez-nuts", "panda-dao", "bakery-soccer-ball", "realt-token-9133-devonshire-rd-detroit-mi-48224", "realt-token-11653-nottingham-rd-detroit-mi-48224", "arti-project", "realt-token-402-s-kostner-ave-chicago-il-60624", "education-ecosystem", "realt-token-8342-schaefer-highway-detroit-mi-48228", "cocktail", "realt-token-13116-kilbourne-ave-detroit-mi-48213", "swapship", "realt-token-6923-greenview-ave-detroit-mi-48228", "octax", "realt-token-15039-ward-ave-detroit-mi-48227", "realt-token-11300-roxbury-st-detroit-mi-48224", "safeorbit", "realt-token-14231-strathmoor-st-detroit-mi-48227", "realt-token-18276-appoline-st-detroit-mi-48235", "realt-token-14229-wilshire-dr-detroit-mi-48213", "realt-token-17809-charest-st-detroit-mi-48212", "realt-token-16200-fullerton-ave-detroit-mi-48227", "realt-token-8181-bliss-st-detroit-mi-48234", "sukhavati-network", "car", "eblockstock", "asta", "cryptochrome", "dfnorm-vault-nftx", "berry-vault-nftx", "clube-atletico-mineiro-fan-token", "bgt", "powerbalt", "business-credit-substitute", "converter-finance", "meridaworld", "medooza-ecosystem", "brapper-token", "apple-finance", "mirror", "3x-short-maker-token", "huskyshiba", "hygenercoin", "baby-everdoge", "nimbus", "i9-coin", "athletex", "neo-holistic-coin", "rapidly-reusable-rocket", "dui-token", "snap", "blastx", "stable-asset", "gaberise", "littlesesame", "robot-wars", "bonfire", "more-coin",
+      "medikey", "nia-token", "nework", "coinnec", "cbi-index-7", "caspian", "babydogecake", "croat", "oec-sushi", "50-keeper", "phillips-pay-coin", "onemoon", "safewin", "checoin", "empow", "meetple", "fanbi-token", "bullrun2-0", "3x-long-bilira-token", "swiftmoon", "ape-token", "dain-token", "gift-coin", "supertron", "super-heavy-booster-4", "formula", "truebit-protocol", "our-pay", "quickchart", "gibx-swap", "3x-short-bnb-token", "dogewarrior", "boxaxis", "smart-medical-coin", "metauniverse", "yfe-money", "refork", "inoovi", "ace-entertainment", "oec-kine", "tronbetdice", "definition-network", "jindo-inu", "gravitoken", "warrior-token", "project-pai", "ripple-alpha", "burp", "baby-bitcoin", "toffee", "wrapped-ncg", "per-project", "yfos-finance", "help-coins", "grill-farm", "nuvo-cash", "gstcoin", "snowball-token", "carrot-token", "alita", "fair-dollars", "daddyusdt", "wula", "pofi", "famous-coin", "black-diamond", "crow", "universe-coin", "1x-short-theta-network-token", "vidyx", "phoenix-defi-finance", "endorsit", "diamond-hands-token", "eth-20-ma-crossover-yield-set-ii", "treelion", "xsl-labs", "idletusd-best-yield", "pokerain", "favecoin", "meebits", "lp-ycurve", "frozencake", "trade-win", "kryptobellion", "attlas-token", "xolo", "seeder-finance", "bull-run", "berryswap", "gunthy", "hepa-finance", "blockchainpoland", "clams", "zomainfinity", "around-network", "doge-back", "lucky", "flourishing-ai", "bitcoin-platinums", "bfg-token", "cy-finance", "kenny-token", "bliss", "octapay", "tatcoin", "btcnext-coin", "doos-token", "rapidz", "germancoin", "super-gold", "3x-short-chainlink-token", "crypto-excellence", "momoshiba", "808ta-token", "blocktanium", "open-platform", "3x-long-okb-token", "sandman", "idlewbtc-best-yield", "earlybsc", "dmz-token", "tripedia", "beautyk", "afrodex-labs-token", "yfi-paprika", "binance-agile-set-dollar", "buypay", "yottachain", "space-monkey", "aura-protocol", "unicly-the-day-by-arc-collection", "bittup", "pixel-inu", "game1network", "baby-pancake", "thecash", "digital-antares-dollar", "benz", "pureland-project", "exchange-payment-coin", "peach", "anti-fraud-chain", "dxy-finance", "delphi-chain-link", "eva-coin", "decore", "goonrich", "binance-peg-bitcoin-cash", "0-5x-long-bitcoin-cash-token", "polkabase", "sunglassesdoge", "kichicoin", "fnaticx", "equilibrium-games", "baby-shark", "boost", "dogg-token", "ethereum-vault", "dragon-ball", "hyper-speed-network", "asian-african-capital-chain", "sss-finance", "poly-peg-mdex", "tako-token", "rangers-fan-token", "3x-long-bnb-token", "rug", "3x-short-bitcoin-token", "polygonfarm-finance", "blast", "defichain", "scientix", "aeur", "hoodrat-finance", "nkcl-classic", "pinkswap-token", "ubix-network", "safetesla", "starminer-ore-token", "safestar", "3x-long-matic-token", "freight-trust-network", "lunar-highway", "babyfeg", "yfi-mobi", "bigfoot", "kindcow-finance", "cc", "birb", "gforce", "the-midas-touch-gold", "wrapped-matic", "anchor-neural-world-token", "onegetcoin", "chainflix", "bitcoin-fast", "unify", "paycoin", "srune", "attila", "basid-coin", "hakunamatata-new", "super-floki", "immutable", "baby-cake", "lwazi-project", "va-na-su", "storx", "safe-earn", "realfinance-network", "bugg-finance", "supermoon", "lanceria", "ludena-protocol", "mobilecoin", "redi", "olympus-token", "nftmart-token", "kalata-protocol", "whale-coin", "binance-peg-cardano", "lofi-defi", "good-token", "aave-enj-v1", "gasp", "knight-war-spirits", "nasa-doge", "story", "ulti-arena", "doge-superbowl", "aave-susd-v1", "bscgold", "sherpa", "yfione", "safelaunch", "vacay", "footie-plus", "farmers-only", "lpi-dao", "ivogel", "efin", "defi-on-mcw", "moonstorm", "cuminu", "eaglecoin", "venjocoin", "secret-erc20", "lcg", "balanced-dollars", "findora", "gera-coin", "goku-inu", "weld", "raider-aurum", "project-with", "pocoland", "aryacoin", "eski-ehir-fan-tokens", "nicheman", "pantherswap", "homeros", "shibacash", "jarvis", "moon-stop", "loser-coin", "vulkania", "storage-area-network-anywhere", "miraqle", "akita-inu", "carbon-coin", "bonus-cake", "marshmallowdefi", "tcoin-fun", "sologenic", "blockchain-exchange-alliance", "trip-leverage-token", "ecosystem-coin-network", "ainu-token", "linkart", "dopple-finance", "nestree", "mandi-token", "opalcoin", "binstarter", "oxo-farm", "saylormoon", "pokmonsters", "memecoin", "binance-bitcoin", "basis-coin-share", "vidy", "kok-coin", "silvertoken", "eternal-oasis", "safuyield-protocol", "safebitcoin", "apix", "ilcoin", "solarmoon", "blocery",
+      "7up", "gobyte", "universal-coin", "keisuke-inu", "aga-carbon-rewards", "wifi-coin", "woodcoin", "tenshi-v2", "perl-eco", "delos-defi", "dnaxcat", "moonstar", "tianya-token", "torii-finance", "solberry", "maidcoin", "hive-dollar", "blackhole-protocol", "pofid-dao", "trustercoin", "koji", "universal-basic-income", "waykichain-governance-coin", "hycon", "loon-network", "beechat", "eminer", "observer-coin", "gummy-beans", "all-me", "meconcash", "jsb-foundation", "guardian-token", "linkflow", "green-beli", "hyper-pay", "safemoney", "donutcat", "bit-ecological-digital", "amnext", "g999", "nftpad", "x-world-games", "octane-protocol-token", "cure-token-v2", "venus-reward-token", "dogebull", "vitex-coin", "lucky-lion", "miks-coin", "eth-20-day-ma-crossover-set", "cpcoin", "coffe", "kaiju-worlds", "megatech", "coinclaim", "defi-stoa", "weecoins", "aave-crv", "unifees", "aave-amm-unimkrweth", "zombie-farm", "cazi-cazi", "aave-amm-uniaaveweth", "cheecoin", "securabyte-protocol", "orlycoin", "aave-susd", "realt-token-19020-rosemont-ave-detroit-mi-48219", "realt-token-10616-mckinney-st-detroit-mi-48224", "jobscoin", "omcoin", "realt-token-9169-boleyn-st-detroit-mi-48224", "realt-token-10084-grayton-st-detroit-mi-48224", "aave-rai", "hippo-token", "realt-token-17813-bradford-st-detroit-mi-48205", "realt-token-14078-carlisle-st-detroit-mi-48205", "aave-amm-bptbalweth", "scrv", "idot", "the-chad-token", "suniswap", "mooncat-vault-nftx", "meeb-vault-nftx", "realt-token-18273-monte-vista-st-detroit-mi-48221", "realt-token-18776-sunderland-rd-detroit-mi-48219", "realt-token-1000-florida-ave-akron-oh-44314", "buckhath-coin", "richcity", "solarite", "codeo-token", "blueshare-token", "ball-token", "cyber-doge", "hanzo", "realt-token-15373-parkside-st-detroit-mi-48238", "mex", "afterburn", "sponge", "bitsou", "bast", "greenzonex", "printer-finance", "sephirothinu", "alchemist-defi-mist", "bonsai-vault-nftx", "rusd", "pasta-vault-nftx", "polysafu", "gocrypto", "endgame-token", "ryoshi-token", "ultra-nft", "shiba-chocolate", "blackfisk", "tartarus", "bitocoin", "alita-network", "usd-bancor", "akoin", "cheese-swap", "odop", "ercaux", "bdollar", "king-swap", "timers", "bogecoin", "buildup", "wechain-coin", "clover", "playervsplayercoin", "global-game-coin", "herum", "etor", "bitroncoin", "serbian-cave-hermit", "crespo", "turex", "nydronia", "unicly-waifu-collection", "yearn-finance-infrastructure-labs", "buxcoin", "defini", "dmme", "starblock", "1x-short-dogecoin-token", "madagascar-token", "aster", "3x-long-pax-gold-token", "yfi-credits-group", "chaincade", "doraemoon", "neoworld-cash", "polyshark-finance", "findshibby", "sov", "0-5x-long-altcoin-index-token", "usd-gambit", "fanzy", "swerve-fi-usd", "historia", "buyucoin-token", "yfiscurity", "goldex-token", "despace-protocol", "oec-dai", "safeblast", "conun", "r34p", "3x-short-compound-token-token", "mixty-finance", "rice-wallet", "nosta", "riseup", "cocktailbar-finance", "op-coin", "yummy", "calypso", "vn-token", "p2p", "mti-finance", "dark-build", "jack-raffle", "ulgen-hash-power", "oiocoin", "bluefincore", "nocapcoin", "dappcents", "xpandacoin", "3x-short-ethereum-classic-token", "lightningcoin", "feellike", "pixeos", "versewar", "bonorum", "3x-short-theta-network-token", "detox", "recovery-right-token", "tilwiki", "thetimeschaincoin", "beer-money", "lucy", "idleusdc-risk-adjusted", "tronbetlive", "badger-sett-badger", "sopay", "genexi", "amond", "bunnycake", "usd-sports", "3x-long-tether-token", "1x-short-trx-token", "change-our-world", "cryptoverificationcoin", "rapdoge", "skin-rich", "jokes-meme", "electric-arena", "zenko", "3x-short-balancer-token", "lovehearts", "balloon-coin", "obic", "pocket-bomb", "ifx24", "3x-long-midcap-index-token", "eos-eth", "charity-alfa", "thunder-swap", "0-5x-long-kyber-network-token", "benative", "seadex", "veraswap", "blaze-network", "neuro-charity", "rich-maker", "cyclops-treasure", "dyztoken", "elon-diamond-hands", "1x-short-okb-token", "onelink", "3x-long-zcash-token", "0-5x-long-cosmos-token", "joos-protocol", "bitz", "stib", "karaganda-token", "quick-bounty", "touch", "hedge-tech-governance", "hype-bet", "no-trump-augur-prediction-token", "3x-short-vechain-token", "shipitpro", "0-5x-long-dragon-index-token", "shiba-cloud", "republic-of-dogs", "salmon", "99masternodes", "babylink", "ivy-mining", "art-blocks-curated-fidenza-855", "payou-finance", "sbland-vault-nftx", "forexcoin", "thisoption", "benscoin", "foundgame", "nirvana", "cng-casino", "pway", "time-space-chain", "rush", "currency-network", "bowl-a-coin", "ai-mining", "bit-public-talent-network", "space-cat", "goldnero", "entherfound", "coin4trade", "dscvr-finance", "finswap", "luckyseventoken", "easyswap", "land-of-strife", "stonks", "transparent-token", "eloncryptogod", "kawanggawa", "future-cash-digital", "bcat", "vomer", "unicly-mooncats-collection", "defidrop", "rocket-token", "king-of-the-doge", "cell-etf", "artista"
+      ];
+      /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
+      autocomplete(document.getElementById("myInput"), countries);
+    </script>
+
+    <script src="moment.js"></script>
+    <script src="moment-timezone-with-data.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+       $(document).ready( () => {
+      $('body').on('mouseenter mouseleave','.nav-item',function(e){
+        if ($(window).width() > 750) {
+          var _d=$(e.target).closest('.nav-item');_d.addClass('show');
+          setTimeout(function(){
+          _d[_d.is(':hover')?'addClass':'removeClass']('show');
+          },1);
+        }
+    });
+  });
+    </script>
+  </body>
+</html>
