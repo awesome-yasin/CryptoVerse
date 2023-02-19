@@ -1,3 +1,4 @@
+
 let coinID = location.search.slice(1);
 let BASE_URL = `https://api.coingecko.com/api/v3`;
 let COIN_DATA_ENDPOINT = 
@@ -7,19 +8,27 @@ let coinUrl = BASE_URL + COIN_DATA_ENDPOINT;
 let marketUrl = BASE_URL + MARKET_DATA_ENDPOINT;
 let trendingurl = "https://api.coingecko.com/api/v3/search/trending";
 
-$(document).ready( () => {
-  $('body').on('mouseenter mouseleave','.nav-item',function(e){
-    if ($(window).width() > 750) {
-      var _d=$(e.target).closest('.nav-item');_d.addClass('show');
-      setTimeout(function(){
-      _d[_d.is(':hover')?'addClass':'removeClass']('show');
-      },1);
-    }
-});	
+$(document).ready(() => {
+  // Get the currency selector dropdown element
+  const currencySelector = document.getElementById("currency-selector");
+
+  // Add an event listener to the currency selector dropdown
+  currencySelector.addEventListener("change", function() {
+    // Get the selected currency value
+    const selectedCurrency = currencySelector.value;
+
+    // Update the currency attribute of the relevant widgets
+    $('coingecko-coin-compare-chart-widget').attr('currency', selectedCurrency);
+    $('coingecko-coin-converter-widget').attr('currency', selectedCurrency);
+    $('coingecko-coin-market-ticker-list-widget').attr('currency', selectedCurrency);
+  });
+
+  // Call getApiData(), refreshMarketTableBody(), and refreshTrendBody() as before
   getApiData();
   refreshMarketTableBody();
   refreshTrendBody();
 });
+
 
 function generateListElements(data) {
   let number = Intl.NumberFormat("en-IN");
@@ -38,21 +47,6 @@ function generateListElements(data) {
   $('#coinList2').append(
     $('<li class="list-group-item"></li>').html(
       `<coingecko-coin-market-ticker-list-widget coin-id="${data.id}" currency="inr" height="400" locale="en" background-color="#ffffff"></coingecko-coin-market-ticker-list-widget>`),
-  //   $('<li class="list-group-item"></li>').text("Algorithm: " + 
-  //   data.hashing_algorithm),
-  //   $('<li class="list-group-item"></li>').html("HomePage: " + 
-  //   data.links.homepage[0].link(data.links.homepage[0]) + "<br>"),
-  // $('<li class="list-group-item"></li>').text("Algorithm: " + 
-  //   data.hashing_algorithm),
-  // $('<li class="list-group-item"></li>').html("Description: " + 
-  //   data.description.en),
-  // $('<li class="list-group-item"></li>').html("Homepage: " + 
-  //   data.links.homepage[0].link(data.links.homepage[0])),
-  // $('<li class="list-group-item"></li>').text("Genesis: " + data.genesis_date),
-  // $('<li class="list-group-item"></li>').text("All Time High: " + "$" + 
-  //   number.format(data.market_data.ath.usd)),
-  // $('<li class="text-danger list-group-item"></li>').text("From ATH: " + 
-  //   Number(data.market_data.ath_change_percentage.usd).toFixed(2) + "%"),
   )
   $('#priceChange').append(
     $('<tr class="content-row"></tr>').append(
@@ -121,6 +115,161 @@ function generateListElements(data) {
 
   $('#atlnd').text(data.name + " " + "ATL Date")
   $('#atld').text((moment(data.market_data.atl_date.inr)).format("llll") + " " + "("+ (moment(data.market_data.atl_date.inr, "YYYYMMDD")).fromNow()+ ")")
+
+  $('<li class="list-group-item"></li>').html("Homepage: " + 
+      data.links.homepage[0].link(data.links.homepage[0]))
+
+      $('#hpgn').text(data.name + " " + "HomePage")
+      $('#hpg').html(data.links.homepage[0].link(data.links.homepage[0]))
+
+
+
+
+      // Define a function to format the currency value based on the selected currency
+function formatCurrencyValue(value, currencyCode) {
+  switch (currencyCode) {
+    case "aed":
+      return "د.إ" + " " + number.format(value);
+    case "ars":
+      return "$" + " " + number.format(value);
+    case "aud":
+      return "$" + " " + number.format(value);
+    case "bdt":
+      return "৳" + " " + number.format(value);
+    case "bhd":
+      return "ب.د" + " " + number.format(value);
+    case "bmd":
+      return "$" + " " + number.format(value);
+    case "brl":
+      return "R$" + " " + number.format(value);
+    case "cad":
+      return "$" + " " + number.format(value);
+    case "chf":
+      return "CHF" + " " + number.format(value);
+    case "clp":
+      return "$" + " " + number.format(value);
+    case "czk":
+      return "Kč" + " " + number.format(value);
+    case "dkk":
+      return "kr" + " " + number.format(value);
+    case "gbp":
+      return "£" + " " + number.format(value);
+    case "hkd":
+      return "$" + " " + number.format(value);
+    case "huf":
+      return "Ft" + " " + number.format(value);
+    case "ils":
+      return "₪" + " " + number.format(value);
+    case "inr":
+      return "₹" + " " + number.format(value);
+    case "kwd":
+      return "ك.د" + " " + number.format(value);
+    case "lkr":
+      return "රු" + " " + number.format(value);
+    case "mmk":
+      return "K" + " " + number.format(value);
+    case "mxn":
+      return "$" + " " + number.format(value);
+    case "myr":
+      return "RM" + " " + number.format(value);
+    case "ngn":
+      return "₦" + " " + number.format(value);
+    case "nok":
+      return "kr" + " " + number.format(value);
+    case "nzd":
+      return "$" + " " + number.format(value);
+    case "php":
+      return "₱" + " " + number.format(value);
+    case "pkr":
+      return "₨" + " " + number.format(value);
+    case "pln":
+      return "zł" + " " + number.format(value);
+    case "sar":
+      return "ر.س" + " " + number.format(value);
+    case "sek":
+      return "kr" + " " + number.format(value);
+    case "sgd":
+      return "$" + " " + number.format(value);
+    case "thb":
+      return "฿" + " " + number.format(value);
+    case "try":
+      return "₺" + " " + number.format(value);
+    case "uah":
+      return "₴" + " " + number.format(value);
+    case "vef":
+      return "Bs.F." + " " + number.format(value);
+    case "vnd":
+      return "₫" + " " + number.format(value);
+    case "zar":
+      return "R" + " " + number.format(value);
+    case "xdr":
+      return "SDR" + " " + number.format(value);
+      case "usd":
+    return "$" + " " + number.format(value);
+  case "idr":
+    return "Rp" + " " + number.format(value);
+  case "twd":
+    return "NT$" + " " + number.format(value);
+  case "eur":
+    return "€" + " " + number.format(value);
+  case "krw":
+    return "₩" + " " + number.format(value);
+  case "jpy":
+    return "¥" + " " + number.format(value);
+  case "rub":
+    return "₽" + " " + number.format(value);
+  case "cny":
+    return "¥" + " " + number.format(value);
+    default:
+      return value;
+  }
+  
+}
+
+// Define a variable to hold the selected currency code
+let selectedCurrency = "inr";
+
+// Set up an event listener to update the values when the currency is changed
+$("#currency-selector").on("change", function() {
+  selectedCurrency = $(this).val();
+  updateValues(data);
+});
+
+// Define a function to update all the values on the page based on the selected currency
+function updateValues(data) {
+  $('#headn').text(data.name + " " + "Price and Market Stats");
+
+  $('#price_name').text(data.name + " " + "Price");
+  $('#price').text(formatCurrencyValue(data.market_data.current_price[selectedCurrency], selectedCurrency));
+
+  $('#market_cap').text(data.name + " " + "Market Cap");
+  $('#market_cap_price').text(formatCurrencyValue(data.market_data.market_cap[selectedCurrency] / 10000000, selectedCurrency) + " " + "Crore");
+
+  $('#trading_vol_name').text(data.name + " " + "Trading Volume");
+  $('#trading_volume').text(formatCurrencyValue(data.market_data.total_volume[selectedCurrency] / 10000000, selectedCurrency) + " " + "Crore");
+
+  $('#24_n').text(data.name + " " + "24h High / 24h Low");
+  $('#24h').text(formatCurrencyValue(data.market_data.high_24h[selectedCurrency], selectedCurrency) +" "+ "/" +" "+ formatCurrencyValue(data.market_data.low_24h[selectedCurrency], selectedCurrency));
+
+  $('#athn').text(data.name + " " + "All-Time High");
+  $('#ath').empty().append(
+    $(`<p class=' ${data.market_data.ath_change_percentage[selectedCurrency] >= 0 ? "text-success" : "text-danger"} text-left'></p>`).text(formatCurrencyValue(data.market_data.ath[selectedCurrency], selectedCurrency) + " "+"/"+"  "+ Number(data.market_data.ath_change_percentage[selectedCurrency]).toFixed(2) + "%")
+  );
+
+  $('#atln').text(data.name + " " + "All-Time Low");
+  $('#atl').empty().append(
+    $(`<p class=' ${data.market_data.atl_change_percentage[selectedCurrency] >= 0 ? "text-success" : "text-danger"} text-left'></p>`).text(formatCurrencyValue(data.market_data.atl[selectedCurrency], selectedCurrency) + " "+"/"+"  "+ Number(data.market_data.atl_change_percentage[selectedCurrency]).toFixed(2) + "%" + " " )
+  );
+
+  $('#market_dom_n').text(data.name + " " + "Market Cap Rank");
+  $('#market_dom').text(number.format(data.market_data.market_cap_rank));
+
+  $('#tsn').text(data.name + " " + "Total Supply");
+  $('#ts').text(number.format(data.market_data.total_supply / 10000000) + " " + "Crore");
+
+  $('#csn').text(data.name + " " + "Circulating Supply");
+}
+     
 
 };
 function generateTrendBody(data){
@@ -291,3 +440,5 @@ async function refreshMarketTableBody() {
 async function refreshTrendBody() {
   generateTrendBody(await getTrendData());
 }
+
+
