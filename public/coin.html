@@ -25,15 +25,15 @@
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
      
     ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-      
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-     
-    ></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/css/bootstrap-select.min.css" integrity="sha512-ARJR74swou2y0Q2V9k0GbzQ/5vJ2RBSoCWokg4zkfM29Fb3vZEQyv0iWBMW/yvKgyHSR/7D64pFMmU8nYmbRkg==" crossorigin="anonymous" referrerpolicy="no-referrer" />  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/js/bootstrap-select.min.js" integrity="sha512-yDlE7vpGDP7o2eftkCiPZ+yuUyEcaBwoJoIhdXv71KZWugFqEphIS3PU60lEkFaz8RxaVsMpSvQxMBaKVwA5xg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>  <title>CryptoVerse - Crypto Tracker, Portfolio, Events, News</title>
+   
     <title>CryptoVerse - Crypto Tracker, Portfolio, Events, News</title>
     <style>
       td {
@@ -136,6 +136,61 @@
         </tbody>
       </table>
 </div>
+<label for="currency-select" style="font-weight: bold; margin: 20px 20px; font-size: 18px;">Select a currency:</label>
+
+<select id="currency-selector" class="selectpicker" data-style="btn-success" data-live-search="true">
+  <optgroup label="Suggested Currencies">
+    <option value="usd">USD - US Dollar</option>
+    <option value="idr">IDR - Indonesian Rupiah</option>
+    <option value="twd">TWD - New Taiwan Dollar</option>
+    <option value="eur">EUR - Euro</option>
+    <option value="krw">KRW - South Korean Won</option>
+    <option value="jpy">JPY - Japanese Yen</option>
+    <option value="rub">RUB - Russian Ruble</option>
+    <option value="cny">CNY - Chinese Yuan</option>
+    <option value="inr">INR</option>
+  </optgroup>
+  <optgroup label="Fiat Currencies">
+    <option value="aed">AED - United Arab Emirates Dirham</option>
+  <option value="ars">ARS - Argentine Peso</option>
+  <option value="aud">AUD - Australian Dollar</option>
+  <option value="bdt">BDT - Bangladeshi Taka</option>
+  <option value="bhd">BHD - Bahraini Dinar</option>
+  <option value="bmd">BMD - Bermudian Dollar</option>
+  <option value="brl">BRL - Brazil Real</option>
+  <option value="cad">CAD - Canadian Dollar</option>
+  <option value="chf">CHF - Swiss Franc</option>
+  <option value="clp">CLP - Chilean Peso</option>
+  <option value="czk">CZK - Czech Koruna</option>
+  <option value="dkk">DKK - Danish Krone</option>
+  <option value="gbp">GBP - British Pound Sterling</option>
+  <option value="hkd">HKD - Hong Kong Dollar</option>
+  <option value="huf">HUF - Hungarian Forint</option>
+  <option value="ils">ILS - Israeli New Shekel</option>
+  <option value="inr" selected>INR - Indian Rupee</option>
+  <option value="kwd">KWD - Kuwaiti Dinar</option>
+  <option value="lkr">LKR - Sri Lankan Rupee</option>
+  <option value="mmk">MMK - Burmese Kyat</option>
+  <option value="mxn">MXN - Mexican Peso</option>
+  <option value="myr">MYR - Malaysian Ringgit</option>
+  <option value="ngn">NGN - Nigerian Naira</option>
+  <option value="nok">NOK - Norwegian Krone</option>
+  <option value="nzd">NZD - New Zealand Dollar</option>
+  <option value="php">PHP - Philippine Peso</option>
+  <option value="pkr">PKR - Pakistani Rupee</option>
+  <option value="pln">PLN - Polish Zloty</option>
+  <option value="sar">SAR - Saudi Riyal</option>
+  <option value="sek">SEK - Swedish Krona</option>
+  <option value="sgd">SGD - Singapore Dollar</option>
+  <option value="thb">THB - Thai Baht</option>
+  <option value="try">TRY - Turkish Lira</option>
+  <option value="uah">UAH - Ukrainian hryvnia</option>
+  <option value="vef">VEF - Venezuelan bolívar fuerte</option>
+  <option value="vnd">VND - Vietnamese đồng</option>
+  <option value="zar">ZAR - South African Rand</option>
+  <option value="xdr">XDR - IMF Special Drawing Rights</option>
+  </optgroup>
+</select>
 
 <div id="subscription_area" style="margin-top: 70px; margin-bottom: 70px;">
   <div class="container">
@@ -262,7 +317,12 @@
                 <th scope="row" id="btname"></th>
                 <td id="bt"></td>
               </tr>
-             
+              <tr>
+                <th scope="row" id="hpgn"></th>
+                <td id="hpg"></td>
+              </tr>
+
+              
                
                 
               
@@ -437,3 +497,4 @@
     <script src="js/search.js"></script>
   </body>
 </html>
+
